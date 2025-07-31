@@ -1,0 +1,29 @@
+
+<div class="uvideos">
+    <div class="video-slider">
+        <div class="video-item" data-video-id="jeZ5PA8Q354">
+            <img src="https://img.youtube.com/vi/jeZ5PA8Q354/hqdefault.jpg" alt="Video 1">
+        </div>
+        <div class="video-item" data-video-id="dQw4w9WgXcQ">
+            <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Video 2">
+        </div>
+        <div class="video-item" data-video-id="M7lc1UVf-VE">
+            <img src="https://img.youtube.com/vi/M7lc1UVf-VE/hqdefault.jpg" alt="Video 3">
+        </div>
+        <div class="video-item" data-video-id="3JZ_D3ELwOQ">
+            <img src="https://img.youtube.com/vi/3JZ_D3ELwOQ/hqdefault.jpg" alt="Video 4">
+        </div>
+        <div class="video-item" data-video-id="9bZkp7q19f0">
+            <img src="https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg" alt="Video 5">
+        </div>
+    </div>
+
+    <div class="video-modal" id="videoModal">
+        <span class="close" id="closeModal">&times;</span>
+        <div class="modal-content">
+            <iframe id="modalVideo" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</div>

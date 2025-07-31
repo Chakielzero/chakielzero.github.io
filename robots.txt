@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /private/
+Allow: /sudachi/
+Allow: /wiiu/
+Allow: /psvita/
+
+Sitemap: https://www.chakielroms.com/sitemap.xml
