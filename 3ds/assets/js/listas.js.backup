@@ -2,14 +2,14 @@
 const juegos = [
     {
         id: "Adventure Time - The Secret of the Nameless Kingdom",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/aventure.webp",
+        imgSrc: "assets/img/aventure.jpg",
         altText: "Adventure Time - The Secret of the Nameless Kingdom",
         title: "Adventure Time - The Secret of the Nameless Kingdom (Europe) (En).3ds",
         downloadLink2: "https://nephobox.com/s/1otwFTP7gQ5gQqqHo7NImYQ" // Segundo enlace de descarga
     },       
     {
         id: "Amazing Spider-Man, The",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/spiderman.webp",
+        imgSrc: "assets/img/spiderman.jpg",
         altText: "Amazing Spider-Man, The",
         title: "Amazing Spider-Man, The (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/1eNcLX7_146YpSubYq8J2Bg" // Segundo enlace de descarga
@@ -17,7 +17,7 @@ const juegos = [
     },       
     {
         id: "Amazing Spider-Man 2, The",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/spiderman2.webp",
+        imgSrc: "assets/img/spiderman2.jpg",
         altText: "Amazing Spider-Man 2, The",
         title: "Amazing Spider-Man 2, The (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1VJQQoqkWHryn2VBmufHycQ" // Segundo enlace de descarga        
@@ -25,7 +25,7 @@ const juegos = [
     },       
     {
         id: "Angry Birds Trilogy",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/angry.webp",
+        imgSrc: "assets/img/angry.jpg",
         altText: "Angry Birds Trilogy",
         title: "Angry Birds Trilogy (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1QOoKSqBSerqQ5klN6tpMkA" // Segundo enlace de descarga
@@ -33,7 +33,7 @@ const juegos = [
     },       
     {
         id: "Animal Crossing - New Leaf",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/animal.webp",
+        imgSrc: "assets/img/animal.jpg",
         altText: "Animal Crossing - New Leaf",
         title: "Animal Crossing - New Leaf (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1bhTaK565pGiUolk-AogHtg" // Segundo enlace de descarga
@@ -41,7 +41,7 @@ const juegos = [
     },       
     {
         id: "Asphalt 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/asphalt.webp",
+        imgSrc: "assets/img/asphalt.jpg",
         altText: "Asphalt 3D",
         title: "Asphalt 3D (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/18AoKVmQtR37FBX5MeSt5nQ" // Segundo enlace de descarga
@@ -49,7 +49,7 @@ const juegos = [
     },       
     {
         id: "Batman - Arkham Origins Blackgate",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/batman.webp",
+        imgSrc: "assets/img/batman.jpg",
         altText: "Batman - Arkham Origins Blackgate",
         title: "Batman - Arkham Origins Blackgate (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/15pD882oJczZWCXfCgPpYVw" // Segundo enlace de descarga
@@ -57,7 +57,7 @@ const juegos = [
     },       
     {
         id: "Captain America - Super Soldier",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/capitan.webp",
+        imgSrc: "assets/img/capitan.jpg",
         altText: "Captain America - Super Soldier",
         title: "Captain America - Super Soldier (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1FTLm2SHg9Toa929GkFPYVg" // Segundo enlace de descarga
@@ -65,7 +65,7 @@ const juegos = [
     },       
     {
         id: "Cars 2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/cars2.webp",
+        imgSrc: "assets/img/cars2.jpg",
         altText: "Cars 2",
         title: "Cars 2 (Europe) (En,Fr,De,Es,It,Nl).3ds",
         downloadLink2: "https://nephobox.com/s/1_bvIg2xZq1fMaXxV3ITH5w" // Segundo enlace de descarga
@@ -73,7 +73,7 @@ const juegos = [
     },       
     {
         id: "Cartoon Network Battle Cradhers",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/cartoon.webp",
+        imgSrc: "assets/img/cartoon.jpg",
         altText: "Cartoon Network Battle Cradhers",
         title: "Cartoon Network Battle Cradhers (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1t7TXhvoKVo0JIxlaLDFIYQ" // Segundo enlace de descarga
@@ -81,7 +81,7 @@ const juegos = [
     },       
     {
         id: "Detective Pikachu",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/detective.webp",
+        imgSrc: "assets/img/detective.jpg",
         altText: "Detective Pikachu",
         title: "Detective Pikachu (Europe) (En,Ja,Fr,De,Es,It,Zh).3ds",
         downloadLink2: "https://nephobox.com/s/1w8Eja70lP2vXR8jLUnTarQ" // Segundo enlace de descarga
@@ -89,7 +89,7 @@ const juegos = [
     },       
     {
         id: "Disney Epic Mickey - Power of Illusion",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/epicmickey.webp",
+        imgSrc: "assets/img/epicmickey.jpg",
         altText: "Disney Epic Mickey - Power of Illusion",
         title: "Disney Epic Mickey - Power of Illusion (USA) (En,Fr,Es,Pt).3ds",
         downloadLink2: "https://nephobox.com/s/1odabbVyAj6Lvy9swEMCblw" // Segundo enlace de descarga
@@ -97,7 +97,7 @@ const juegos = [
     },       
     {
         id: "Disney Planes",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/planes.webp",
+        imgSrc: "assets/img/planes.jpg",
         altText: "Disney Planes",
         title: "Disney Planes (Europe) (En,Fr,De,Es,It,Nl).3ds",
         downloadLink2: "https://nephobox.com/s/1sRe_gVixVvNgkixGimDXFw" // Segundo enlace de descarga
@@ -105,7 +105,7 @@ const juegos = [
     },       
     {
         id: "Donkey Kong Country Returns 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/donkey.webp",
+        imgSrc: "assets/img/donkey.jpg",
         altText: "Donkey Kong Country Returns 3D",
         title: "Donkey Kong Country Returns 3D (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/1OgshwXHjaYxi_zveGZJnLQ" // Segundo enlace de descarga
@@ -113,7 +113,7 @@ const juegos = [
     },       
     {
         id: "Dragon Ball Fusions",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/dbfusions.webp",
+        imgSrc: "assets/img/dbfusions.jpg",
         altText: "Dragon Ball Fusions",
         title: "Dragon Ball Fusions (USA).3ds",
         downloadLink2: "https://nephobox.com/s/14N-16Al3LUj5bUYVlb9XvA" // Segundo enlace de descarga
@@ -121,7 +121,7 @@ const juegos = [
     },       
     {
         id: "Dragon Ball Z - Extreme Butoden",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/dbextreme.webp",
+        imgSrc: "assets/img/dbextreme.jpg",
         altText: "Dragon Ball Z - Extreme Butoden",
         title: "Dragon Ball Z - Extreme Butoden.3ds",
         downloadLink2: "https://nephobox.com/s/1x5rfn9sEp107Md9pL41dRw" // Segundo enlace de descarga
@@ -129,7 +129,7 @@ const juegos = [
     },       
     {
         id: "Dragon Quest VIII - Journey of the Cursed King",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/dragonquest.webp",
+        imgSrc: "assets/img/dragonquest.jpg",
         altText: "Dragon Quest VIII - Journey of the Cursed King",
         title: "Dragon Quest VIII - Journey of the Cursed King (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1T-93tq-9Q1eL0B0navl-Zw" // Segundo enlace de descarga
@@ -137,7 +137,7 @@ const juegos = [
     },       
     {
         id: "Dream Trigger 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/dreamteam.webp",
+        imgSrc: "assets/img/dreamteam.jpg",
         altText: "Dream Trigger 3D",
         title: "Dream Trigger 3D (Europe) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/1Gyhg9McI7AMNpZeCyPWJaA" // Segundo enlace de descarga
@@ -145,7 +145,7 @@ const juegos = [
     },       
     {
         id: "Driver - Renegade 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/driver.webp",
+        imgSrc: "assets/img/driver.jpg",
         altText: "Driver - Renegade 3D",
         title: "Driver - Renegade 3D (Europe) (En,Fr,De,Es,It,Nl,Pt,Sv,No,Da).3ds",
         downloadLink2: "https://nephobox.com/s/1iVZyJvj2zYQklMQtphbdBA" // Segundo enlace de descarga
@@ -153,7 +153,7 @@ const juegos = [
     },       
     {
         id: "F1 2011",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/f1.webp",
+        imgSrc: "assets/img/f1.jpg",
         altText: "F1 2011",
         title: "F1 2011 (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/180k62FWaybdWLO_wWfopEA" // Segundo enlace de descarga
@@ -161,7 +161,7 @@ const juegos = [
     },       
     {
         id: "Farming Simulator 18",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/farming.webp",
+        imgSrc: "assets/img/farming.jpg",
         altText: "Farming Simulator 18",
         title: "Farming Simulator 18 (Europe) (En,Fr,De,Es,It,Pt,Pl,Ru).3ds",
         downloadLink2: "https://nephobox.com/s/1J2JFUhOEt0ewjAiQXDmSKw" // Segundo enlace de descarga
@@ -169,7 +169,7 @@ const juegos = [
     },       
     {
         id: "Fast & Furious - Showdown",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/fastyfurius.webp",
+        imgSrc: "assets/img/fastyfurius.jpg",
         altText: "Fast & Furious - Showdown",
         title: "Fast & Furious - Showdown (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1AaesDIAo_RONVeuGQ_Guzg" // Segundo enlace de descarga
@@ -177,7 +177,7 @@ const juegos = [
     },       
     {
         id: "FIFA Soccer 12",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/fifa12.webp",
+        imgSrc: "assets/img/fifa12.jpg",
         altText: "FIFA Soccer 12.3ds",
         title: "FIFA Soccer 12 (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/1-OfmmbjX0G4pQacsRwaX8Q" // Segundo enlace de descarga
@@ -185,7 +185,7 @@ const juegos = [
     },       
     {
         id: "FIFA Soccer 13",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/fifa13.webp",
+        imgSrc: "assets/img/fifa13.jpg",
         altText: "FIFA Soccer 13",
         title: "FIFA Soccer 13 (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/1XkLM1_Gy8IfAhv5FD43IEw" // Segundo enlace de descarga
@@ -193,7 +193,7 @@ const juegos = [
     },       
     {
         id: "FIFA 14 - Legacy Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/fifa14.webp",
+        imgSrc: "assets/img/fifa14.jpg",
         altText: "FIFA 14 - Legacy Edition",
         title: "FIFA 14 - Legacy Edition (Europe) (De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1-jzw3MC5SwOKboq_kDEAiw" // Segundo enlace de descarga
@@ -201,7 +201,7 @@ const juegos = [
     },       
     {
         id: "FIFA 15 - Legacy Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/fifa15.webp",
+        imgSrc: "assets/img/fifa15.jpg",
         altText: "FIFA 15 - Legacy Edition",
         title: "FIFA 15 - Legacy Edition (Europe) (De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1Ov1qHfV7dfUiN5M0H_rPHw" // Segundo enlace de descarga
@@ -209,7 +209,7 @@ const juegos = [
     },       
     {
         id: "Fire Emblem - Awakening",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/fireawa.webp",
+        imgSrc: "assets/img/fireawa.jpg",
         altText: "Fire Emblem - Awakening",
         title: "Fire Emblem - Awakening (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1WyvdA2A2qyLal6gRMNRGcg" // Segundo enlace de descarga
@@ -217,7 +217,7 @@ const juegos = [
     },       
     {
         id: "Fire Emblem Echoes - Shadows of Valentia",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/fireechoes.webp",
+        imgSrc: "assets/img/fireechoes.jpg",
         altText: "Fire Emblem Echoes - Shadows of Valentia",
         title: "Fire Emblem Echoes - Shadows of Valentia (Europe) (En,Fr,De,Es,It,Nl).3ds",
         downloadLink2: "https://nephobox.com/s/1hF8jWGuaBB-E2vAudcSV6A" // Segundo enlace de descarga
@@ -225,7 +225,7 @@ const juegos = [
     },       
     {
         id: "Fire Emblem Fates - Limited Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/firelimited.webp",
+        imgSrc: "assets/img/firelimited.jpg",
         altText: "Fire Emblem Fates - Limited Edition",
         title: "Fire Emblem Fates - Limited Edition (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/12NwIKEkczgN8uOY9GF2yqg" // Segundo enlace de descarga
@@ -233,7 +233,7 @@ const juegos = [
     },       
     {
         id: "Gravity Falls - Legend of the Gnome Gemulets",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/gravity.webp",
+        imgSrc: "assets/img/gravity.jpg",
         altText: "Gravity Falls - Legend of the Gnome Gemulets",
         title: "Gravity Falls - Legend of the Gnome Gemulets (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1S_lME9KrZ6dcjXhMlbuBfA" // Segundo enlace de descarga
@@ -241,7 +241,7 @@ const juegos = [
     },       
     {
         id: "Green Lantern - Rise of the Manhunters",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/green.webp",
+        imgSrc: "assets/img/green.jpg",
         altText: "Green Lantern - Rise of the Manhunters",
         title: "Green Lantern - Rise of the Manhunters (Europe) (En,Fr,De,Es,It,Nl).3ds",
         downloadLink2: "https://nephobox.com/s/1wdgwV8D0ntMi27wxdPjESg" // Segundo enlace de descarga
@@ -249,7 +249,7 @@ const juegos = [
     },       
     {
         id: "Hey! Pikmin",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/heypikmin.webp",
+        imgSrc: "assets/img/heypikmin.jpg",
         altText: "Hey! Pikmin",
         title: "Hey! Pikmin (Europe) (En,Fr,De,Es,It,Nl).3ds",
         downloadLink2: "https://nephobox.com/s/1fwYI8ZGVMN3xyshJi1Nimg" // Segundo enlace de descarga
@@ -257,7 +257,7 @@ const juegos = [
     },       
     {
         id: "Hot Wheels - World's Best Driver",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/hot.webp",
+        imgSrc: "assets/img/hot.jpg",
         altText: "Hot Wheels - World's Best Driver",
         title: "Hot Wheels - World's Best Driver (Europe) (En,Fr,De,Es,It,Nl).3ds",
         downloadLink2: "https://nephobox.com/s/1PmpwaJirvUcqRGUKLfGSJw" // Segundo enlace de descarga
@@ -265,7 +265,7 @@ const juegos = [
     },       
     {
         id: "Hyrule Warriors Legends",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/hyrule.webp",
+        imgSrc: "assets/img/hyrule.jpg",
         altText: "Hyrule Warriors Legends",
         title: "Hyrule Warriors Legends (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1q7TEyIjoEwheiQHA_o_nGw" // Segundo enlace de descarga
@@ -273,7 +273,7 @@ const juegos = [
     },       
     {
         id: "Kid Icarus - Uprising.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/kidicarus.webp",
+        imgSrc: "assets/img/kidicarus.jpg",
         altText: "Kid Icarus - Uprising.3ds",
         title: "Kid Icarus - Uprising.3ds",
         downloadLink2: "https://nephobox.com/s/1aujpFGUyDfSJah7-K7KlPQ" // Segundo enlace de descarga
@@ -282,7 +282,7 @@ const juegos = [
     },       
     {
         id: "Kingdom Hearts 3D - Dream Drop Distance",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/kingdoms.webp",
+        imgSrc: "assets/img/kingdoms.jpg",
         altText: "Kingdom Hearts 3D - Dream Drop Distance",
         title: "Kingdom Hearts 3D - Dream Drop Distance (USA) (En,Fr).3ds",
         downloadLink2: "https://nephobox.com/s/1fSfLWXOhbjcdKtvV1eKb4g" // Segundo enlace de descarga
@@ -290,7 +290,7 @@ const juegos = [
     },       
     {
         id: "Kirby - Planet Robobot",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/kirbyrobobot.webp",
+        imgSrc: "assets/img/kirbyrobobot.jpg",
         altText: "Kirby - Planet Robobot",
         title: "Kirby - Planet Robobot (Europe).3ds",
         downloadLink2: "https://nephobox.com/s/15VfBvcMjJIva59cnz0eXlg" // Segundo enlace de descarga
@@ -298,7 +298,7 @@ const juegos = [
     },       
     {
         id: "Kirby - Triple Deluxe",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/kirbytriple.webp",
+        imgSrc: "assets/img/kirbytriple.jpg",
         altText: "Kirby - Triple Deluxe",
         title: "Kirby - Triple Deluxe (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1psX583IrIAcm1bWTSgmawQ" // Segundo enlace de descarga
@@ -306,7 +306,7 @@ const juegos = [
     },       
     {
         id: "Kirby Battle Royale",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/kirbybattle.webp",
+        imgSrc: "assets/img/kirbybattle.jpg",
         altText: "Kirby Battle Royale",
         title: "Kirby Battle Royale (Europe) (En,Fr,De,Es,It,Nl).3ds",
         downloadLink2: "https://nephobox.com/s/16sSAy85O6eE_520dAGJMAw" // Segundo enlace de descarga
@@ -314,7 +314,7 @@ const juegos = [
     },       
     {
         id: "Kirby's Extra Epic Yarn",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/kirbyepic.webp",
+        imgSrc: "assets/img/kirbyepic.jpg",
         altText: "Kirby's Extra Epic Yarn",
         title: "Kirby's Extra Epic Yarn (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1YDIvcv1BKodoc0h8zz805A" // Segundo enlace de descarga
@@ -322,7 +322,7 @@ const juegos = [
     },       
     {
         id: "Kung Fu Panda - Showdown of Legendary Legends",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/kunfupanda.webp",
+        imgSrc: "assets/img/kunfupanda.jpg",
         altText: "Kung Fu Panda - Showdown of Legendary Legends",
         title: "Kung Fu Panda - Showdown of Legendary Legends (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1Z9vZhOeTbckGEssKllNYHw" // Segundo enlace de descarga
@@ -330,7 +330,7 @@ const juegos = [
     },       
     {
         id: "Legend of Zelda, The - A Link Between Worlds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/zeldalinkbetween.webp",
+        imgSrc: "assets/img/zeldalinkbetween.jpg",
         altText: "Legend of Zelda, The - A Link Between Worlds",
         title: "Legend of Zelda, The - A Link Between Worlds (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1GqV5lYsg6Fgv1refyp9VSA" // Segundo enlace de descarga
@@ -338,7 +338,7 @@ const juegos = [
     },       
     {
         id: "Legend of Zelda, The - Tri Force Heroes",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/zeldatriforce.webp",
+        imgSrc: "assets/img/zeldatriforce.jpg",
         altText: "Legend of Zelda, The - Tri Force Heroes",
         title: "Legend of Zelda, The - Tri Force Heroes (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/1WfmS7hW9bkCGFfzOQovrsg" // Segundo enlace de descarga
@@ -346,7 +346,7 @@ const juegos = [
     },       
     {
         id: "LEGO Batman 3 - Beyond Gotham",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/legobatman3.webp",
+        imgSrc: "assets/img/legobatman3.jpg",
         altText: "LEGO Batman 3 - Beyond Gotham",
         title: "LEGO Batman 3 - Beyond Gotham (Europe) (En,Fr,De,Es,It,Nl,Da).3ds",
         downloadLink2: "https://nephobox.com/s/16gwCTaCO_1kc-dbFCsaUlA" // Segundo enlace de descarga
@@ -354,7 +354,7 @@ const juegos = [
     },       
     {
         id: "LEGO City Undercover - The Chase Begins",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/legocity.webp",
+        imgSrc: "assets/img/legocity.jpg",
         altText: "LEGO City Undercover - The Chase Begins",
         title: "LEGO City Undercover - The Chase Begins (Europe) (En,Fr,De,Es,It,Nl,Pt,Da,Ru).3ds",
         downloadLink2: "https://nephobox.com/s/1iWzl6mp5_jjaBLg5q_q1dw" // Segundo enlace de descarga
@@ -362,7 +362,7 @@ const juegos = [
     },       
     {
         id: "LEGO Jurassic World.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/legojurassic.webp",
+        imgSrc: "assets/img/legojurassic.jpg",
         altText: "LEGO Jurassic World.3ds",
         title: "LEGO Jurassic World (Spain).3ds",
         downloadLink2: "https://nephobox.com/s/111eC1-bF_k4_Wrbb8yfPQQ" // Segundo enlace de descarga
@@ -370,7 +370,7 @@ const juegos = [
     },       
     {
         id: "LEGO Legends of Chima - Laval's Journey",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/legochima.webp",
+        imgSrc: "assets/img/legochima.jpg",
         altText: "LEGO Legends of Chima - Laval's Journey",
         title: "LEGO Legends of Chima - Laval's Journey (Europe) (En,Fr,De,Es,It,Nl,Da).3ds",
         downloadLink2: "https://nephobox.com/s/1_CCrsi8dXXzlriXtumPcqA" // Segundo enlace de descarga
@@ -378,7 +378,7 @@ const juegos = [
     },       
     {
         id: "LEGO Marvel Super Heroes - Universe in Peril",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/legomarvel.webp",
+        imgSrc: "assets/img/legomarvel.jpg",
         altText: "LEGO Marvel Super Heroes - Universe in Peril",
         title: "LEGO Marvel Super Heroes - Universe in Peril (Europe) (En,Fr,De,Es,It,Nl,Da).3ds",
         downloadLink2: "https://nephobox.com/s/1LOHSrdelRsKb6emcYiCkeg" // Segundo enlace de descarga
@@ -386,7 +386,7 @@ const juegos = [
     },       
     {
         id: "LEGO Movie Videogame, The",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/legomovie.webp",
+        imgSrc: "assets/img/legomovie.jpg",
         altText: "LEGO Movie Videogame, The",
         title: "LEGO Movie Videogame, The (Europe) (En,Fr,Es,It,Nl,Da).3ds",
         downloadLink2: "https://nephobox.com/s/182v295hYp3LbuzCj6_iECw" // Segundo enlace de descarga
@@ -394,7 +394,7 @@ const juegos = [
     },       
     {
         id: "LEGO Ninjago - Nindroids.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/legoninjago.webp",
+        imgSrc: "assets/img/legoninjago.jpg",
         altText: "LEGO Ninjago - Nindroids.3ds",
         title: "LEGO Ninjago - Nindroids (Europe) (En,Fr,De,Es,It,Nl,Da).3ds",
         downloadLink2: "https://nephobox.com/s/1GHq415M51ETUaypMpdOGhw" // Segundo enlace de descarga
@@ -402,7 +402,7 @@ const juegos = [
     },       
     {
         id: "LEGO Ninjago - Shadow of Ronin.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/legoninjagoshadow.webp",
+        imgSrc: "assets/img/legoninjagoshadow.jpg",
         altText: "LEGO Ninjago - Shadow of Ronin.3ds",
         title: "LEGO Ninjago - Shadow of Ronin (Europe) (En,Fr,De,Es,It,Nl,Da).3ds",
         downloadLink2: "https://nephobox.com/s/1mJzOIwN6WBiIH8lhIv7zPA" // Segundo enlace de descarga
@@ -410,7 +410,7 @@ const juegos = [
     },       
     {
         id: "LEGO Pirates of the Caribbean - The Video Game.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/legopirates.webp",
+        imgSrc: "assets/img/legopirates.jpg",
         altText: "LEGO Pirates of the Caribbean - The Video Game",
         title: "LEGO Pirates of the Caribbean - The Video Game (Europe) (En,Fr,De,Es,It,Nl,Sv,No,Da).3ds",
         downloadLink2: "https://nephobox.com/s/11rhYY_TicNZiYtbCAto49A" // Segundo enlace de descarga
@@ -418,7 +418,7 @@ const juegos = [
     },       
     {
         id: "LEGO Star Wars - The Force Awakens",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/legostarwars3.webp",
+        imgSrc: "assets/img/legostarwars3.jpg",
         altText: "LEGO Star Wars - The Force Awakens",
         title: "LEGO Star Wars - The Force Awakens (Europe) (En,Fr,De,Es,It,Nl,Da).3ds",
         downloadLink2: "https://nephobox.com/s/16I789NV73BLzXoSmlq4ybQ" // Segundo enlace de descarga
@@ -426,7 +426,7 @@ const juegos = [
     },       
     {
         id: "LEGO Star Wars III - The Clone Wars",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/legostarwarsawa.webp",
+        imgSrc: "assets/img/legostarwarsawa.jpg",
         altText: "LEGO Star Wars III - The Clone Wars",
         title: "LEGO Star Wars III - The Clone Wars (Europe) (En,Fr,De,Es,It,Da).3ds",
         downloadLink2: "https://nephobox.com/s/1usToBPE2tkS8XJbESAN0Kg" // Segundo enlace de descarga
@@ -434,7 +434,7 @@ const juegos = [
     },       
     {
         id: "Luigi's Mansion - Dark Moon",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/luigismansion2.webp",
+        imgSrc: "assets/img/luigismansion2.jpg",
         altText: "Luigi's Mansion - Dark Moon",
         title: "Luigi's Mansion - Dark Moon (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/1xh9HCDSyQHXkiMOs8Pvwuw" // Segundo enlace de descarga
@@ -442,7 +442,7 @@ const juegos = [
     },       
     {
         id: "Mario & Luigi - Bowser's Inside Story + Bowser Jr.'s Journey",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/maroyluigi.webp",
+        imgSrc: "assets/img/maroyluigi.jpg",
         altText: "Mario & Luigi - Bowser's Inside Story + Bowser Jr.'s Journey",
         title: "Mario & Luigi - Bowser's Inside Story + Bowser Jr.'s Journey (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1EULOJvbxYFIJfQqLx2PK1A" // Segundo enlace de descarga
@@ -450,7 +450,7 @@ const juegos = [
     },       
     {
         id: "Mario & Luigi - Dream Team Bros",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/marioyluigi2.webp",
+        imgSrc: "assets/img/marioyluigi2.jpg",
         altText: "Mario & Luigi - Dream Team Bros",
         title: "Mario & Luigi - Dream Team Bros. (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru).3ds",
         downloadLink2: "https://nephobox.com/s/1AgoS3NU0-KTG4oLPzeHfrA" // Segundo enlace de descarga
@@ -458,7 +458,7 @@ const juegos = [
     },       
     {
         id: "Mario & Luigi - Paper Jam Bros",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/marioyluigi3.webp",
+        imgSrc: "assets/img/marioyluigi3.jpg",
         altText: "Mario & Luigi - Paper Jam Bros",
         title: "Mario & Luigi - Paper Jam Bros. (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru).3ds",
         downloadLink2: "https://nephobox.com/s/1Zl4gP9S1jkO6z55_2-Z1vg" // Segundo enlace de descarga
@@ -466,7 +466,7 @@ const juegos = [
     },       
     {
         id: "Mario & Sonic at the London 2012 Olympic Games",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/marioysonic.webp",
+        imgSrc: "assets/img/marioysonic.jpg",
         altText: "Mario & Sonic at the London 2012 Olympic Games",
         title: "Mario & Sonic at the London 2012 Olympic Games (Europe) (En,Fr,De,Es,It,Nl).3ds",
         downloadLink2: "https://nephobox.com/s/1GU9dWwGv9amunXBj9bZ0tw" // Segundo enlace de descarga
@@ -474,7 +474,7 @@ const juegos = [
     },       
     {
         id: "Mario and Donkey Kong - Minis on the Move",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/marioydonkey.webp",
+        imgSrc: "assets/img/marioydonkey.jpg",
         altText: "Mario and Donkey Kong - Minis on the Move",
         title: "Mario and Donkey Kong - Minis on the Move (Europe) (En,Fr,De,Es,It) (eShop).3ds",
         downloadLink2: "https://nephobox.com/s/1ajzdGnZvzg99C4ClldzI4Q" // Segundo enlace de descarga
@@ -482,7 +482,7 @@ const juegos = [
     },       
     {
         id: "Mario Kart 7.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/mariokart7.webp",
+        imgSrc: "assets/img/mariokart7.jpg",
         altText: "Mario Kart 7.3ds",
         title: "Mario Kart 7.3ds",
         downloadLink2: "https://nephobox.com/s/18JFqFofF5mgzcUOO4Jbj_A" // Segundo enlace de descarga
@@ -490,7 +490,7 @@ const juegos = [
     },       
     {
         id: "Mario Party - Island Tour",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/marioparty.webp",
+        imgSrc: "assets/img/marioparty.jpg",
         altText: "Mario Party - Island Tour",
         title: "Mario Party - Island Tour (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru).3ds",
         downloadLink2: "https://nephobox.com/s/1iRy7mlPo6yapYKliqFwpMg" // Segundo enlace de descarga
@@ -498,7 +498,7 @@ const juegos = [
     },       
     {
         id: "Mario Tennis Open",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/mariotennis.webp",
+        imgSrc: "assets/img/mariotennis.jpg",
         altText: "Mario Tennis Open",
         title: "Mario Tennis Open (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru).3ds",
         downloadLink2: "https://nephobox.com/s/1snRnv5ZBoH2EXlClYF0buw" // Segundo enlace de descarga
@@ -506,7 +506,7 @@ const juegos = [
     },       
     {
         id: "Mega Man Legacy Collection.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/megaman.webp",
+        imgSrc: "assets/img/megaman.jpg",
         altText: "Mega Man Legacy Collection.3ds",
         title: "Mega Man Legacy Collection (USA).3ds",
         downloadLink2: "https://nephobox.com/s/1Xg5IJRJTmc98lI-NxLJxUA" // Segundo enlace de descarga
@@ -514,7 +514,7 @@ const juegos = [
     },       
     {
         id: "Metal Gear Solid 3D - Snake Eater",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/metalgear3d.webp",
+        imgSrc: "assets/img/metalgear3d.jpg",
         altText: "Metal Gear Solid 3D - Snake Eater",
         title: "Metal Gear Solid 3D - Snake Eater (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1G2AoIAbGeRruTsotNfqeQw" // Segundo enlace de descarga
@@ -522,7 +522,7 @@ const juegos = [
     },       
     {
         id: "Metroid - Samus Returns",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/metroidsamus.webp",
+        imgSrc: "assets/img/metroidsamus.jpg",
         altText: "Metroid - Samus Returns",
         title: "Metroid - Samus Returns (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/1PfONJtV5w7kbY4UFksO3Kw" // Segundo enlace de descarga
@@ -530,7 +530,7 @@ const juegos = [
     },       
     {
         id: "Metroid Prime - Federation Force",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/metroidprime.webp",
+        imgSrc: "assets/img/metroidprime.jpg",
         altText: "Metroid Prime - Federation Force",
         title: "Metroid Prime - Federation Force (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/1qbp2A_rUs0YCo_VUwLxkhw" // Segundo enlace de descarga
@@ -538,7 +538,7 @@ const juegos = [
     },       
     {
         id: "Minecraft - New Nintendo 3DS Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/minecraft.webp",
+        imgSrc: "assets/img/minecraft.jpg",
         altText: "Minecraft - New Nintendo 3DS Edition",
         title: "Minecraft - New Nintendo 3DS Edition (USA).3ds",
         downloadLink2: "https://nephobox.com/s/1i06mm6Kmo8xgRxzMj1VLzg" // Segundo enlace de descarga
@@ -546,7 +546,7 @@ const juegos = [
     },       
     {
         id: "Monster Hunter 4 Ultimate",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/monsterhunter4.webp",
+        imgSrc: "assets/img/monsterhunter4.jpg",
         altText: "Monster Hunter 4 Ultimate",
         title: "Monster Hunter 4 Ultimate (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1B3UumwmViwhTnsHYBs9xgg" // Segundo enlace de descarga
@@ -554,7 +554,7 @@ const juegos = [
     },       
     {
         id: "Naruto Powerful Shippuden",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/narutopower.webp",
+        imgSrc: "assets/img/narutopower.jpg",
         altText: "Naruto Powerful Shippuden",
         title: "Naruto Powerful Shippuden (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1XB9-B3QLlvfArvIVFwyHdg" // Segundo enlace de descarga
@@ -562,7 +562,7 @@ const juegos = [
     },       
     {
         id: "Naruto Shippuden 3D - The New Era",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/naruto3d.webp",
+        imgSrc: "assets/img/naruto3d.jpg",
         altText: "Naruto Shippuden 3D - The New Era",
         title: "Naruto Shippuden 3D - The New Era (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1GxzLwTdLKa4RMTYy9vUJXg" // Segundo enlace de descarga
@@ -570,7 +570,7 @@ const juegos = [
     },       
     {
         id: "NASCAR Unleashed.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/nascar.webp",
+        imgSrc: "assets/img/nascar.jpg",
         altText: "NASCAR Unleashed.3ds",
         title: "NASCAR Unleashed (USA).3ds",
         downloadLink2: "https://nephobox.com/s/1PO-k5sV0i-Huu70z-aLRGw" // Segundo enlace de descarga
@@ -578,7 +578,7 @@ const juegos = [
     },       
     {
         id: "Need for Speed - The Run",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/nfstherun.webp",
+        imgSrc: "assets/img/nfstherun.jpg",
         altText: "Need for Speed - The Run",
         title: "Need for Speed - The Run (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/19ijliLHx3-73peTp-CE2BA" // Segundo enlace de descarga
@@ -586,7 +586,7 @@ const juegos = [
     },       
     {
         id: "New Super Mario Bros. 2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/newsupermario2.webp",
+        imgSrc: "assets/img/newsupermario2.jpg",
         altText: "New Super Mario Bros. 2",
         title: "New Super Mario Bros. 2 (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru).3ds",
         downloadLink2: "https://nephobox.com/s/1JGAq2TWGTpdhXZxu80z7OA" // Segundo enlace de descarga
@@ -594,7 +594,7 @@ const juegos = [
     },       
     {
         id: "One Piece - Unlimited Cruise SP",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/opsp.webp",
+        imgSrc: "assets/img/opsp.jpg",
         altText: "One Piece - Unlimited Cruise SP",
         title: "One Piece - Unlimited Cruise SP (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1ahyTdf8NcaoCjWxSWOAP_A" // Segundo enlace de descarga
@@ -602,7 +602,7 @@ const juegos = [
     },       
     {
         id: "One Piece - Unlimited Cruise SP2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/opsp2.webp",
+        imgSrc: "assets/img/opsp2.jpg",
         altText: "One Piece - Unlimited Cruise SP2",
         title: "One Piece - Unlimited Cruise SP2 (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1H0H-mk42VAsJh3CF5HQgJA" // Segundo enlace de descarga
@@ -610,7 +610,7 @@ const juegos = [
     },       
     {
         id: "One Piece - Unlimited World Red",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/opunlimited.webp",
+        imgSrc: "assets/img/opunlimited.jpg",
         altText: "One Piece - Unlimited World Red",
         title: "One Piece - Unlimited World Red (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1Q0-qtf-iF69gu45fquqOGA" // Segundo enlace de descarga
@@ -618,7 +618,7 @@ const juegos = [
     },       
     {
         id: "Pac-Man & Galaga Dimensions",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pacman.webp",
+        imgSrc: "assets/img/pacman.jpg",
         altText: "Pac-Man & Galaga Dimensions",
         title: "Pac-Man & Galaga Dimensions (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1j-JHHRzdKiWEiWd--lcMxQ" // Segundo enlace de descarga
@@ -626,7 +626,7 @@ const juegos = [
     },       
     {
         id: "Pac-Man and the Ghostly Adventures",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pacmanadventure.webp",
+        imgSrc: "assets/img/pacmanadventure.jpg",
         altText: "Pac-Man and the Ghostly Adventures",
         title: "Pac-Man and the Ghostly Adventures (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1T0EEdWtGQ7KCx5uIfoKljw" // Segundo enlace de descarga
@@ -634,7 +634,7 @@ const juegos = [
     },       
     {
         id: "Pac-Man and the Ghostly Adventures 2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pacmanadventure2.webp",
+        imgSrc: "assets/img/pacmanadventure2.jpg",
         altText: "Pac-Man and the Ghostly Adventures 2",
         title: "Pac-Man and the Ghostly Adventures 2 (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1KEczYFGY69wRUiee-FPSqQ" // Segundo enlace de descarga
@@ -642,7 +642,7 @@ const juegos = [
     },       
     {
         id: "Pac-Man Party 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pacmanparty.webp",
+        imgSrc: "assets/img/pacmanparty.jpg",
         altText: "Pac-Man Party 3D",
         title: "Pac-Man Party 3D (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1z_cuqUhv6gTOVflSWkwsyg" // Segundo enlace de descarga
@@ -650,7 +650,7 @@ const juegos = [
     },       
     {
         id: "Paper Mario - Sticker Star",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/papermario.webp",
+        imgSrc: "assets/img/papermario.jpg",
         altText: "Paper Mario - Sticker Star",
         title: "Paper Mario - Sticker Star (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1Vx7JXFbJ9sNT_w5__o5fcw" // Segundo enlace de descarga
@@ -658,7 +658,7 @@ const juegos = [
     },       
     {
         id: "Pokemon Alpha Sapphire",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pokemonalphasapphire.webp",
+        imgSrc: "assets/img/pokemonalphasapphire.jpg",
         altText: "Pokemon Alpha Sapphire",
         title: "Pokemon Alpha Sapphire (Europe) (En,Ja,Fr,De,Es,It,Ko) (Rev 2).3ds",
         downloadLink2: "https://nephobox.com/s/1nXdyFjqMUHNyT1rLbqKUrQ" // Segundo enlace de descarga
@@ -666,7 +666,7 @@ const juegos = [
     },       
     {
         id: "Pokemon Moon",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pokemonmoon.webp",
+        imgSrc: "assets/img/pokemonmoon.jpg",
         altText: "Pokemon Moon",
         title: "Pokemon Moon (Europe) (En,Ja,Fr,De,Es,It,Zh,Ko).3ds",
         downloadLink2: "https://nephobox.com/s/1KBKcoFRcWzMTFdkARgMP3g" // Segundo enlace de descarga
@@ -674,7 +674,7 @@ const juegos = [
     },       
     {
         id: "Pokemon Omega Ruby",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pokemonomega.webp",
+        imgSrc: "assets/img/pokemonomega.jpg",
         altText: "Pokemon Omega Ruby",
         title: "Pokemon Omega Ruby (Europe) (En,Ja,Fr,De,Es,It,Ko) (Rev 2).3ds",
         downloadLink2: "https://nephobox.com/s/1Jtv6d9f__gpwR6Yl1jQeMw" // Segundo enlace de descarga
@@ -682,7 +682,7 @@ const juegos = [
     },       
     {
         id: "Pokemon Rumble World",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pokemonrumble.webp",
+        imgSrc: "assets/img/pokemonrumble.jpg",
         altText: "Pokemon Rumble World",
         title: "Pokemon Rumble World (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1rKBf_KiDG-xOBNtpB5Az3w" // Segundo enlace de descarga
@@ -690,7 +690,7 @@ const juegos = [
     },       
     {
         id: "Pokemon Sun",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pokemonsun.webp",
+        imgSrc: "assets/img/pokemonsun.jpg",
         altText: "Pokemon Sun",
         title: "Pokemon Sun (Europe) (En,Ja,Fr,De,Es,It,Zh,Ko).3ds",
         downloadLink2: "https://nephobox.com/s/19MCg6AfuNlEUnZFl-EvfgA" // Segundo enlace de descarga
@@ -698,7 +698,7 @@ const juegos = [
     },       
     {
         id: "Pokemon Super Mystery Dungeon",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pokemonmistery.webp",
+        imgSrc: "assets/img/pokemonmistery.jpg",
         altText: "Pokemon Super Mystery Dungeon",
         title: "Pokemon Super Mystery Dungeon (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1FCctyieNZMR70gpV3IiOkg" // Segundo enlace de descarga
@@ -707,7 +707,7 @@ const juegos = [
     },       
     {
         id: "Pokemon Ultra Moon",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pokemonultramoon.webp",
+        imgSrc: "assets/img/pokemonultramoon.jpg",
         altText: "Pokemon Ultra Moon",
         title: "Pokemon Ultra Moon (Europe) (En,Ja,Fr,De,Es,It,Zh,Ko).3ds",
         downloadLink2: "https://nephobox.com/s/1jVse7qThFEhu-3FsMZjBkg" // Segundo enlace de descarga
@@ -715,7 +715,7 @@ const juegos = [
     },       
     {
         id: "Pokemon Ultra Sun",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pokemonultrasun.webp",
+        imgSrc: "assets/img/pokemonultrasun.jpg",
         altText: "Pokemon Ultra Sun",
         title: "Pokemon Ultra Sun (Europe) (En,Ja,Fr,De,Es,It,Zh,Ko).3ds",
         downloadLink2: "https://nephobox.com/s/13NfXHv0FtgwaDSp6oCOS9w" // Segundo enlace de descarga
@@ -723,7 +723,7 @@ const juegos = [
     },       
     {
         id: "Pokemon X",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pokemonx.webp",
+        imgSrc: "assets/img/pokemonx.jpg",
         altText: "Pokemon X",
         title: "Pokemon X (USA) (En,Ja,Fr,De,Es,It,Ko).3ds",
         downloadLink2: "https://nephobox.com/s/1UY4tgumd5R_KHlA5fE2_lQ" // Segundo enlace de descarga
@@ -731,7 +731,7 @@ const juegos = [
     },       
     {
         id: "Pokemon Y",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pokemony.webp",
+        imgSrc: "assets/img/pokemony.jpg",
         altText: "Pokemon Y",
         title: "Pokemon Y (Europe) (En,Ja,Fr,De,Es,It,Ko).3ds",
         downloadLink2: "https://nephobox.com/s/1tsmLtdwnXW6jBIs4A6KsYQ" // Segundo enlace de descarga
@@ -739,7 +739,7 @@ const juegos = [
     },       
     {
         id: "Poochy & Yoshi's Woolly World",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/yoshi.webp",
+        imgSrc: "assets/img/yoshi.jpg",
         altText: "Poochy & Yoshi's Woolly World",
         title: "Poochy & Yoshi's Woolly World (Europe) (En,Fr,De,Es,It,Nl).3ds",
         downloadLink2: "https://nephobox.com/s/1cjlRlWzfEhoGT9ZXTcOLIg" // Segundo enlace de descarga
@@ -747,7 +747,7 @@ const juegos = [
     },       
     {
         id: "Power Rangers - Megaforce",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/powerangers.webp",
+        imgSrc: "assets/img/powerangers.jpg",
         altText: "Power Rangers - Megaforce",
         title: "Power Rangers - Megaforce (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/11oq8LUkWv4tJPbOcV7ytTw" // Segundo enlace de descarga
@@ -755,7 +755,7 @@ const juegos = [
     },       
     {
         id: "Pro Evolution Soccer 2011 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pes11.webp",
+        imgSrc: "assets/img/pes11.jpg",
         altText: "Pro Evolution Soccer 2011 3D",
         title: "Pro Evolution Soccer 2011 3D (Europe) (Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1MG2pTuLjJYmEPCfp-eNMXg" // Segundo enlace de descarga
@@ -763,7 +763,7 @@ const juegos = [
     },       
     {
         id: "Pro Evolution Soccer 2012 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pes12.webp",
+        imgSrc: "assets/img/pes12.jpg",
         altText: "Pro Evolution Soccer 2012 3D",
         title: "Pro Evolution Soccer 2012 3D (Europe) (Es,It,Pt,El).3ds",
         downloadLink2: "https://nephobox.com/s/1IoFl5n8Vr0_7ULUQe3pDKA" // Segundo enlace de descarga
@@ -771,7 +771,7 @@ const juegos = [
     },       
     {
         id: "Pro Evolution Soccer 2013 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/pes13.webp",
+        imgSrc: "assets/img/pes13.jpg",
         altText: "Pro Evolution Soccer 2013 3D",
         title: "Pro Evolution Soccer 2013 3D (Europe) (Es,It,Pt,El).3ds",
         downloadLink2: "https://nephobox.com/s/13o9oZzeDF9Iph3tJzmqSXw" // Segundo enlace de descarga
@@ -779,7 +779,7 @@ const juegos = [
     },       
     {
         id: "Project X Zone (Europe).3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/proyectxzone.webp",
+        imgSrc: "assets/img/proyectxzone.jpg",
         altText: "Project X Zone (Europe).3ds",
         title: "Project X Zone (Europe).3ds",
         downloadLink2: "https://nephobox.com/s/1ELv-XCb673RG5A3lC1yuDA" // Segundo enlace de descarga
@@ -787,7 +787,7 @@ const juegos = [
     },       
     {
         id: "Project X Zone 2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/proyectxzone2.webp",
+        imgSrc: "assets/img/proyectxzone2.jpg",
         altText: "Project X Zone 2",
         title: "Project X Zone 2 (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/11y3XczhEtmtYp4VD72vW9w" // Segundo enlace de descarga
@@ -795,7 +795,7 @@ const juegos = [
     },       
     {
         id: "Rabbids Rumble",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/rabbids.webp",
+        imgSrc: "assets/img/rabbids.jpg",
         altText: "Rabbids Rumble",
         title: "Rabbids Rumble (Europe) (En,Fr,De,Es,It,Nl,Sv,No,Da).3ds",
         downloadLink2: "https://nephobox.com/s/1mLC6W4z2LZ0jT3BtHFCp_g" // Segundo enlace de descarga
@@ -803,7 +803,7 @@ const juegos = [
     },       
     {
         id: "Rayman 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/rayman3d.webp",
+        imgSrc: "assets/img/rayman3d.jpg",
         altText: "Rayman 3D",
         title: "Rayman 3D (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1rFnmIr9AlPK85v5WPtO8uw" // Segundo enlace de descarga
@@ -811,7 +811,7 @@ const juegos = [
     },       
     {
         id: "Rayman Origins",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/raymanorigins.webp",
+        imgSrc: "assets/img/raymanorigins.jpg",
         altText: "Rayman Origins",
         title: "Rayman Origins (Europe) (En,Fr,De,Es,It,Nl).3ds",
         downloadLink2: "https://nephobox.com/s/1YoOIgXN13Aw6onjmSTvUJQ" // Segundo enlace de descarga
@@ -819,7 +819,7 @@ const juegos = [
     },       
     {
         id: "Regular Show - Mordecai and Rigby in 8-bit Land",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/regularshow.webp",
+        imgSrc: "assets/img/regularshow.jpg",
         altText: "Regular Show - Mordecai and Rigby in 8-bit Land",
         title: "Regular Show - Mordecai and Rigby in 8-bit Land (Europe).3ds",
         downloadLink2: "https://nephobox.com/s/1IfF5jWh3VUQW0mlm71A-Rw" // Segundo enlace de descarga
@@ -827,7 +827,7 @@ const juegos = [
     },       
     {
         id: "Resident Evil - Revelations",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/revelations.webp",
+        imgSrc: "assets/img/revelations.jpg",
         altText: "Resident Evil - Revelations",
         title: "Resident Evil - Revelations (USA) (En,Ja,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1z3_n7uJHqp2IHW6G5bNoRg" // Segundo enlace de descarga
@@ -835,7 +835,7 @@ const juegos = [
     },       
     {
         id: "Resident Evil - The Mercenaries 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/rethemercenaries.webp",
+        imgSrc: "assets/img/rethemercenaries.jpg",
         altText: "Resident Evil - The Mercenaries 3D",
         title: "Resident Evil - The Mercenaries 3D (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1wVuPc3u4seE-aQ-YIYFqqQ" // Segundo enlace de descarga
@@ -843,7 +843,7 @@ const juegos = [
     },       
     {
         id: "Ridge Racer 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/ridgeracer.webp",
+        imgSrc: "assets/img/ridgeracer.jpg",
         altText: "Ridge Racer 3D",
         title: "Ridge Racer 3D (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1oMiH48HefacnrPvUyLeDOw" // Segundo enlace de descarga
@@ -851,7 +851,7 @@ const juegos = [
     },       
     {
         id: "Shantae and the Pirate's Curse",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/shantae.webp",
+        imgSrc: "assets/img/shantae.jpg",
         altText: "Shantae and the Pirate's Curse",
         title: "Shantae and the Pirate's Curse (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/15Zpj0_ZvMWLVdF9E8ZU5Xw" // Segundo enlace de descarga
@@ -859,7 +859,7 @@ const juegos = [
     },       
     {
         id: "Shinobi",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/shinobi.webp",
+        imgSrc: "assets/img/shinobi.jpg",
         altText: "Shinobi",
         title: "Shinobi (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1rtGmkp7fEqWtJBFECHAWKA" // Segundo enlace de descarga
@@ -867,7 +867,7 @@ const juegos = [
     },       
     {
         id: "Shovel Knight.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/shovel.webp",
+        imgSrc: "assets/img/shovel.jpg",
         altText: "Shovel Knight.3ds",
         title: "Shovel Knight (USA).3ds",
         downloadLink2: "https://nephobox.com/s/1TWl18jhL_iVZ7LlOTVHxJw" // Segundo enlace de descarga
@@ -875,7 +875,7 @@ const juegos = [
     },       
     {
         id: "Sonic & All-Stars Racing Transformed",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/sonicracing.webp",
+        imgSrc: "assets/img/sonicracing.jpg",
         altText: "Sonic & All-Stars Racing Transformed",
         title: "Sonic & All-Stars Racing Transformed (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1bX7KMGbXknENV2vmn-xpiw" // Segundo enlace de descarga
@@ -883,7 +883,7 @@ const juegos = [
     },       
     {
         id: "Sonic Boom - Fire & Ice",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/sonicboom.webp",
+        imgSrc: "assets/img/sonicboom.jpg",
         altText: "Sonic Boom - Fire & Ice",
         title: "Sonic Boom - Fire & Ice (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1g28uvjPGvZZb3d59XyT8BQ" // Segundo enlace de descarga
@@ -891,7 +891,7 @@ const juegos = [
     },       
     {
         id: "Sonic Boom - Shattered Crystal",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/sonicboom2.webp",
+        imgSrc: "assets/img/sonicboom2.jpg",
         altText: "Sonic Boom - Shattered Crystal",
         title: "Sonic Boom - Shattered Crystal (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1At4eDwlNlFwOvJY8g-f_UA" // Segundo enlace de descarga
@@ -899,7 +899,7 @@ const juegos = [
     },       
     {
         id: "Sonic Generations",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/sonicgenerations.webp",
+        imgSrc: "assets/img/sonicgenerations.jpg",
         altText: "Sonic Generations",
         title: "Sonic Generations (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/1XxYPTh3gAR3aCEmx7-ppAg" // Segundo enlace de descarga
@@ -907,7 +907,7 @@ const juegos = [
     },       
     {
         id: "Spider-Man - Edge of Time",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/spidermanedge.webp",
+        imgSrc: "assets/img/spidermanedge.jpg",
         altText: "Spider-Man - Edge of Time",
         title: "Spider-Man - Edge of Time (Europe) (En,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1o9dgxeiaxL-BbR4KZXKq3Q" // Segundo enlace de descarga
@@ -915,7 +915,7 @@ const juegos = [
     },       
     {
         id: "SpongeBob SquarePants - Plankton's Robotic Revenge",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/bobesponja.webp",
+        imgSrc: "assets/img/bobesponja.jpg",
         altText: "SpongeBob SquarePants - Plankton's Robotic Revenge",
         title: "SpongeBob SquarePants - Plankton's Robotic Revenge (Europe) (En,Fr,De,Es,It,Nl,Sv).3ds",
         downloadLink2: "https://nephobox.com/s/1rylFgXKb0DbcsAEkQTS5kw" // Segundo enlace de descarga
@@ -923,7 +923,7 @@ const juegos = [
     },       
     {
         id: "Star Fox 64 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/starfox64.webp",
+        imgSrc: "assets/img/starfox64.jpg",
         altText: "Star Fox 64 3D",
         title: "Star Fox 64 3D (Europe) (En,Fr,De,Es,It) (Rev 3).3ds",
         downloadLink2: "https://nephobox.com/s/1OlT4_FPL54v1KfzuIuGBYg" // Segundo enlace de descarga
@@ -931,7 +931,7 @@ const juegos = [
     },       
     {
         id: "Super Mario 3D Land",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/supermarioland.webp",
+        imgSrc: "assets/img/supermarioland.jpg",
         altText: "Super Mario 3D Land",
         title: "Super Mario 3D Land (USA) (En,Fr,Es).3ds",
         downloadLink2: "https://nephobox.com/s/1LwVQciqLRBhlqPlG1cZWIg" // Segundo enlace de descarga
@@ -939,7 +939,7 @@ const juegos = [
     },       
     {
         id: "Super Mario Maker for Nintendo 3DS",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/mariomaker.webp",
+        imgSrc: "assets/img/mariomaker.jpg",
         altText: "Super Mario Maker for Nintendo 3DS",
         title: "Super Mario Maker for Nintendo 3DS (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru).3ds",
         downloadLink2: "https://nephobox.com/s/12hhKEv7GLxvLwal-PT0HpQ" // Segundo enlace de descarga
@@ -947,7 +947,7 @@ const juegos = [
     },       
     {
         id: "SUPER SMASH BROS EUR.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/supersmashbros.webp",
+        imgSrc: "assets/img/supersmashbros.jpg",
         altText: "SUPER SMASH BROS EUR.3ds",
         title: "SUPER SMASH BROS EUR.3ds",
         downloadLink2: "https://nephobox.com/s/1xhnKVE6axaMASjNAoGH8Tw" // Segundo enlace de descarga
@@ -955,7 +955,7 @@ const juegos = [
     },       
     {
         id: "Super Street Fighter IV - 3D Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/streetfigther.webp",
+        imgSrc: "assets/img/streetfigther.jpg",
         altText: "Super Street Fighter IV - 3D Edition",
         title: "Super Street Fighter IV - 3D Edition (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/13DV0NbWuI1mgrImQauz0JQ" // Segundo enlace de descarga
@@ -963,7 +963,7 @@ const juegos = [
     },       
     {
         id: "Teenage Mutant Ninja Turtles - Danger of the Ooze",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/turtles.webp",
+        imgSrc: "assets/img/turtles.jpg",
         altText: "Teenage Mutant Ninja Turtles - Danger of the Ooze",
         title: "Teenage Mutant Ninja Turtles - Danger of the Ooze (Europe) (En,Fr,De,Es,It,Nl,Sv).3ds",
         downloadLink2: "https://nephobox.com/s/1p-5mJpgWdu0mmgWobsdR-g" // Segundo enlace de descarga
@@ -971,7 +971,7 @@ const juegos = [
     },       
     {
         id: "Tekken 3D - Prime Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/tekken3d.webp",
+        imgSrc: "assets/img/tekken3d.jpg",
         altText: "Tekken 3D - Prime Edition",
         title: "Tekken 3D - Prime Edition (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1sPF__wZgQ87QHWM2vpm02w" // Segundo enlace de descarga
@@ -979,7 +979,7 @@ const juegos = [
     },       
     {
         id: "Terraria",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/terraria.webp",
+        imgSrc: "assets/img/terraria.jpg",
         altText: "Terraria",
         title: "Terraria (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1hzWn9vkFT1LYiWcOgub29A" // Segundo enlace de descarga
@@ -987,7 +987,7 @@ const juegos = [
     },       
     {
         id: "Tetris Ultimate",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/tetris.webp",
+        imgSrc: "assets/img/tetris.jpg",
         altText: "Tetris Ultimate",
         title: "Tetris Ultimate (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1G_ZciAFhXm35Gt3JJ1Ibbg" // Segundo enlace de descarga
@@ -995,7 +995,7 @@ const juegos = [
     },       
     {
         id: "The Legend of Zelda - Ocarina of Time 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/zeldaocarina.webp",
+        imgSrc: "assets/img/zeldaocarina.jpg",
         altText: "The Legend of Zelda - Ocarina of Time 3D",
         title: "The Legend of Zelda - Ocarina of Time 3D.3ds",
         downloadLink2: "https://nephobox.com/s/1_fbC8TRmf9XyRUcA4Tnqng" // Segundo enlace de descarga
@@ -1003,7 +1003,7 @@ const juegos = [
     },       
     {
         id: "The Legend of Zelda - Twilight Princess",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/zeldatw.webp",
+        imgSrc: "assets/img/zeldatw.jpg",
         altText: "The Legend of Zelda - Twilight Princess",
         title: "The Legend of Zelda - Twilight Princess (World) (En,Ja,Fr,De,Es,It) (eShop).3ds",
         downloadLink2: "https://nephobox.com/s/1sOEs9RH2oVPAxOJmj6ropQ" // Segundo enlace de descarga
@@ -1011,7 +1011,7 @@ const juegos = [
     },       
     {
         id: "Tom Clancy's Ghost Recon - Shadow Wars",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/tomclancys.webp",
+        imgSrc: "assets/img/tomclancys.jpg",
         altText: "Tom Clancy's Ghost Recon - Shadow Wars",
         title: "Tom Clancy's Ghost Recon - Shadow Wars (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1RQ8u3MbCpLcTrOy2VoNL7g" // Segundo enlace de descarga
@@ -1019,7 +1019,7 @@ const juegos = [
     },       
     {
         id: "Transformers - Dark of the Moon - Stealth Force Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/transformer.webp",
+        imgSrc: "assets/img/transformer.jpg",
         altText: "Transformers - Dark of the Moon - Stealth Force Edition",
         title: "Transformers - Dark of the Moon - Stealth Force Edition (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1gRKl84m2_aH4VxJecSwYTg" // Segundo enlace de descarga
@@ -1027,7 +1027,7 @@ const juegos = [
     },       
     {
         id: "Transformers Prime - The Game",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/transformerprime.webp",
+        imgSrc: "assets/img/transformerprime.jpg",
         altText: "Transformers Prime - The Game",
         title: "Transformers Prime - The Game (Europe) (En,Fr,De,Es,It,Nl,Sv).3ds",
         downloadLink2: "https://nephobox.com/s/1OVgzuIwNM9HYkA-zusIlnw" // Segundo enlace de descarga
@@ -1035,7 +1035,7 @@ const juegos = [
     },       
     {
         id: "Turbo - Super Stunt Squad",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/turbo.webp",
+        imgSrc: "assets/img/turbo.jpg",
         altText: "Turbo - Super Stunt Squad",
         title: "Turbo - Super Stunt Squad (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1sttthHTNsLzBiEaL1PkIkA" // Segundo enlace de descarga
@@ -1043,7 +1043,7 @@ const juegos = [
     },       
     {
         id: "WarioWare Gold",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/warioware.webp",
+        imgSrc: "assets/img/warioware.jpg",
         altText: "WarioWare Gold",
         title: "WarioWare Gold (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1wty12cYWaPHtzKvbvpW4nw" // Segundo enlace de descarga
@@ -1051,7 +1051,7 @@ const juegos = [
     },       
     {
         id: "WWE All Stars",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/wweallstar.webp",
+        imgSrc: "assets/img/wweallstar.jpg",
         altText: "WWE All Stars",
         title: "WWE All Stars (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/11cw1s02Uf3eFWH_lrMcIZA" // Segundo enlace de descarga
@@ -1059,7 +1059,7 @@ const juegos = [
     },       
     {
         id: "Xenoblade Chronicles 3D",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/xenoblade.webp",
+        imgSrc: "assets/img/xenoblade.jpg",
         altText: "Xenoblade Chronicles 3D",
         title: "Xenoblade Chronicles 3D (Europe) (En,Fr,De,Es,It).3ds",
         downloadLink2: "https://nephobox.com/s/1qyqIfP7rUXqoFHrLQPvb1g" // Segundo enlace de descarga
@@ -1067,7 +1067,7 @@ const juegos = [
     },       
     {
         id: "Yo-Kai Watch.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/yokaiwatch.webp",
+        imgSrc: "assets/img/yokaiwatch.jpg",
         altText: "Yo-Kai Watch.3ds",
         title: "Yo-Kai Watch.3ds",
         downloadLink2: "https://nephobox.com/s/1HvV1MEt2DxO3YsFEbsVR3A" // Segundo enlace de descarga
@@ -1075,7 +1075,7 @@ const juegos = [
     },       
     {
         id: "Yoshi's New Island",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/yoshiisland.webp",
+        imgSrc: "assets/img/yoshiisland.jpg",
         altText: "Yoshi's New Island",
         title: "Yoshi's New Island (Europe) (En,Fr,De,Es,It,Nl,Pt,Ru).3ds",
         downloadLink2: "https://nephobox.com/s/1mqQ2BQw0oYYGliYE5GPOag" // Segundo enlace de descarga
@@ -1083,7 +1083,7 @@ const juegos = [
     },       
     {
         id: "ZELDA Majoras Maks.3ds",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds/zeldamajoras.webp",
+        imgSrc: "assets/img/zeldamajoras.jpg",
         altText: "ZELDA Majoras Maks.3ds",
         title: "ZELDA Majoras Maks.3ds",
         downloadLink2: "https://nephobox.com/s/1XT8gCu6qoPTNAq_5BBPHmQ" // Segundo enlace de descarga

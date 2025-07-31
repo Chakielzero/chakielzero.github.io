@@ -2,14 +2,14 @@
 const juegos = [       
     {
         id: "A Short Hike",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/HIKE.webp",
+        imgSrc: "assets/img/HIKE.jpg",
         altText: "A Short Hike",
         title: "A Short Hike.nsp",
         downloadLink2: "https://terabox.com/s/1QLkxNwHn56_RdAPaxRIpCA" // Segundo enlace de descarga
     },       
     {
         id: "ANIMAL WELL",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/ANIWELL.webp",
+        imgSrc: "assets/img/ANIWELL.jpg",
         altText: "ANIMALL WELL",
         title: "ANIMAL WELL.nsp",
         downloadLink2: "https://terabox.com/s/1gUh9ldXtLJkxh4TrwBUY7g" // Segundo enlace de descarga
@@ -17,7 +17,7 @@ const juegos = [
     },       
     {
         id: "ARMS",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/ARMS.webp",
+        imgSrc: "assets/img/ARMS.jpg",
         altText: "ARMS",
         title: "ARMS.nsp",
         downloadLink2: "https://terabox.com/s/1xx0pp2yebYGcnmWbuhcw4Q" // Segundo enlace de descarga
@@ -25,7 +25,7 @@ const juegos = [
     },       
     {
         id: "BACKROOM ESCAPE LABYRINTH HORROR",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BACKROOM.webp",
+        imgSrc: "assets/img/BACKROOM.jpg",
         altText: "BACKROOM ESCAPE LABYRINTH HORROR",
         title: "BACKROOM ESCAPE LABYRINTH HORROR.nsp",
         downloadLink2: "https://terabox.com/s/1X_CFSVPS3-IHW_hd7yR1Pg" // Segundo enlace de descarga
@@ -33,7 +33,7 @@ const juegos = [
     },       
     {
         id: "Bastion",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BASTION.webp",
+        imgSrc: "assets/img/BASTION.jpg",
         altText: "Bastion",
         title: "Bastion.nsp",
         downloadLink2: "https://terabox.com/s/1EjaWHiZ2PPBPRqT87HeaUQ" // Segundo enlace de descarga
@@ -41,7 +41,7 @@ const juegos = [
     },       
     {
         id: "Batman Arkham Knight",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BATMAN.webp",
+        imgSrc: "assets/img/BATMAN.jpg",
         altText: "Batman Arkham Knight",
         title: "Batman Arkham Knight.nsp",
         downloadLink2: "https://terabox.com/s/1221YkjBHvRGEriVnIcplDA" // Segundo enlace de descarga
@@ -49,7 +49,7 @@ const juegos = [
     },       
     {
         id: "Bayonetta 2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BAYO2.webp",
+        imgSrc: "assets/img/BAYO2.jpg",
         altText: "Bayonetta 2",
         title: "Bayonetta 2.nsp",
         downloadLink2: "https://terabox.com/s/1Zflp75ozyF3lzBxuvSDCvw" // Segundo enlace de descarga
@@ -57,7 +57,7 @@ const juegos = [
     },       
     {
         id: "Bioshock Remastered ",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BIO.webp",
+        imgSrc: "assets/img/BIO.jpg",
         altText: "Bioshock Remastered ",
         title: "Bioshock Remastered.xci",
         downloadLink2: "https://terabox.com/s/1-BGTW7y9toBTt1ZapXidYQ" // Segundo enlace de descarga
@@ -65,7 +65,7 @@ const juegos = [
     },       
     {
         id: "Blades of Time",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BLADES.webp",
+        imgSrc: "assets/img/BLADES.jpg",
         altText: "Blades of Time",
         title: "Blades of Time.nsp",
         downloadLink2: "https://terabox.com/s/1d8LYMkElCy8JE_UgWzXLkw" // Segundo enlace de descarga
@@ -73,7 +73,7 @@ const juegos = [
     },       
     {
         id: "Blasphemous 2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/FEMUS2.webp",
+        imgSrc: "assets/img/FEMUS2.jpg",
         altText: "Blasphemous 2",
         title: "Blasphemous 2.xci",
         downloadLink2: "https://terabox.com/s/1oAKDizxXGlf7sim9JlP5Eg" // Segundo enlace de descarga
@@ -81,7 +81,7 @@ const juegos = [
     },       
     {
         id: "BULLETSTORM DUKE OF SWITCH EDITION",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BULLET.webp",
+        imgSrc: "assets/img/BULLET.jpg",
         altText: "BULLETSTORM DUKE OF SWITCH EDITION",
         title: "BULLETSTORM DUKE OF SWITCH EDITION.nsp",
         downloadLink2: "https://terabox.com/s/1nRHN30jMKSZfC-mOFV_EVQ" // Segundo enlace de descarga
@@ -89,7 +89,7 @@ const juegos = [
     },       
     {
         id: "Burnout Paradise Remastered",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BORNOT.webp",
+        imgSrc: "assets/img/BORNOT.jpg",
         altText: "Burnout Paradise Remastered",
         title: "Burnout Paradise Remastered.nsp",
         downloadLink2: "https://terabox.com/s/1oBXGqCckmjW10qXIoAOAbw" // Segundo enlace de descarga
@@ -97,7 +97,7 @@ const juegos = [
     },       
     {
         id: "Call Of Juarez",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/CALL.webp",
+        imgSrc: "assets/img/CALL.jpg",
         altText: "Call Of Juarez",
         title: "Call Of Juarez.nsp",
         downloadLink2: "https://terabox.com/s/1ZuuXWIB0QRtu8BvFco0iIQ" // Segundo enlace de descarga
@@ -105,7 +105,7 @@ const juegos = [
     },       
     {
         id: "Cars 3 Driven to Win",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/CARS3.webp",
+        imgSrc: "assets/img/CARS3.jpg",
         altText: "Cars 3 Driven to Win",
         title: "Cars 3 Driven to Win.nsp",
         downloadLink2: "https://terabox.com/s/1aJbDCQInXfK2vZ0Ont4SrQ" // Segundo enlace de descarga
@@ -113,7 +113,7 @@ const juegos = [
     },       
     {
         id: "Cat Warrior",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/CAT.webp",
+        imgSrc: "assets/img/CAT.jpg",
         altText: "Cat Warrior",
         title: "Cat Warrior.nsp",
         downloadLink2: "https://terabox.com/s/1WocX7AQXGMnYPk-sOWQW2A" // Segundo enlace de descarga
@@ -121,7 +121,7 @@ const juegos = [
     },       
     {
         id: "Celeste",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/CELE.webp",
+        imgSrc: "assets/img/CELE.jpg",
         altText: "Celeste",
         title: "Celeste.xci",
         downloadLink2: "https://terabox.com/s/1tQ8n8H8Hy2d7-sqmFGPEJg" // Segundo enlace de descarga
@@ -129,7 +129,7 @@ const juegos = [
     },       
     {
         id: "Crash Bandicoot N. Sane Trilogy",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/CRASHN.webp",
+        imgSrc: "assets/img/CRASHN.jpg",
         altText: "Crash Bandicoot N. Sane Trilogy",
         title: "Crash Bandicoot N. Sane Trilogy.xci",
         downloadLink2: "https://terabox.com/s/1bwR9CwCYqceO9zlikl1O2g" // Segundo enlace de descarga
@@ -137,7 +137,7 @@ const juegos = [
     },       
     {
         id: "CRISIS CORE FINAL FANTASY VII REUNION",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/FINAL.webp",
+        imgSrc: "assets/img/FINAL.jpg",
         altText: "CRISIS CORE FINAL FANTASY VII REUNION",
         title: "CRISIS CORE FINAL FANTASY VII REUNION.xci",
         downloadLink2: "https://terabox.com/s/1aGN3suuj7X7x6YuBn4jVDQ" // Segundo enlace de descarga
@@ -145,7 +145,7 @@ const juegos = [
     },       
     {
         id: "Crysis 3 Remastered",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/crysis3.webp",
+        imgSrc: "assets/img/crysis3.jpg",
         altText: "Crysis 3 Remastered",
         title: "Crysis 3 Remastered.xci",
         downloadLink2: "https://terabox.com/s/1BJcGwcE1TnIzqShQKBd2Mg" // Segundo enlace de descarga
@@ -153,7 +153,7 @@ const juegos = [
     },       
     {
         id: "Cuphead",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/CUD.webp",
+        imgSrc: "assets/img/CUD.jpg",
         altText: "Cuphead",
         title: "Cuphead.nsp",
         downloadLink2: "https://terabox.com/s/1VRWPisAp_Fsg5AuK5fhSnA" // Segundo enlace de descarga
@@ -161,7 +161,7 @@ const juegos = [
     },       
     {
         id: "Darksiders 2 Deathinitive Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/DARK.webp",
+        imgSrc: "assets/img/DARK.jpg",
         altText: "Darksiders 2 Deathinitive Edition",
         title: "Darksiders 2 Deathinitive Edition.nsp",
         downloadLink2: "https://terabox.com/s/119rVj519hnyYP0IMEVZm9A" // Segundo enlace de descarga
@@ -169,7 +169,7 @@ const juegos = [
     },       
     {
         id: "Demon Slayer Kimetsu no Yaiba The Hinokami Chronicles",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/KMY.webp",
+        imgSrc: "assets/img/KMY.jpg",
         altText: "Demon Slayer Kimetsu no Yaiba The Hinokami Chronicles",
         title: "Demon Slayer Kimetsu no Yaiba The Hinokami Chronicles.xci",
         downloadLink2: "https://terabox.com/s/1deH9vO28IimUKC61PV1YJg" // Segundo enlace de descarga
@@ -177,7 +177,7 @@ const juegos = [
     },       
     {
         id: "Donkey Kong Country Tropical Freeze",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/FRZ.webp",
+        imgSrc: "assets/img/FRZ.jpg",
         altText: "Donkey Kong Country Tropical Freeze",
         title: "Donkey Kong Country Tropical Freeze.nsp",
         downloadLink2: "https://terabox.com/s/17m28161k8KWktBtlq90kfA" // Segundo enlace de descarga
@@ -185,7 +185,7 @@ const juegos = [
     },       
     {
         id: "DOOM",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/doom.webp",
+        imgSrc: "assets/img/doom.jpg",
         altText: "DOOM",
         title: "DOOM.xci",
         downloadLink2: "https://terabox.com/s/1e1lYEllW2IrLVXpWzwHe5g" // Segundo enlace de descarga
@@ -193,7 +193,7 @@ const juegos = [
     },       
     {
         id: "DOOM Eternal",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/DMET.webp",
+        imgSrc: "assets/img/DMET.jpg",
         altText: "DOOM Eternal",
         title: "DOOM Eternal.nsp",
         downloadLink2: "https://terabox.com/s/19AH4jbodgMqqv5Kt3qXCmQ" // Segundo enlace de descarga
@@ -201,7 +201,7 @@ const juegos = [
     },       
     {
         id: "Dragon Ball FighterZ",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/DBFZ.webp",
+        imgSrc: "assets/img/DBFZ.jpg",
         altText: "Dragon Ball FighterZ",
         title: "Dragon Ball FighterZ.nsp",
         downloadLink2: "https://terabox.com/s/1cm_aGwMtSuGG_C__D32ZZA" // Segundo enlace de descarga
@@ -209,7 +209,7 @@ const juegos = [
     },       
     {
         id: "Dragon Ball Xenoverse 2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/XV2.webp",
+        imgSrc: "assets/img/XV2.jpg",
         altText: "Dragon Ball Xenoverse 2",
         title: "Dragon Ball Xenoverse 2.xci (PENDIENTE)",
         downloadLink2: "https://terabox.com/s/1QPfAMXLXpOUQBqaZAs9www" // Segundo enlace de descarga
@@ -217,7 +217,7 @@ const juegos = [
     },       
     {
         id: "Dragon Ball Z Kakarot",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/DBZK.webp",
+        imgSrc: "assets/img/DBZK.jpg",
         altText: "Dragon Ball Z Kakarot",
         title: "Dragon Ball Z Kakarot.nsp",
         downloadLink2: "https://terabox.com/s/1eNiyCEOJZa2YH8_pKfoiLA" // Segundo enlace de descarga
@@ -225,7 +225,7 @@ const juegos = [
     },       
     {
         id: "Dying light Platinum Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/DYING.webp",
+        imgSrc: "assets/img/DYING.jpg",
         altText: "Dying light Platinum Edition",
         title: "Dying light Platinum Edition.nsp",
         downloadLink2: "https://terabox.com/s/1De5xWYaRwlgkPaDoK_YaFw" // Segundo enlace de descarga
@@ -233,7 +233,7 @@ const juegos = [
     },       
     {
         id: "EA SPORTS FIFA 23 Legacy Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/FIFA23.webp",
+        imgSrc: "assets/img/FIFA23.jpg",
         altText: "EA SPORTS FIFA 23 Legacy Edition",
         title: "EA SPORTS FIFA 23 Legacy Edition.xci",
         downloadLink2: "https://terabox.com/s/172o7t09Qg1VBgJthSfHTNg" // Segundo enlace de descarga
@@ -241,7 +241,7 @@ const juegos = [
     },       
     {
         id: "Five Nights at Freddy's 2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/FNS2.webp",
+        imgSrc: "assets/img/FNS2.jpg",
         altText: "Five Nights at Freddy's 2",
         title: "Five Nights at Freddy's 2.xci",
         downloadLink2: "https://terabox.com/s/1WOl8AgbwTGfI4JH_s_d99Q" // Segundo enlace de descarga
@@ -249,7 +249,7 @@ const juegos = [
     },       
     {
         id: "Five Nights at Freddy's Into the Pit",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/FIVEPIT.webp",
+        imgSrc: "assets/img/FIVEPIT.jpg",
         altText: "Five Nights at Freddy's Into the Pit",
         title: "Five Nights at Freddy's Into the Pit.nsp",
         downloadLink2: "https://terabox.com/s/1KMN-cot7DrMItz4vOl_XTw" // Segundo enlace de descarga
@@ -257,7 +257,7 @@ const juegos = [
     },       
     {
         id: "Five Nights at Freddy's Sister Location",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/FIVESISTER.webp",
+        imgSrc: "assets/img/FIVESISTER.jpg",
         altText: "Five Nights at Freddy's Sister Location",
         title: "Five Nights at Freddy's Sister Location.xci",
         downloadLink2: "https://terabox.com/s/1iciZtDiosyV6ApEs_-UmSw" // Segundo enlace de descarga
@@ -265,7 +265,7 @@ const juegos = [
     },       
     {
         id: "Forgotten Memories Remastered",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/FORGO.webp",
+        imgSrc: "assets/img/FORGO.jpg",
         altText: "Forgotten Memories Remastered",
         title: "Forgotten Memories Remastered.nsp",
         downloadLink2: "https://terabox.com/s/13hZSj_KZ1qTqwmcb0ZBCdA" // Segundo enlace de descarga
@@ -273,7 +273,7 @@ const juegos = [
     },       
     {
         id: "Ghostrunner",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/GHOSTT.webp",
+        imgSrc: "assets/img/GHOSTT.jpg",
         altText: "Ghostrunner",
         title: "Ghostrunner.xci",
         downloadLink2: "https://terabox.com/s/1MWsxl20BWFqUM2EwMEpVCA" // Segundo enlace de descarga
@@ -281,7 +281,7 @@ const juegos = [
     },       
     {
         id: "Guns Gore and Cannoli 1",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/GUNNS.webp",
+        imgSrc: "assets/img/GUNNS.jpg",
         altText: "Guns Gore and Cannoli 1",
         title: "Guns Gore and Cannoli 1.nsp",
         downloadLink2: "https://terabox.com/s/1NaVmBW3bJ2263aodn7yyuQ" // Segundo enlace de descarga
@@ -289,7 +289,7 @@ const juegos = [
     },       
     {
         id: "Hellblade Senuas Sacrifice",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/HELL.webp",
+        imgSrc: "assets/img/HELL.jpg",
         altText: "Hellblade Senuas Sacrifice",
         title: "Hellblade Senuas Sacrifice.nsp",
         downloadLink2: "https://terabox.com/s/1ZKQ4uTKcY3Oq5D5oSe7uCw" // Segundo enlace de descarga
@@ -297,7 +297,7 @@ const juegos = [
     },       
     {
         id: "Hogwarts Legacy",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/HWS.webp",
+        imgSrc: "assets/img/HWS.jpg",
         altText: "Hogwarts Legacy",
         title: "Hogwarts Legacy.nsp",
         downloadLink2: "https://terabox.com/s/1AmjDfOe4WaFZoIvsrZcGUQ" // Segundo enlace de descarga
@@ -305,7 +305,7 @@ const juegos = [
     },       
     {
         id: "Hot Wheels Unleashed",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/HOTW.webp",
+        imgSrc: "assets/img/HOTW.jpg",
         altText: "Hot Wheels Unleashed",
         title: "Hot Wheels Unleashed.xci",
         downloadLink2: "https://terabox.com/s/1P22-V6Tf0YdCnkSYpdJ49w" // Segundo enlace de descarga
@@ -313,7 +313,7 @@ const juegos = [
     },       
     {
         id: "JoJo´s Bizarre Adventure All-Star Battle R",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/jojos.webp",
+        imgSrc: "assets/img/jojos.jpg",
         altText: "JoJo´s Bizarre Adventure All-Star Battle R",
         title: "JoJo´s Bizarre Adventure All-Star Battle R.nsp",
         downloadLink2: "https://terabox.com/s/1gvU0k5G1MaaIE8L45z2eBQ" // Segundo enlace de descarga
@@ -321,7 +321,7 @@ const juegos = [
     },       
     {
         id: "JUMP FORCE Deluxe Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/JUMPF.webp",
+        imgSrc: "assets/img/JUMPF.jpg",
         altText: "JUMP FORCE Deluxe Edition",
         title: "JUMP FORCE Deluxe Edition.nsp",
         downloadLink2: "https://terabox.com/s/12SqscC21G0dfOnBuVAOn_Q" // Segundo enlace de descarga
@@ -329,7 +329,7 @@ const juegos = [
     },       
     {
         id: "Kamen Rider Memory of Heroez",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/KMR.webp",
+        imgSrc: "assets/img/KMR.jpg",
         altText: "Kamen Rider Memory of Heroez",
         title: "Kamen Rider Memory of Heroez.xci",
         downloadLink2: "https://terabox.com/s/1X8UfThjLYqHhlZjbcvLT9w" // Segundo enlace de descarga
@@ -337,7 +337,7 @@ const juegos = [
     },       
     {
         id: "Katana Zero",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/KTN.webp",
+        imgSrc: "assets/img/KTN.jpg",
         altText: "Katana Zero",
         title: "Katana Zero.xci",
         downloadLink2: "https://terabox.com/s/196aewymsQO27gPRyyHyVvg" // Segundo enlace de descarga
@@ -345,7 +345,7 @@ const juegos = [
     },       
     {
         id: "Kirby and the Forgotten Land",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/KRBFL.webp",
+        imgSrc: "assets/img/KRBFL.jpg",
         altText: "Kirby and the Forgotten Land",
         title: "Kirby and the Forgotten Land.nsp",
         downloadLink2: "https://terabox.com/s/10gJJ6X5dqoCF8khxfQ4evw" // Segundo enlace de descarga
@@ -353,7 +353,7 @@ const juegos = [
     },       
     {
         id: "Little Kitty2C Big City",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/kitty.webp",
+        imgSrc: "assets/img/kitty.jpg",
         altText: "Little Kitty2C Big City",
         title: "Little Kitty2C Big City.nsp",
         downloadLink2: "https://terabox.com/s/1jPLHWRZ8nMgz28txvA15Dw" // Segundo enlace de descarga
@@ -361,7 +361,7 @@ const juegos = [
     },       
     {
         id: "LOLLIPOP CHAINSAW RePOP",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/LLOPOP.webp",
+        imgSrc: "assets/img/LLOPOP.jpg",
         altText: "LOLLIPOP CHAINSAW RePOP",
         title: "LOLLIPOP CHAINSAW RePOP.nsp",
         downloadLink2: "https://terabox.com/s/1Nhsyrf-4a8ZeOfyAYtv7_A" // Segundo enlace de descarga
@@ -369,7 +369,7 @@ const juegos = [
     },       
     {
         id: "Luigi's Mansion 3",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/LGM3.webp",
+        imgSrc: "assets/img/LGM3.jpg",
         altText: "Luigi's Mansion 3",
         title: "Luigi's Mansion 3.nsp",
         downloadLink2: "https://terabox.com/s/13PHJTQSYaYCyvaIdG-o2XA" // Segundo enlace de descarga
@@ -377,7 +377,7 @@ const juegos = [
     },       
     {
         id: "Luigi's Mansion 2 HD",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/LGM2.webp",
+        imgSrc: "assets/img/LGM2.jpg",
         altText: "Luigi's Mansion 2 HD",
         title: "Luigi's Mansion 2 HD.nsp",
         downloadLink2: "https://terabox.com/s/1pXyo72_yOE3X_GA2pmD44A" // Segundo enlace de descarga
@@ -385,7 +385,7 @@ const juegos = [
     },       
     {
         id: "Mario + Rabbids Sparks of Hope",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MRBID.webp",
+        imgSrc: "assets/img/MRBID.jpg",
         altText: "Mario + Rabbids Sparks of Hope",
         title: "Mario + Rabbids Sparks of Hope.xci",
         downloadLink2: "https://terabox.com/s/1OE4MwQmwvkpuRSp_8eE7Rw" // Segundo enlace de descarga
@@ -393,7 +393,7 @@ const juegos = [
     },       
     {
         id: "Mario kart 8 Deluxe",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MK8.webp",
+        imgSrc: "assets/img/MK8.jpg",
         altText: "Mario kart 8 Deluxe",
         title: "Mario kart 8 Deluxe.nsp",
         downloadLink2: "https://terabox.com/s/1vLYC6MXooazkcKNaBEOAEA" // Segundo enlace de descarga
@@ -401,7 +401,7 @@ const juegos = [
     },       
     {
         id: "Mario Strikers: Battle League",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MKRS.webp",
+        imgSrc: "assets/img/MKRS.jpg",
         altText: "Mario Strikers: Battle League",
         title: "Mario Strikers: Battle League.xci",
         downloadLink2: "https://terabox.com/s/1qp6nYJOec3iaWoKB1jJ11w" // Segundo enlace de descarga
@@ -409,7 +409,7 @@ const juegos = [
     },       
     {
         id: "Mario vs. Donkey Kong",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MRDK.webp",
+        imgSrc: "assets/img/MRDK.jpg",
         altText: "Mario vs. Donkey Kong",
         title: "Mario vs. Donkey Kong.nsp",
         downloadLink2: "https://terabox.com/s/1YcR-kkZGKtHpWIatogu7aQ" // Segundo enlace de descarga
@@ -417,7 +417,7 @@ const juegos = [
     },       
     {
         id: "Mario Party Superstars",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MRPYSP.webp",
+        imgSrc: "assets/img/MRPYSP.jpg",
         altText: "Mario Party Superstars",
         title: "Mario Party Superstars.xci",
         downloadLink2: "https://terabox.com/s/1wZ_FnEGyEky-4x7NdO7nhA" // Segundo enlace de descarga
@@ -425,7 +425,7 @@ const juegos = [
     },       
     {
         id: "Mario y Sonic en los Juegos Olympicos Tokio 2020",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MARIOYSONIC.webp",
+        imgSrc: "assets/img/MARIOYSONIC.jpg",
         altText: "Mario y Sonic en los Juegos Olympicos Tokio 2020",
         title: "Mario y Sonic en los Juegos Olympicos Tokio 2020.nsp",
         downloadLink2: "https://terabox.com/s/10xkSo9gpK0tyT9B2JcjLIg" // Segundo enlace de descarga
@@ -433,7 +433,7 @@ const juegos = [
     },       
     {
         id: "Marvel vs Capcom Fighting Collection Arcade Classics",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MVCP.webp",
+        imgSrc: "assets/img/MVCP.jpg",
         altText: "Marvel vs Capcom Fighting Collection Arcade Classics",
         title: "Marvel vs Capcom Fighting Collection Arcade Classics.xci",
         downloadLink2: "https://terabox.com/s/1KIswN6_QgUvcTGPhYKJnlg" // Segundo enlace de descarga
@@ -441,7 +441,7 @@ const juegos = [
     },       
     {
         id: "Mega Man 11",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MG11.webp",
+        imgSrc: "assets/img/MG11.jpg",
         altText: "Mega Man 11",
         title: "Mega Man 11.xci",
         downloadLink2: "https://terabox.com/s/1iCx5DeQSLr1YEYpk1dIH5Q" // Segundo enlace de descarga
@@ -449,7 +449,7 @@ const juegos = [
     },       
     {
         id: "Metroid Dread",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MTDR.webp",
+        imgSrc: "assets/img/MTDR.jpg",
         altText: "Metroid Dread",
         title: "Metroid Dread.nsp",
         downloadLink2: "https://terabox.com/s/1KewBmftXcoqtZ5doMmqemg" // Segundo enlace de descarga
@@ -457,7 +457,7 @@ const juegos = [
     },       
     {
         id: "Metroid Prime Remastered",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MTPR.webp",
+        imgSrc: "assets/img/MTPR.jpg",
         altText: "Metroid Prime Remastered",
         title: "Metroid Prime Remastered.nsp",
         downloadLink2: "https://terabox.com/s/1hLGfz_0XNl7J51TcwGYguQ" // Segundo enlace de descarga
@@ -465,7 +465,7 @@ const juegos = [
     },       
     {
         id: "Minecraft Dungeons ULtimate Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MCDUN.webp",
+        imgSrc: "assets/img/MCDUN.jpg",
         altText: "Minecraft Dungeons Ultimate Edition",
         title: "Minecraft Dungeons Ultimate Edition.xci",
         downloadLink2: "https://terabox.com/s/1QIuXOxLh9CAbRr2olldzoA" // Segundo enlace de descarga
@@ -473,7 +473,7 @@ const juegos = [
     },       
     {
         id: "Minecraft Legends",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MCLY.webp",
+        imgSrc: "assets/img/MCLY.jpg",
         altText: "Minecraft Legends",
         title: "Minecraft Legends.nsp",
         downloadLink2: "https://terabox.com/s/16PWRYG8HkmZAuyvPKhdFjg" // Segundo enlace de descarga
@@ -481,7 +481,7 @@ const juegos = [
     },       
     {
         id: "Minecraft",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MCBK.webp",
+        imgSrc: "assets/img/MCBK.jpg",
         altText: "Minecraft",
         title: "Minecraft.xci",
         downloadLink2: "https://terabox.com/s/1z3lt3ylvMVYh2r-WwSQg2g" // Segundo enlace de descarga
@@ -489,7 +489,7 @@ const juegos = [
     },       
     {
         id: "Mitsurugi Kamui Hikae",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MKH.webp",
+        imgSrc: "assets/img/MKH.jpg",
         altText: "Mitsurugi Kamui Hikae",
         title: "Mitsurugi Kamui Hikae.nsp",
         downloadLink2: "https://terabox.com/s/1SuuE8w_s_KG776cBW5I9KA" // Segundo enlace de descarga
@@ -497,7 +497,7 @@ const juegos = [
     },       
     {
         id: "Mortal Kombat 1",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MK1.webp",
+        imgSrc: "assets/img/MK1.jpg",
         altText: "Mortal kombat 1",
         title: "Mortal Kombat 1.nsp",
         downloadLink2: "https://terabox.com/s/1HLajWAtdGV7RmEQDA3enYw" // Segundo enlace de descarga
@@ -505,7 +505,7 @@ const juegos = [
     },       
     {
         id: "Mortal Kombat 11",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MK11.webp",
+        imgSrc: "assets/img/MK11.jpg",
         altText: "Mortal Kombat 11",
         title: "Mortal Kombat 11.nsp",
         downloadLink2: "https://terabox.com/s/1nt8znYMkxC4fj5pCik2zMA" // Segundo enlace de descarga
@@ -513,7 +513,7 @@ const juegos = [
     },       
     {
         id: "Naruto Ultimate Ninja Storm 4",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/NRT4.webp",
+        imgSrc: "assets/img/NRT4.jpg",
         altText: "Naruto Ultimate Ninja Storm 4",
         title: "Naruto Ultimate Ninja Storm 4.nsp",
         downloadLink2: "https://terabox.com/s/1u331UK4Y5gKhmFZQbOGhlg" // Segundo enlace de descarga
@@ -521,7 +521,7 @@ const juegos = [
     },       
     {
         id: "Naruto Utlimate Ninja Trilogy",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/NRTTY.webp",
+        imgSrc: "assets/img/NRTTY.jpg",
         altText: "Naruto Utlimate Ninja Trilogy",
         title: "Naruto Utlimate Ninja Trilogy.nsp",
         downloadLink2: "Link" // Segundo enlace de descarga
@@ -529,7 +529,7 @@ const juegos = [
     },       
     {
         id: "Need for Speed: Hot Pursuit Remastered",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/NFSWHT.webp",
+        imgSrc: "assets/img/NFSWHT.jpg",
         altText: "Need for Speed: Hot Pursuit Remastered",
         title: "Need for Speed: Hot Pursuit Remastered.nsp",
         downloadLink2: "https://terabox.com/s/1O2NY3UF9jq-zsN6vdFf7DQ" // Segundo enlace de descarga
@@ -537,7 +537,7 @@ const juegos = [
     },       
     {
         id: "NEO The World Ends with You",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/NEO.webp",
+        imgSrc: "assets/img/NEO.jpg",
         altText: "NEO The World Ends with You",
         title: "NEO The World Ends with You.nsp",
         downloadLink2: "https://terabox.com/s/1zg_CY7e97NRnOpLD0Hja3A" // Segundo enlace de descarga
@@ -545,7 +545,7 @@ const juegos = [
     },       
     {
         id: "New Super Mario Bros. U Deluxe",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/WIUDL.webp",
+        imgSrc: "assets/img/WIUDL.jpg",
         altText: "New Super Mario Bros. U Deluxe",
         title: "New Super Mario Bros. U Deluxe.nsp",
         downloadLink2: "https://terabox.com/s/1_ThpK4njt3WXCnYjbrbnyw" // Segundo enlace de descarga
@@ -553,7 +553,7 @@ const juegos = [
     },       
     {
         id: "NieRAutomata The End of YoRHa Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/NIER.webp",
+        imgSrc: "assets/img/NIER.jpg",
         altText: "NieRAutomata The End of YoRHa Edition",
         title: "NieRAutomata The End of YoRHa Edition.nsp",
         downloadLink2: "https://terabox.com/s/1OV4GYKtx1pBVW_jAD8gmdQ" // Segundo enlace de descarga
@@ -561,7 +561,7 @@ const juegos = [
     },       
     {
         id: "Nights of Azure 2 Bride of the New Moon",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/night.webp",
+        imgSrc: "assets/img/night.jpg",
         altText: "Nights of Azure 2 Bride of the New Moon",
         title: "Nights of Azure 2 Bride of the New Moon.nsp",
         downloadLink2: "https://terabox.com/s/191nChnECC51jH8tg4knk7A" // Segundo enlace de descarga
@@ -569,7 +569,7 @@ const juegos = [
     },       
     {
         id: "Nikoderiko The Magical World",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/NIKO.webp",
+        imgSrc: "assets/img/NIKO.jpg",
         altText: "Nikoderiko The Magical World",
         title: "Nikoderiko The Magical World.nsp",
         downloadLink2: "https://terabox.com/s/1IGtqz0Et7H7hPLu8rLxrDg" // Segundo enlace de descarga
@@ -577,7 +577,7 @@ const juegos = [
     },       
     {
         id: "No Man Sky",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/HMSKY.webp",
+        imgSrc: "assets/img/HMSKY.jpg",
         altText: "No Man Sky",
         title: "No Man Sky.nsp",
         downloadLink2: "https://terabox.com/s/1Ir7ZrOlzU68IYXIwSPS-fg" // Segundo enlace de descarga
@@ -585,7 +585,7 @@ const juegos = [
     },       
     {
         id: "OCEANHORN 2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/OCH2.webp",
+        imgSrc: "assets/img/OCH2.jpg",
         altText: "OCEANHORN 2",
         title: "OCEANHORN 2.nsp",
         downloadLink2: "https://terabox.com/s/1fv3qwVX-lG-lHyhBzi-SKw" // Segundo enlace de descarga
@@ -593,7 +593,7 @@ const juegos = [
     },       
     {
         id: "One Piece Odyssey Deluxe Edition",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/ONEPI.webp",
+        imgSrc: "assets/img/ONEPI.jpg",
         altText: "One Piece Odyssey Deluxe Edition",
         title: "One Piece Odyssey Deluxe Edition.xci",
         downloadLink2: "https://terabox.com/s/1utwTn9RDH-nLW3Wxu8E4vw" // Segundo enlace de descarga
@@ -601,7 +601,7 @@ const juegos = [
     },       
     {
         id: "Pay Day 2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/PAYDAY2.webp",
+        imgSrc: "assets/img/PAYDAY2.jpg",
         altText: "Pay Day 2",
         title: "Pay Day 2.xci",
         downloadLink2: "https://terabox.com/s/1tMfnbkHXlK6cr_humZcEjQ" // Segundo enlace de descarga
@@ -609,7 +609,7 @@ const juegos = [
     },       
     {
         id: "Persona 5 Royal",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/PS5RL.webp",
+        imgSrc: "assets/img/PS5RL.jpg",
         altText: "Persona 5 Royal",
         title: "Persona 5 Royal.nsp",
         downloadLink2: "https://terabox.com/s/10Eu7Gi06KhvvfjzRGbq7zA" // Segundo enlace de descarga
@@ -617,7 +617,7 @@ const juegos = [
     },       
     {
         id: "Plastomorphosis",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/PLMS.webp",
+        imgSrc: "assets/img/PLMS.jpg",
         altText: "Plastomorphosis",
         title: "Plastomorphosis.nsp",
         downloadLink2: "https://terabox.com/s/1pXeGysqlCpA09IEZsHzU2Q" // Segundo enlace de descarga
@@ -625,7 +625,7 @@ const juegos = [
     },       
     {
         id: "Pokémon Escudo",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/ESCUDO.webp",
+        imgSrc: "assets/img/ESCUDO.jpg",
         altText: "Pokémon Escudo",
         title: "Pokémon Escudo.xci",
         downloadLink2: "https://terabox.com/s/1RBGe1SCRh5LJUHsqUCdsCw" // Segundo enlace de descarga
@@ -633,7 +633,7 @@ const juegos = [
     },       
     {
         id: "Pokémon Espada",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/ESPADA.webp",
+        imgSrc: "assets/img/ESPADA.jpg",
         altText: "Pokémon Espada",
         title: "Pokémon Espada.xci",
         downloadLink2: "https://terabox.com/s/1isNOfaLQ-LOWFevmAKX73Q" // Segundo enlace de descarga 
@@ -641,7 +641,7 @@ const juegos = [
     },       
     {
         id: "Pokémon: Let’s Go, Pikachu",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/PKMPIK.webp",
+        imgSrc: "assets/img/PKMPIK.jpg",
         altText: "Pokémon: Let’s Go, Pikachu",
         title: "Pokémon: Let’s Go, Pikachu.nsp",
         downloadLink2: "https://terabox.com/s/1bvDOG2yp7Vi1VcZkpNHUNg" // Segundo enlace de descarga
@@ -649,7 +649,7 @@ const juegos = [
     },       
     {
         id: "Pokémon Leyendas Arceus",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/PLA.webp",
+        imgSrc: "assets/img/PLA.jpg",
         altText: "Pokémon Leyendas Arceus",
         title: "Pokémon Leyendas Arceus.xci",
         downloadLink2: "https://terabox.com/s/1ghqUU9fRKsu29OQeI7n99Q" // Segundo enlace de descarga  
@@ -657,7 +657,7 @@ const juegos = [
     },       
     {
         id: "Pokken Tournament DX",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/POKKEN.webp",
+        imgSrc: "assets/img/POKKEN.jpg",
         altText: "Pokken Tournament DX",
         title: "Pokken Tournament DX.xci",
         downloadLink2: "https://terabox.com/s/18ef602wucsIwjlZTcxrdwA" // Segundo enlace de descarga
@@ -665,7 +665,7 @@ const juegos = [
     },       
     {
         id: "Poppy Play Time 3",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/POPY3.webp",
+        imgSrc: "assets/img/POPY3.jpg",
         altText: "Poppy Play Time 3",
         title: "Poppy Play Time 3.nsp",
         downloadLink2: "https://terabox.com/s/1c87nyaLsgW8kmk8uGSyJdA" // Segundo enlace de descarga
@@ -673,7 +673,7 @@ const juegos = [
     },       
     {
         id: "PORTAL",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/PORTAL.webp",
+        imgSrc: "assets/img/PORTAL.jpg",
         altText: "PORTAL",
         title: "PORTAL.nsp",
         downloadLink2: "https://terabox.com/s/1gsJqqLj2j2wGnZwhf2zumA" // Segundo enlace de descarga
@@ -681,7 +681,7 @@ const juegos = [
     },       
     {
         id: "Prince of Persia The Lost Crown",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/PRFC.webp",
+        imgSrc: "assets/img/PRFC.jpg",
         altText: "Prince of Persia The Lost Crown",
         title: "Prince of Persia The Lost Crown.xci",
         downloadLink2: "https://terabox.com/s/1egQNtraylBpleyF-eXKxxg" // Segundo enlace de descarga
@@ -689,7 +689,7 @@ const juegos = [
     },       
     {
         id: "Princess Peach Showtime",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/PRINCPC.webp",
+        imgSrc: "assets/img/PRINCPC.jpg",
         altText: "Princess Peach Showtime",
         title: "Princess Peach Showtime.xci",
         downloadLink2: "https://terabox.com/s/1Ek4fsBjBAJBBamxVGu0YhQ" // Segundo enlace de descarga
@@ -697,7 +697,7 @@ const juegos = [
     },       
     {
         id: "Red Dead Redemption",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/RDD.webp",
+        imgSrc: "assets/img/RDD.jpg",
         altText: "Red Dead Redemption",
         title: "Red Dead Redemption.nsp",
         downloadLink2: "https://terabox.com/s/1YSpTCxrWAoCcvKmMEz2emw" // Segundo enlace de descarga
@@ -705,7 +705,7 @@ const juegos = [
     },       
     {
         id: "Resident Evil 0",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/RE0.webp",
+        imgSrc: "assets/img/RE0.jpg",
         altText: "Resident Evil 0",
         title: "Resident Evil 0.nsp",
         downloadLink2: "https://terabox.com/s/1B9xhgtMqV2bv4ATey16kYA" // Segundo enlace de descarga
@@ -713,7 +713,7 @@ const juegos = [
     },       
     {
         id: "Resident Evil 4",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/RV4.webp",
+        imgSrc: "assets/img/RV4.jpg",
         altText: "Resident Evil 4",
         title: "Resident Evil 4.nsp",
         downloadLink2: "https://terabox.com/s/1T5VaQ4yiDHOxOi4JRroZ3w" // Segundo enlace de descarga
@@ -721,7 +721,7 @@ const juegos = [
     },       
     {
         id: "Resident Evil 5",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/RE5.webp",
+        imgSrc: "assets/img/RE5.jpg",
         altText: "Resident Evil 5",
         title: "Resident Evil 5.nsp",
         downloadLink2: "https://terabox.com/s/1qmLAT3UqY9vVY9lNXaNKyg" // Segundo enlace de descarga
@@ -729,7 +729,7 @@ const juegos = [
     },       
     {
         id: "Resident Evil 6",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/RV6.webp",
+        imgSrc: "assets/img/RV6.jpg",
         altText: "Resident Evil 6",
         title: "Resident Evil 6.nsp (PRONTO)",
         downloadLink2: "JJJJ" // Segundo enlace de descarga
@@ -737,7 +737,7 @@ const juegos = [
     },       
     {
         id: "Resident Evil Revelations 2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/RVR2.webp",
+        imgSrc: "assets/img/RVR2.jpg",
         altText: "Resident Evil Revelations 2",
         title: "Resident Evil Revelations 2.xci",
         downloadLink2: "https://terabox.com/s/16F3Hg15bNzbiZUcKGXnlHQ" // Segundo enlace de descarga
@@ -745,7 +745,7 @@ const juegos = [
     },       
     {
         id: "Rise Race The Future",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/RISE.webp",
+        imgSrc: "assets/img/RISE.jpg",
         altText: "Rise Race The Future",
         title: "Rise Race The Future.nsp",
         downloadLink2: "https://terabox.com/s/1D0055IhfLFhXYukfrvANtA" // Segundo enlace de descarga
@@ -753,7 +753,7 @@ const juegos = [
     },       
     {
         id: "Rugrats Adventures in Gameland",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/rugrats.webp",
+        imgSrc: "assets/img/rugrats.jpg",
         altText: "Rugrats Adventures in Gameland",
         title: "Rugrats Adventures in Gameland.nsp",
         downloadLink2: "https://terabox.com/s/1lcke0ErOt0aTbLRvgsv0eA" // Segundo enlace de descarga
@@ -761,7 +761,7 @@ const juegos = [
     },       
     {
         id: "Saints Row The Third The Full Package",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SAINTS.webp",
+        imgSrc: "assets/img/SAINTS.jpg",
         altText: "Saints Row The Third The Full Package",
         title: "Saints Row The Third The Full Package.xci",
         downloadLink2: "https://terabox.com/s/1ojc9s8DwuOkLzvK-qYiCYA" // Segundo enlace de descarga
@@ -769,7 +769,7 @@ const juegos = [
     },       
     {
         id: "Sea Of Stars",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SEA.webp",
+        imgSrc: "assets/img/SEA.jpg",
         altText: "Sea Of Stars",
         title: "Sea Of Stars.xci/nsp",
         downloadLink2: "https://terabox.com/s/1Lt_cne38jOMvhtpV18G2BA" // Segundo enlace de descarga
@@ -777,7 +777,7 @@ const juegos = [
     },       
     {
         id: "Skullgirls 2ND Encore",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SKR2.webp",
+        imgSrc: "assets/img/SKR2.jpg",
         altText: "Skullgirls 2ND Encore",
         title: "Skullgirls 2ND Encore.nsp",
         downloadLink2: "https://terabox.com/s/1Hswpud0hQweZrX3oDn_VCA" // Segundo enlace de descarga
@@ -785,7 +785,7 @@ const juegos = [
     },       
     {
         id: "SNK vs Capcom SVC CHAOS",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SVC.webp",
+        imgSrc: "assets/img/SVC.jpg",
         altText: "SNK vs Capcom SVC CHAOS",
         title: "SNK vs Capcom SVC CHAOS.nsp",
         downloadLink2: "https://terabox.com/s/1Au2s6v7h7AwzW7key_TxMA" // Segundo enlace de descarga
@@ -793,7 +793,7 @@ const juegos = [
     },       
     {
         id: "Snow Bros Special",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SNOW.webp",
+        imgSrc: "assets/img/SNOW.jpg",
         altText: "Snow Bros Special",
         title: "Snow Bros Special.xci",
         downloadLink2: "https://terabox.com/s/1hc2QuzU651YvrWj4B40NyA" // Segundo enlace de descarga
@@ -801,7 +801,7 @@ const juegos = [
     },       
     {
         id: "Snow Runner",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SNOWRNN.webp",
+        imgSrc: "assets/img/SNOWRNN.jpg",
         altText: "Snow Runner",
         title: "Snow Runner.nsp",
         downloadLink2: "https://terabox.com/s/1uHpZEpFp0WCooQ_m2UdQgQ" // Segundo enlace de descarga
@@ -809,7 +809,7 @@ const juegos = [
     },       
     {
         id: "Sonic Superstars",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SNSP.webp",
+        imgSrc: "assets/img/SNSP.jpg",
         altText: "Sonic Superstars",
         title: "Sonic Superstars.xci",
         downloadLink2: "https://terabox.com/s/19FamQ4H8Wh-8XFvThritBA" // Segundo enlace de descarga
@@ -817,7 +817,7 @@ const juegos = [
     },       
     {
         id: "SONIC X SHADOW GENERATIONS",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SNXSH.webp",
+        imgSrc: "assets/img/SNXSH.jpg",
         altText: "SONIC X SHADOW GENERATIONS",
         title: "SONIC X SHADOW GENERATIONS.xci",
         downloadLink2: "https://terabox.com/s/1ScSbu_QQ0MfEme1JtZ0gAA" // Segundo enlace de descarga
@@ -825,7 +825,7 @@ const juegos = [
     },       
     {
         id: "Sonic Frontiers",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SNFRON.webp",
+        imgSrc: "assets/img/SNFRON.jpg",
         altText: "Sonic Frontiers",
         title: "Sonic Frontiers.nsp",
         downloadLink2: "https://terabox.com/s/1AMEq0iFu8azfAB9x3E-YVA" // Segundo enlace de descarga
@@ -833,7 +833,7 @@ const juegos = [
     },       
     {
         id: "Sonic Mania",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SNMANIA.webp",
+        imgSrc: "assets/img/SNMANIA.jpg",
         altText: "Sonic Mania",
         title: "Sonic Mania.nsp",
         downloadLink2: "https://terabox.com/s/1PgzPvFmgZGQkNq-_vYbQXw" // Segundo enlace de descarga
@@ -841,7 +841,7 @@ const juegos = [
     },       
     {
         id: "Sout Park SNOW DAY",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SOUT.webp",
+        imgSrc: "assets/img/SOUT.jpg",
         altText: "Sout Park SNOW DAY",
         title: "Sout Park SNOW DAY.xci",
         downloadLink2: "https://terabox.com/s/1s_OhIThYxuS8KGOqHgoGhg" // Segundo enlace de descarga
@@ -849,7 +849,7 @@ const juegos = [
     },       
     {
         id: "SpongeBob SquarePants: The Cosmic Shake",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BOB.webp",
+        imgSrc: "assets/img/BOB.jpg",
         altText: "SpongeBob SquarePants: The Cosmic Shake",
         title: "SpongeBob SquarePants: The Cosmic Shake.xci",
         downloadLink2: "https://terabox.com/s/1LwauNTTNkiDUWFMMvryt6Q" // Segundo enlace de descarga
@@ -857,7 +857,7 @@ const juegos = [
     },       
     {
         id: "Stalker Shadow Of Chernobyl",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/STKL.webp",
+        imgSrc: "assets/img/STKL.jpg",
         altText: "Stalker Shadow Of Chernobyl",
         title: "Stalker Shadow Of Chernobyl.nsp",
         downloadLink2: "https://terabox.com/s/1F_2cLmmHOssae3RMEShoIg" // Segundo enlace de descarga
@@ -865,7 +865,7 @@ const juegos = [
     },       
     {
         id: "Stray",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/STRAY.webp",
+        imgSrc: "assets/img/STRAY.jpg",
         altText: "Stray",
         title: "Stray.nsp (Pendiente)",
         downloadLink2: "https://terabox.com/s/14yqtAG4P1iVy-R04hrh9uA" // Segundo enlace de descarga
@@ -873,7 +873,7 @@ const juegos = [
     },       
     {
         id: "Super Bomberman R2",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SPBR2.webp",
+        imgSrc: "assets/img/SPBR2.jpg",
         altText: "Super Bomberman R2",
         title: "Super Bomberman R2.nsp",
         downloadLink2: "https://terabox.com/s/1YA2yCyQxyoftlAqA-_RnMA" // Segundo enlace de descarga
@@ -881,7 +881,7 @@ const juegos = [
     },       
     {
         id: "Super Mario 3D World + Bowsers Fury",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SPMR.webp",
+        imgSrc: "assets/img/SPMR.jpg",
         altText: "Super Mario 3D World + Bowsers Fury",
         title: "Super Mario 3D World + Bowsers Fury.nsp",
         downloadLink2: "https://terabox.com/s/1XWE-qE1AT1e9vSE_w6l8Dg" // Segundo enlace de descarga
@@ -889,7 +889,7 @@ const juegos = [
     },       
     {
         id: "Super Mario Bros Wonder",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SPMRWD.webp",
+        imgSrc: "assets/img/SPMRWD.jpg",
         altText: "Super Mario Bros Wonder",
         title: "Super Mario Bros Wonder.xci",
         downloadLink2: "https://terabox.com/s/1l0M7K3_4AA97FaRXtewcSg" // Segundo enlace de descarga
@@ -897,7 +897,7 @@ const juegos = [
     },       
     {
         id: "Super Mario Odyssey",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/mario.webp",
+        imgSrc: "assets/img/mario.jpg",
         altText: "Super Mario Odyssey",
         title: "Super Mario Odyssey.nsp",
         downloadLink2: "https://terabox.com/s/1y9W4WQ6g42oA4c5JtD8avg" // Segundo enlace de descarga
@@ -905,7 +905,7 @@ const juegos = [
     },       
     {
         id: "Super Mario Party Jamboree",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/PARTYJM.webp",
+        imgSrc: "assets/img/PARTYJM.jpg",
         altText: "Super Mario Party Jamboree",
         title: "Super Mario Party Jamboree.xci",
         downloadLink2: "https://terabox.com/s/1hUPITc07mBmhNkg06lGlbQ" // Segundo enlace de descarga
@@ -913,7 +913,7 @@ const juegos = [
     },       
     {
         id: "Super Mario RPG",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SPRPG.webp",
+        imgSrc: "assets/img/SPRPG.jpg",
         altText: "Super Mario RPG",
         title: "Super Mario RPG.nsp",
         downloadLink2: "https://terabox.com/s/1QdLtby2TBcKvGqZpJt46eA" // Segundo enlace de descarga
@@ -921,7 +921,7 @@ const juegos = [
     },       
     {
         id: "Super Smash Bros Ultimate",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SMASH.webp",
+        imgSrc: "assets/img/SMASH.jpg",
         altText: "Super Smash Bros Ultimate",
         title: "Super Smash Bros Ultimate.nsp",
         downloadLink2: "https://terabox.com/s/1OG1YkBFDZW0C9IxaTg3YAQ" // Segundo enlace de descarga
@@ -929,7 +929,7 @@ const juegos = [
     },       
     {
         id: "The Elder Scrolls V Skyrim",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SKIV.webp",
+        imgSrc: "assets/img/SKIV.jpg",
         altText: "The Elder Scrolls V Skyrim",
         title: "The Elder Scrolls V Skyrim.xci",
         downloadLink2: "https://terabox.com/s/1vm43Jhiw_OGPjF51nq3oag" // Segundo enlace de descarga
@@ -937,7 +937,7 @@ const juegos = [
     },       
     {
         id: "The End Is Nigh",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/TNIGT.webp",
+        imgSrc: "assets/img/TNIGT.jpg",
         altText: "The End Is Nigh",
         title: "The End Is Nigh.nsp",
         downloadLink2: "https://terabox.com/s/1ZP7EsTvMvO7kcaNhuWyzBg" // Segundo enlace de descarga
@@ -945,7 +945,7 @@ const juegos = [
     },       
     {
         id: "The Legend of Zelda Breath of The Wild",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/ZELDABREAT.webp",
+        imgSrc: "assets/img/ZELDABREAT.jpg",
         altText: "The Legend of Zelda Echoes of Wisdom",
         title: "The Legend of Zelda Echoes of Wisdom.nsp",
         downloadLink2: "https://terabox.com/s/1zzIY3tHyhcnqC1XCl22Aqw" // Segundo enlace de descarga
@@ -953,7 +953,7 @@ const juegos = [
     },       
     {
         id: "The Legend of Zelda Echoes of Wisdom",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/ZELDAZL.webp",
+        imgSrc: "assets/img/ZELDAZL.jpg",
         altText: "The Legend of Zelda Echoes of Wisdom",
         title: "The Legend of Zelda Echoes of Wisdom.xci",
         downloadLink2: "https://terabox.com/s/1msOcSm7ndl1V-CTkGPvAxg" // Segundo enlace de descarga
@@ -961,7 +961,7 @@ const juegos = [
     },       
     {
         id: "The Legend Of Zelda Link's Awakenings",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/ZELDALINKS.webp",
+        imgSrc: "assets/img/ZELDALINKS.jpg",
         altText: "The Legend Of Zelda Link's Awakenings",
         title: "The Legend Of Zelda Link's Awakenings.xci",
         downloadLink2: "https://terabox.com/s/1U6Um10ejISxXPsGXS6H4tA" // Segundo enlace de descarga
@@ -969,7 +969,7 @@ const juegos = [
     },       
     {
         id: "The Legend of Zelda  Skyward Sword HD",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/SKYWARD.webp",
+        imgSrc: "assets/img/SKYWARD.jpg",
         altText: "The Legend of Zelda  Skyward Sword HD",
         title: "The Legend of Zelda  Skyward Sword HD.nsp",
         downloadLink2: "https://terabox.com/s/1n74HSSV3bBJH1IS_OEigHw" // Segundo enlace de descarga
@@ -977,7 +977,7 @@ const juegos = [
     },       
     {
         id: "The Legend of Zelda Tears Of The Kingdom",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/ZELDATOK.webp",
+        imgSrc: "assets/img/ZELDATOK.jpg",
         altText: "The Legend of Zelda Tears Of The Kingdom",
         title: "The Legend of Zelda Tears Of The Kingdom.xci",
         downloadLink2: "https://terabox.com/s/1E-eDSb3sbJs8_GZpv9Fdmg" // Segundo enlace de descarga
@@ -985,7 +985,7 @@ const juegos = [
     },       
     {
         id: "The Witcher Wild III Hunt",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/TW3.webp",
+        imgSrc: "assets/img/TW3.jpg",
         altText: "The Witcher Wild III Hunt",
         title: "The Witcher Wild III Hunt.xci",
         downloadLink2: "https://terabox.com/s/1Qb53T9RHpTKvi0Aa7UG_dg" // Segundo enlace de descarga
@@ -993,7 +993,7 @@ const juegos = [
     },       
     {
         id: "Under Night In Birth",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/UNDERBIRT.webp",
+        imgSrc: "assets/img/UNDERBIRT.jpg",
         altText: "Under Night In Birth",
         title: "Under Night In Birth.xci",
         downloadLink2: "https://terabox.com/s/1CgKpuldfyfJ4uR8P5PNrKA" // Segundo enlace de descarga
@@ -1001,7 +1001,7 @@ const juegos = [
     },       
     {
         id: "WRC 10",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/WRC10.webp",
+        imgSrc: "assets/img/WRC10.jpg",
         altText: "WRC 10",
         title: "WRC 10.xci",
         downloadLink2: "https://terabox.com/s/1dyOjl4i3Kby3voUtzHm9fg" // Segundo enlace de descarga
