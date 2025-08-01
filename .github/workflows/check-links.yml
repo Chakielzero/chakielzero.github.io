@@ -10,115 +10,125 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repositorio
-        uses: actions/checkout@v4
+    - name: Checkout repositorio
+      uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
 
-      - name: Instalar herramientas de verificación
-        run: |
-          npm install -g broken-link-checker
-          sudo apt-get update
-          sudo apt-get install -y lynx
+    - name: Instalar herramientas de verificación
+      run: |
+        npm install -g broken-link-checker
+        sudo apt-get update
+        sudo apt-get install -y lynx
 
-      - name: Verificar enlaces y crear reporte
-        id: link_check # Agregamos un ID a este paso para poder referenciar sus outputs
-        run: |
-          mkdir -p logs
+    - name: Verificar enlaces y crear reporte
+      run: |
+        mkdir -p logs
 
-          DOMAIN="https://chakielroms.com"
-          LOG_FILE="logs/broken-links.log"
-          DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
-          BROKEN_LINKS_COUNT=0
+        DOMAIN="https://chakielroms.com"
+        LOG_FILE="logs/broken-links.log"
+        DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
 
-          echo "=== VERIFICACIÓN DE ENLACES ROTOS - $DATE ===" > $LOG_FILE
+        echo "=== VERIFICACIÓN DE ENLACES ROTOS - $DATE ===" > $LOG_FILE
+        echo "" >> $LOG_FILE
+        echo "🌐 Dominio verificado: $DOMAIN" >> $LOG_FILE
+        echo "📅 Fecha de verificación: $DATE" >> $LOG_FILE
+        echo "" >> $LOG_FILE
+
+        # Análisis de archivos HTML locales
+        HTML_FILES=$(find . -name "*.html" -not -path './.git/*' -not -path './logs/*' -not -path './backups/*')
+
+        if [ -z "$HTML_FILES" ]; then
+          echo "❌ No se encontraron archivos HTML" >> $LOG_FILE
+        else
+          echo "📄 Archivos HTML encontrados:" >> $LOG_FILE
+          echo "$HTML_FILES" >> $LOG_FILE
           echo "" >> $LOG_FILE
-          echo "🌐 Dominio verificado: $DOMAIN" >> $LOG_FILE
-          echo "📅 Fecha de verificación: $DATE" >> $LOG_FILE
-          echo "" >> $LOG_FILE
 
-          # Verificar enlaces del sitio web en vivo y capturar los rotos
-          if curl -s --head --max-time 10 "$DOMAIN" | head -n 1 | grep -q "200 OK"; then
-            echo "🔍 Verificando enlaces en el dominio: $DOMAIN" >> $LOG_FILE
-            
-            # Usar broken-link-checker para escanear el sitio y guardar los resultados
-            OUTPUT=$(blc -r -e -o --ignore-redirects "$DOMAIN" || true) # El '|| true' evita que el paso falle si encuentra enlaces rotos
-            echo "$OUTPUT" >> $LOG_FILE
-            
-            # Contar los enlaces rotos
-            BROKEN_LINKS_COUNT=$(echo "$OUTPUT" | grep -c "BROKEN")
-          else
-            echo "❌ El dominio $DOMAIN no responde con un estado 200 OK. No se puede verificar enlaces." >> $LOG_FILE
-            BROKEN_LINKS_COUNT=1 # Consideramos un fallo si el dominio no está disponible
-          fi
+          for file in $HTML_FILES; do
+            echo "🔍 Analizando: $file" >> $LOG_FILE
+            HREF_LINKS=$(grep -oP 'href="\K[^"]+' "$file" 2>/dev/null || echo "")
+            SRC_LINKS=$(grep -oP 'src="\K[^"]+' "$file" 2>/dev/null || echo "")
 
-          echo "" >> $LOG_FILE
-          echo "=== RESUMEN ===" >> $LOG_FILE
-          echo "🚨 Total de enlaces rotos detectados: $BROKEN_LINKS_COUNT" >> $LOG_FILE
-          echo "✅ Verificación completada: $DATE" >> $LOG_FILE
+            if [ -n "$HREF_LINKS" ]; then
+              echo "  📎 Enlaces href encontrados:" >> $LOG_FILE
+              echo "$HREF_LINKS" | sed 's/^/    - /' >> $LOG_FILE
+            fi
 
-          # Creamos los outputs para usarlos en los siguientes pasos
-          echo "broken_links_count=$BROKEN_LINKS_COUNT" >> $GITHUB_OUTPUT
-          
-      - name: Commit y push del reporte
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git fetch origin
-          git rebase origin/main || git rebase origin/master || echo "No rebase needed"
-          git add logs/broken-links.log
-          if git diff --staged --quiet; then
-            echo "No hay cambios en el reporte de enlaces"
-          else
-            git commit -m "🔗 Reporte de enlaces rotos - $(date '+%Y-%m-%d %H:%M')"
-            git push || {
-              echo "Push failed, trying with rebase..."
-              git pull --rebase origin main || git pull --rebase origin master
-              git push
-            }
-          fi
+            if [ -n "$SRC_LINKS" ]; then
+              echo "  🖼️ Enlaces src encontrados:" >> $LOG_FILE
+              echo "$SRC_LINKS" | sed 's/^/    - /' >> $LOG_FILE
+            fi
 
-      ---
+            echo "" >> $LOG_FILE
+          done
+        fi
 
-      ## Envío de notificaciones a Discord
+        # Verificar el sitio web en vivo si está disponible y listar rutas
+        if curl -s --head --max-time 10 "$DOMAIN" | head -n 1 | grep -q "200 OK"; then
+          CRITICAL_PAGES=(
+            "$DOMAIN"
+            "$DOMAIN/index.html"
+          )
 
-      - name: Notificación de éxito en Discord
-        if: success() && steps.link_check.outputs.broken_links_count == '0'
-        uses: tsickert/discord-webhook@v5.3.0
-        with:
-          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          content: |
-            ✅ **Verificación de enlaces completada**
-            
-            No se encontraron enlaces rotos en **chakielroms.com**.
-            
-            **🔗 Log completo:** [`broken-links.log`](<${{ github.server_url }}/${{ github.repository }}/blob/main/logs/broken-links.log>)
+          for page in "${CRITICAL_PAGES[@]}"; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$page" || echo "ERROR")
+            TIME=$(curl -s -o /dev/null -w "%{time_total}" --max-time 10 "$page" 2>/dev/null || echo "ERROR")
 
-      - name: Notificación de advertencias en Discord
-        if: success() && steps.link_check.outputs.broken_links_count != '0'
-        uses: tsickert/discord-webhook@v5.3.0
-        with:
-          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          content: |
-            ⚠️ **Verificación de enlaces - Advertencias detectadas**
-            
-            Se encontraron **${{ steps.link_check.outputs.broken_links_count }}** enlaces rotos en **chakielroms.com**.
-            
-            **🔍 Revisa el log para más detalles:**
-            **🔗 Log completo:** [`broken-links.log`](<${{ github.server_url }}/${{ github.repository }}/blob/main/logs/broken-links.log>)
+            if [ "$STATUS" = "200" ]; then
+              echo "$page ✅ Estado: $STATUS (${TIME}s)" >> $LOG_FILE
+            elif [ "$STATUS" = "ERROR" ]; then
+              echo "$page ❌ Error de conexión" >> $LOG_FILE
+            else
+              echo "$page ⚠️ Estado: $STATUS" >> $LOG_FILE
+            fi
+          done
+        fi
 
-      - name: Notificación de fallo en Discord
-        if: failure()
-        uses: tsickert/discord-webhook@v5.3.0
-        with:
-          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          content: |
-            ❌ **¡Error en la verificación de enlaces!**
-            
-            La acción de verificación de enlaces para **chakielroms.com** falló durante la ejecución.
-            
-            **🔗 Ver detalles del error:**
-            ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        echo "" >> $LOG_FILE
+
+        # Verificar recursos estáticos locales
+        CSS_FILES=$(find . -name "*.css" -not -path './.git/*' -not -path './logs/*' -not -path './backups/*')
+        JS_FILES=$(find . -name "*.js" -not -path './.git/*' -not -path './logs/*' -not -path './backups/*' -not -path './node_modules/*')
+        IMG_FILES=$(find . \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" -o -name "*.svg" -o -name "*.webp" \) -not -path './.git/*' -not -path './logs/*' -not -path './backups/*')
+
+        echo "=== RESUMEN ===" >> $LOG_FILE
+        echo "📊 Estadísticas del sitio:" >> $LOG_FILE
+        echo "  - Archivos HTML: $(echo "$HTML_FILES" | wc -l)" >> $LOG_FILE
+        echo "  - Archivos CSS: $(echo "$CSS_FILES" | wc -l)" >> $LOG_FILE
+        echo "  - Archivos JS: $(echo "$JS_FILES" | wc -l)" >> $LOG_FILE
+        echo "  - Archivos de imagen: $(echo "$IMG_FILES" | wc -l)" >> $LOG_FILE
+        echo "" >> $LOG_FILE
+        echo "✅ Verificación completada: $DATE" >> $LOG_FILE
+
+    - name: Commit y push del reporte
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+
+        git fetch origin
+        git rebase origin/main || git rebase origin/master || echo "No rebase needed"
+
+        git add logs/broken-links.log
+
+        if git diff --staged --quiet; then
+          echo "No hay cambios en el reporte de enlaces"
+        else
+          git commit -m "🔗 Reporte de enlaces rotos - $(date '+%Y-%m-%d %H:%M')"
+          git push || {
+            echo "Push failed, trying with rebase..."
+            git pull --rebase origin main || git pull --rebase origin master
+            git push
+          }
+        fi
+
+    - name: Enviar rutas al canal de Discord
+      run: |
+        PAYLOAD=$(jq -Rs . < logs/broken-links.log)
+        curl -H "Content-Type: application/json" \
+             -X POST \
+             -d "{\"content\": $PAYLOAD}" \
+             ${{ secrets.DISCORD_WEBHOOK_URL }}
