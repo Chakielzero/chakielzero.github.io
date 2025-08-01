@@ -71,6 +71,36 @@ jobs:
         repository: ${{ env.BACKUP_REPO }}
         token: ${{ secrets.BACKUP_TOKEN }}
         path: backup-repo
+      continue-on-error: true
+      
+    - name: Inicializar repositorio si está vacío
+      run: |
+        if [ ! -d "backup-repo/.git" ]; then
+          echo "Repositorio vacío, inicializando..."
+          mkdir -p backup-repo
+          cd backup-repo
+          git init
+          git remote add origin https://github.com/${{ env.BACKUP_REPO }}.git
+          
+          # Configurar auth
+          git config --local http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n x-access-token:${{ secrets.BACKUP_TOKEN }} | base64)"
+          
+          # Crear commit inicial
+          echo "# 🔄 Backups de chakielroms.com" > README.md
+          echo "" >> README.md
+          echo "Repositorio inicializado automáticamente por GitHub Actions" >> README.md
+          
+          git add README.md
+          git config --local user.email "segundariocuenta@gmail.com"
+          git config --local user.name "Chakielzero"
+          git commit -m "🎉 Inicialización automática del repositorio de backups"
+          
+          # Crear rama main y push
+          git branch -M main
+          git push -u origin main
+        else
+          echo "Repositorio ya existe y está inicializado"
+        fi
         
     - name: Organizar backup en repositorio externo
       run: |
