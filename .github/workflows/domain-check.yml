@@ -205,6 +205,7 @@ jobs:
         else
           git commit -m "📊 Actualización log de dominio - ${{ steps.date.outputs.short_date }} ${{ steps.date.outputs.time_only }}"
           git push
+        fi
 
     - name: Notificación de éxito en Discord
       if: success() && steps.domain_check.outputs.https_status == '200' && steps.domain_check.outputs.issues_count == '0'
