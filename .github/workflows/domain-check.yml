@@ -4,9 +4,7 @@ on:
   schedule:
     # Ejecuta cada 6 horas
     - cron: '0 */6 * * *'
-  workflow_dispatch: # Permite ejecutar manualmente
-  push:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   check-domain:

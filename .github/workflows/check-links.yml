@@ -5,10 +5,6 @@ on:
     # Ejecuta cada día a las 3:00 AM UTC
     - cron: '0 3 * * *'
   workflow_dispatch: # Permite ejecutar manualmente
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   check-links:
@@ -196,13 +192,23 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
+        # Asegurar que estamos actualizados
+        git fetch origin
+        git rebase origin/main || git rebase origin/master || echo "No rebase needed"
+        
         git add logs/broken-links.log
         
         if git diff --staged --quiet; then
           echo "No hay cambios en el reporte de enlaces"
         else
           git commit -m "🔗 Reporte de enlaces rotos - $(date '+%Y-%m-%d %H:%M')"
-          git push
+          
+          # Retry push con rebase si falla
+          git push || {
+            echo "Push failed, trying with rebase..."
+            git pull --rebase origin main || git pull --rebase origin master
+            git push
+          }
         fi
         
     - name: Crear issue si hay enlaces rotos
