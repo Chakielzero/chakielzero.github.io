@@ -1,134 +1,150 @@
-name: Verificación de Enlaces Rotos
+name: Verificación de rutas y enlaces rotos
 
 on:
-  schedule:
-    - cron: '0 3 * * *'
   workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'  # Todos los días a las 3:00 UTC
 
 jobs:
-  check-links:
+  verificar:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repositorio
-      uses: actions/checkout@v4
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
+      - name: Configurar zona horaria y permisos
+        run: |
+          sudo timedatectl set-timezone UTC
+          chmod +x scripts/verificar-rutas.sh
 
-    - name: Instalar herramientas de verificación
-      run: |
-        npm install -g broken-link-checker
-        sudo apt-get update
-        sudo apt-get install -y lynx
+      - name: Ejecutar verificación de rutas
+        id: rutas
+        run: bash scripts/verificar-rutas.sh
 
-    - name: Verificar enlaces y crear reporte
-      run: |
-        mkdir -p logs
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-        DOMAIN="https://chakielroms.com"
-        LOG_FILE="logs/broken-links.log"
-        DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
+      - name: Instalar herramientas para verificación de enlaces
+        run: |
+          npm install -g broken-link-checker
+          sudo apt-get update
+          sudo apt-get install -y lynx
 
-        echo "=== VERIFICACIÓN DE ENLACES ROTOS - $DATE ===" > $LOG_FILE
-        echo "" >> $LOG_FILE
-        echo "🌐 Dominio verificado: $DOMAIN" >> $LOG_FILE
-        echo "📅 Fecha de verificación: $DATE" >> $LOG_FILE
-        echo "" >> $LOG_FILE
+      - name: Verificar enlaces y crear reporte
+        run: |
+          mkdir -p logs
 
-        # Análisis de archivos HTML locales
-        HTML_FILES=$(find . -name "*.html" -not -path './.git/*' -not -path './logs/*' -not -path './backups/*')
+          DOMAIN="https://chakielroms.com"
+          LOG_FILE="logs/broken-links.log"
+          DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
 
-        if [ -z "$HTML_FILES" ]; then
-          echo "❌ No se encontraron archivos HTML" >> $LOG_FILE
-        else
-          echo "📄 Archivos HTML encontrados:" >> $LOG_FILE
-          echo "$HTML_FILES" >> $LOG_FILE
+          echo "=== VERIFICACIÓN DE ENLACES ROTOS - $DATE ===" > $LOG_FILE
+          echo "" >> $LOG_FILE
+          echo "🌐 Dominio verificado: $DOMAIN" >> $LOG_FILE
+          echo "📅 Fecha de verificación: $DATE" >> $LOG_FILE
           echo "" >> $LOG_FILE
 
-          for file in $HTML_FILES; do
-            echo "🔍 Analizando: $file" >> $LOG_FILE
-            HREF_LINKS=$(grep -oP 'href="\K[^"]+' "$file" 2>/dev/null || echo "")
-            SRC_LINKS=$(grep -oP 'src="\K[^"]+' "$file" 2>/dev/null || echo "")
+          HTML_FILES=$(find . -name "*.html" -not -path './.git/*' -not -path './logs/*' -not -path './backups/*')
 
-            if [ -n "$HREF_LINKS" ]; then
-              echo "  📎 Enlaces href encontrados:" >> $LOG_FILE
-              echo "$HREF_LINKS" | sed 's/^/    - /' >> $LOG_FILE
-            fi
-
-            if [ -n "$SRC_LINKS" ]; then
-              echo "  🖼️ Enlaces src encontrados:" >> $LOG_FILE
-              echo "$SRC_LINKS" | sed 's/^/    - /' >> $LOG_FILE
-            fi
-
+          if [ -z "$HTML_FILES" ]; then
+            echo "❌ No se encontraron archivos HTML" >> $LOG_FILE
+          else
+            echo "📄 Archivos HTML encontrados:" >> $LOG_FILE
+            echo "$HTML_FILES" >> $LOG_FILE
             echo "" >> $LOG_FILE
-          done
-        fi
 
-        # Verificar el sitio web en vivo si está disponible y listar rutas
-        if curl -s --head --max-time 10 "$DOMAIN" | head -n 1 | grep -q "200 OK"; then
-          CRITICAL_PAGES=(
-            "$DOMAIN"
-            "$DOMAIN/index.html"
-          )
+            for file in $HTML_FILES; do
+              echo "🔍 Analizando: $file" >> $LOG_FILE
+              HREF_LINKS=$(grep -oP 'href="\K[^"]+' "$file" 2>/dev/null || echo "")
+              SRC_LINKS=$(grep -oP 'src="\K[^"]+' "$file" 2>/dev/null || echo "")
 
-          for page in "${CRITICAL_PAGES[@]}"; do
-            STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$page" || echo "ERROR")
-            TIME=$(curl -s -o /dev/null -w "%{time_total}" --max-time 10 "$page" 2>/dev/null || echo "ERROR")
+              if [ -n "$HREF_LINKS" ]; then
+                echo "  📎 Enlaces href encontrados:" >> $LOG_FILE
+                echo "$HREF_LINKS" | sed 's/^/    - /' >> $LOG_FILE
+              fi
 
-            if [ "$STATUS" = "200" ]; then
-              echo "$page ✅ Estado: $STATUS (${TIME}s)" >> $LOG_FILE
-            elif [ "$STATUS" = "ERROR" ]; then
-              echo "$page ❌ Error de conexión" >> $LOG_FILE
-            else
-              echo "$page ⚠️ Estado: $STATUS" >> $LOG_FILE
-            fi
-          done
-        fi
+              if [ -n "$SRC_LINKS" ]; then
+                echo "  🖼️ Enlaces src encontrados:" >> $LOG_FILE
+                echo "$SRC_LINKS" | sed 's/^/    - /' >> $LOG_FILE
+              fi
 
-        echo "" >> $LOG_FILE
+              echo "" >> $LOG_FILE
+            done
+          fi
 
-        # Verificar recursos estáticos locales
-        CSS_FILES=$(find . -name "*.css" -not -path './.git/*' -not -path './logs/*' -not -path './backups/*')
-        JS_FILES=$(find . -name "*.js" -not -path './.git/*' -not -path './logs/*' -not -path './backups/*' -not -path './node_modules/*')
-        IMG_FILES=$(find . \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" -o -name "*.svg" -o -name "*.webp" \) -not -path './.git/*' -not -path './logs/*' -not -path './backups/*')
+          if curl -s --head --max-time 10 "$DOMAIN" | head -n 1 | grep -q "200 OK"; then
+            CRITICAL_PAGES=(
+              "$DOMAIN"
+              "$DOMAIN/index.html"
+            )
 
-        echo "=== RESUMEN ===" >> $LOG_FILE
-        echo "📊 Estadísticas del sitio:" >> $LOG_FILE
-        echo "  - Archivos HTML: $(echo "$HTML_FILES" | wc -l)" >> $LOG_FILE
-        echo "  - Archivos CSS: $(echo "$CSS_FILES" | wc -l)" >> $LOG_FILE
-        echo "  - Archivos JS: $(echo "$JS_FILES" | wc -l)" >> $LOG_FILE
-        echo "  - Archivos de imagen: $(echo "$IMG_FILES" | wc -l)" >> $LOG_FILE
-        echo "" >> $LOG_FILE
-        echo "✅ Verificación completada: $DATE" >> $LOG_FILE
+            for page in "${CRITICAL_PAGES[@]}"; do
+              STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$page" || echo "ERROR")
+              TIME=$(curl -s -o /dev/null -w "%{time_total}" --max-time 10 "$page" 2>/dev/null || echo "ERROR")
 
-    - name: Commit y push del reporte
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+              if [ "$STATUS" = "200" ]; then
+                echo "$page ✅ Estado: $STATUS (${TIME}s)" >> $LOG_FILE
+              elif [ "$STATUS" = "ERROR" ]; then
+                echo "$page ❌ Error de conexión" >> $LOG_FILE
+              else
+                echo "$page ⚠️ Estado: $STATUS" >> $LOG_FILE
+              fi
+            done
+          fi
 
-        git fetch origin
-        git rebase origin/main || git rebase origin/master || echo "No rebase needed"
+          echo "" >> $LOG_FILE
 
-        git add logs/broken-links.log
+          CSS_FILES=$(find . -name "*.css" -not -path './.git/*' -not -path './logs/*' -not -path './backups/*')
+          JS_FILES=$(find . -name "*.js" -not -path './.git/*' -not -path './logs/*' -not -path './backups/*' -not -path './node_modules/*')
+          IMG_FILES=$(find . \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" -o -name "*.svg" -o -name "*.webp" \) -not -path './.git/*' -not -path './logs/*' -not -path './backups/*')
 
-        if git diff --staged --quiet; then
-          echo "No hay cambios en el reporte de enlaces"
-        else
-          git commit -m "🔗 Reporte de enlaces rotos - $(date '+%Y-%m-%d %H:%M')"
-          git push || {
-            echo "Push failed, trying with rebase..."
-            git pull --rebase origin main || git pull --rebase origin master
-            git push
-          }
-        fi
+          echo "=== RESUMEN ===" >> $LOG_FILE
+          echo "📊 Estadísticas del sitio:" >> $LOG_FILE
+          echo "  - Archivos HTML: $(echo "$HTML_FILES" | wc -l)" >> $LOG_FILE
+          echo "  - Archivos CSS: $(echo "$CSS_FILES" | wc -l)" >> $LOG_FILE
+          echo "  - Archivos JS: $(echo "$JS_FILES" | wc -l)" >> $LOG_FILE
+          echo "  - Archivos de imagen: $(echo "$IMG_FILES" | wc -l)" >> $LOG_FILE
+          echo "" >> $LOG_FILE
+          echo "✅ Verificación completada: $DATE" >> $LOG_FILE
 
-    - name: Enviar rutas al canal de Discord
-      run: |
-        PAYLOAD=$(jq -Rs . < logs/broken-links.log)
-        curl -H "Content-Type: application/json" \
-             -X POST \
-             -d "{\"content\": $PAYLOAD}" \
-             ${{ secrets.DISCORD_WEBHOOK_URL }}
+      - name: Commit y push de logs
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          git fetch origin
+          git rebase origin/main || git rebase origin/master || echo "No rebase needed"
+
+          git add logs/rutas.log logs/broken-links.log
+
+          if git diff --staged --quiet; then
+            echo "No hay cambios en los logs"
+          else
+            git commit -m "🔍 Verificación combinada - $(date '+%Y-%m-%d %H:%M')"
+            git push || {
+              echo "Push failed, trying with rebase..."
+              git pull --rebase origin main || git pull --rebase origin master
+              git push
+            }
+          fi
+
+      - name: Notificar logs a Discord
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          filename: logs/rutas.log
+          description: |
+            ✅ Verificación de rutas completada.
+            📁 Archivo: rutas.log
+
+      - name: Notificar reporte de enlaces a Discord
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          filename: logs/broken-links.log
+          description: |
+            🔗 Reporte de enlaces rotos generado.
+            📁 Archivo: broken-links.log
