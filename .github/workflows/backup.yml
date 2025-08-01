@@ -1,3 +1,4 @@
+# Nombre de la acción
 name: Backup a Repositorio Externo
 
 on:
@@ -35,7 +36,7 @@ jobs:
         echo "- **Repositorio origen**: ${{ github.repository }}" >> backup-data/backup-info.md
         echo "- **Commit actual**: $(git rev-parse HEAD)" >> backup-data/backup-info.md
         echo "- **Rama**: $(git branch --show-current)" >> backup-data/backup-info.md
-        echo "- **Último commit**: $(git log -1 --pretty=format:'%h - %an, %ar : %s')" >> backup-data/backup-info.md
+        echo "- **Último commit**: $(git log -1 --pretty=format:'%h - %ar : %s')" >> backup-data/backup-info.md
         echo "" >> backup-data/backup-info.md
         
         # Estadísticas del repositorio
@@ -234,9 +235,18 @@ jobs:
           git push
         fi
         
-    - name: Notificación de éxito
-      run: |
-        echo "✅ Backup completado exitosamente"
-        echo "📁 Repositorio de backup: ${{ env.BACKUP_REPO }}"
-        echo "📅 Fecha: ${{ steps.date.outputs.date }}"
-        echo "🔗 Ver backup: https://github.com/${{ env.BACKUP_REPO }}"
+    # --- Notificación a Discord (paso de éxito) ---
+    - name: Notificación de éxito en Discord
+      if: success()
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        content: "✅ Backup completado exitosamente para el repositorio **${{ github.repository }}**."
+        
+    # --- Notificación a Discord (paso de fallo) ---
+    - name: Notificación de fallo en Discord
+      if: failure()
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        content: "❌ ¡Atención! El backup para el repositorio **${{ github.repository }}** ha fallado."
