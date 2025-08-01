@@ -3,8 +3,8 @@ name: Backup a Repositorio Externo
 
 on:
   schedule:
-    # Ejecuta cada domingo a las 2:00 AM UTC
-    - cron: '0 2 * * 0'
+    # Ejecuta cada d8a a las 2:00 AM UTC
+    - cron: '0 2 * * *'
   workflow_dispatch: # Permite ejecutar manualmente
 
 jobs:
