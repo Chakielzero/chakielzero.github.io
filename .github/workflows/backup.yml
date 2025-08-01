@@ -1,85 +1,204 @@
-name: Backup Automático
+name: Backup a Repositorio Externo
 
 on:
   schedule:
-    # Ejecuta cada domingo a las 2:00 AM UTC
-    - cron: '0 2 * * 0'
+    # Ejecuta cada día las 2:00 AM UTC
+    - cron: '0 2 * * *'
   workflow_dispatch: # Permite ejecutar manualmente
 
 jobs:
-  backup:
+  backup-to-external:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout repositorio
+    - name: Checkout repositorio actual
       uses: actions/checkout@v4
       with:
         fetch-depth: 0 # Obtiene todo el historial
         
-    - name: Configurar fecha
+    - name: Configurar fecha y variables
       id: date
-      run: echo "date=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
-      
-    - name: Crear archivo de backup
       run: |
-        mkdir -p backups
+        echo "date=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
+        echo "short_date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        echo "BACKUP_REPO=chakielzero/chakielweb-backup" >> $GITHUB_ENV
+        
+    - name: Crear estructura de backup
+      run: |
+        mkdir -p backup-data
         
         # Información del repositorio
-        echo "=== BACKUP DEL REPOSITORIO chakielzero.github.io ===" > backups/backup-info-${{ steps.date.outputs.date }}.txt
-        echo "Fecha: $(date)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
-        echo "Commit actual: $(git rev-parse HEAD)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
-        echo "Rama: $(git branch --show-current)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
-        echo "Último commit: $(git log -1 --pretty=format:'%h - %an, %ar : %s')" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
-        echo "" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "=== BACKUP DEL REPOSITORIO chakielzero.github.io ===" > backup-data/backup-info.md
+        echo "" >> backup-data/backup-info.md
+        echo "## 📊 Información del Backup" >> backup-data/backup-info.md
+        echo "- **Fecha**: $(date)" >> backup-data/backup-info.md
+        echo "- **Repositorio origen**: ${{ github.repository }}" >> backup-data/backup-info.md
+        echo "- **Commit actual**: $(git rev-parse HEAD)" >> backup-data/backup-info.md
+        echo "- **Rama**: $(git branch --show-current)" >> backup-data/backup-info.md
+        echo "- **Último commit**: $(git log -1 --pretty=format:'%h - %an, %ar : %s')" >> backup-data/backup-info.md
+        echo "" >> backup-data/backup-info.md
+        
+        # Estadísticas del repositorio
+        echo "## 📈 Estadísticas" >> backup-data/backup-info.md
+        echo "- **Total de archivos**: $(find . -type f -not -path './.git/*' -not -path './backup-data/*' | wc -l)" >> backup-data/backup-info.md
+        echo "- **Archivos HTML**: $(find . -name '*.html' -not -path './.git/*' | wc -l)" >> backup-data/backup-info.md
+        echo "- **Archivos CSS**: $(find . -name '*.css' -not -path './.git/*' | wc -l)" >> backup-data/backup-info.md
+        echo "- **Archivos JS**: $(find . -name '*.js' -not -path './.git/*' | wc -l)" >> backup-data/backup-info.md
+        echo "- **Imágenes**: $(find . \( -name '*.jpg' -o -name '*.png' -o -name '*.gif' -o -name '*.svg' \) -not -path './.git/*' | wc -l)" >> backup-data/backup-info.md
+        echo "" >> backup-data/backup-info.md
         
         # Lista de archivos
-        echo "=== ARCHIVOS EN EL REPOSITORIO ===" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
-        find . -type f -not -path './.git/*' -not -path './backups/*' | sort >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "## 📁 Archivos incluidos" >> backup-data/backup-info.md
+        echo "\`\`\`" >> backup-data/backup-info.md
+        find . -type f -not -path './.git/*' -not -path './backup-data/*' | sort >> backup-data/backup-info.md
+        echo "\`\`\`" >> backup-data/backup-info.md
         
-        # Estadísticas
-        echo "" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
-        echo "=== ESTADÍSTICAS ===" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
-        echo "Total de archivos: $(find . -type f -not -path './.git/*' -not -path './backups/*' | wc -l)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
-        echo "Archivos HTML: $(find . -name '*.html' -not -path './.git/*' | wc -l)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
-        echo "Archivos CSS: $(find . -name '*.css' -not -path './.git/*' | wc -l)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
-        echo "Archivos JS: $(find . -name '*.js' -not -path './.git/*' | wc -l)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
-        
-        # Crear archivo comprimido del repositorio
-        tar -czf backups/backup-${{ steps.date.outputs.date }}.tar.gz \
+        # Crear archivo comprimido del código fuente
+        tar -czf backup-data/source-code-${{ steps.date.outputs.date }}.tar.gz \
           --exclude='.git' \
-          --exclude='backups' \
+          --exclude='backup-data' \
           --exclude='node_modules' \
+          --exclude='.github' \
           .
           
-    - name: Commit y push del backup
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        # Crear backup del historial git (solo los commits más recientes)
+        git bundle create backup-data/git-history-${{ steps.date.outputs.date }}.bundle HEAD~50..HEAD 2>/dev/null || \
+        git bundle create backup-data/git-history-${{ steps.date.outputs.date }}.bundle --all
         
-        git add backups/
+    - name: Checkout repositorio de backup
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ env.BACKUP_REPO }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        path: backup-repo
+        
+    - name: Organizar backup en repositorio externo
+      run: |
+        cd backup-repo
+        
+        # Crear estructura de carpetas por fecha
+        YEAR=$(date +'%Y')
+        MONTH=$(date +'%m-%B')
+        mkdir -p "backups/$YEAR/$MONTH"
+        
+        # Mover archivos de backup
+        cp ../backup-data/* "backups/$YEAR/$MONTH/"
+        
+        # Crear o actualizar README del repositorio de backup
+        cat > README.md << 'EOF'
+        # 🔄 Backups de chakielroms.com
+        
+        Este repositorio contiene backups automáticos del sitio web [chakielroms.com](https://chakielroms.com).
+        
+        ## 🌐 Repositorio origen
+        - **Sitio web**: [chakielroms.com](https://chakielroms.com)
+        - **Repositorio principal**: [chakielzero.github.io](https://github.com/chakielzero/chakielzero.github.io)
+        - **GitHub Pages**: [chakielzero.github.io](https://chakielzero.github.io)
+        
+        ## 📁 Estructura
+        
+        ```
+        backups/
+        ├── 2025/
+        │   ├── 01-January/
+        │   ├── 02-February/
+        │   └── ...
+        └── README.md
+        ```
+        
+        ## 📊 Información de Backups
+        
+        - **Frecuencia**: Semanal (domingos 2:00 AM UTC)
+        - **Contenido**: Código fuente completo + historial Git
+        - **Retención**: Últimos 12 backups (3 meses)
+        - **Automatización**: GitHub Actions
+        - **Repositorio**: Privado 🔒
+        
+        ## 🔍 Contenido de cada backup
+        
+        - `backup-info.md`: Información detallada del backup
+        - `source-code-YYYY-MM-DD_HH-MM-SS.tar.gz`: Código fuente comprimido
+        - `git-history-YYYY-MM-DD_HH-MM-SS.bundle`: Historial Git reciente
+        
+        ## 📅 Último backup
+        
+        **Fecha**: $(date)  
+        **Estado**: ✅ Completado automáticamente
+        
+        ## 🚀 Restaurar backup
+        
+        Para restaurar un backup:
+        
+        1. Descargar el archivo `.tar.gz` deseado
+        2. Extraer: `tar -xzf source-code-YYYY-MM-DD_HH-MM-SS.tar.gz`
+        3. Para historial Git: `git clone backup.bundle restored-repo`
+        
+        ---
+        *🤖 Generado automáticamente por GitHub Actions desde [chakielzero.github.io](https://github.com/chakielzero/chakielzero.github.io)*
+        EOF
+        
+        # Crear índice de backups
+        echo "# 📋 Índice de Backups" > BACKUP_INDEX.md
+        echo "" >> BACKUP_INDEX.md
+        echo "| Fecha | Archivos | Tamaño | Commits |" >> BACKUP_INDEX.md
+        echo "|-------|----------|---------|---------|" >> BACKUP_INDEX.md
+        
+        # Agregar entrada actual
+        FILECOUNT=$(find "backups/$YEAR/$MONTH" -name "source-code-*.tar.gz" -exec tar -tzf {} \; 2>/dev/null | wc -l || echo "N/A")
+        FILESIZE=$(du -h "backups/$YEAR/$MONTH/source-code-"*.tar.gz 2>/dev/null | cut -f1 || echo "N/A")
+        
+        echo "| ${{ steps.date.outputs.short_date }} | $FILECOUNT | $FILESIZE | ✅ |" >> BACKUP_INDEX.md
+        
+    - name: Commit y push al repositorio de backup
+      run: |
+        cd backup-repo
+        
+        git config --local user.email "backup-action@github.com"
+        git config --local user.name "Backup Bot"
+        
+        git add .
         
         if git diff --staged --quiet; then
-          echo "No hay cambios para commitear"
+          echo "No hay cambios para commitear en el backup"
         else
-          git commit -m "🔄 Backup automático - ${{ steps.date.outputs.date }}"
+          git commit -m "🔄 Backup automático de chakielroms.com - ${{ steps.date.outputs.date }}
+
+          📊 Información del backup:
+          - Repositorio origen: ${{ github.repository }}
+          - Commit: ${{ github.sha }}
+          - Fecha: $(date)
+          - Archivos respaldados: $(find ../backup-data -name '*.tar.gz' -exec tar -tzf {} \; 2>/dev/null | wc -l || echo 'N/A')
+          
+          🤖 Generado automáticamente por GitHub Actions"
+          
           git push
         fi
         
-    - name: Limpiar backups antiguos (mantener solo los últimos 5)
+    - name: Limpiar backups antiguos (opcional)
       run: |
-        cd backups
-        # Mantener solo los 5 archivos .tar.gz más recientes
-        ls -t backup-*.tar.gz | tail -n +6 | xargs -r rm
-        # Mantener solo los 5 archivos .txt más recientes  
-        ls -t backup-info-*.txt | tail -n +6 | xargs -r rm
+        cd backup-repo
+        
+        # Mantener solo los últimos 12 backups (3 meses si es semanal)
+        find backups/ -name "source-code-*.tar.gz" -type f -printf '%T@ %p\n' | sort -n | head -n -12 | cut -d' ' -f2- | xargs -r rm
+        find backups/ -name "git-history-*.bundle" -type f -printf '%T@ %p\n' | sort -n | head -n -12 | cut -d' ' -f2- | xargs -r rm
+        find backups/ -name "backup-info.md" -type f -printf '%T@ %p\n' | sort -n | head -n -12 | cut -d' ' -f2- | xargs -r rm
+        
+        # Eliminar carpetas vacías
+        find backups/ -type d -empty -delete 2>/dev/null || true
         
         # Commit de la limpieza si hay cambios
-        cd ..
-        git add backups/
+        git add .
         
         if git diff --staged --quiet; then
-          echo "No hay archivos antiguos para limpiar"
+          echo "No hay backups antiguos para limpiar"
         else
-          git commit -m "🧹 Limpieza de backups antiguos"
+          git commit -m "🧹 Limpieza de backups antiguos - ${{ steps.date.outputs.date }}"
           git push
         fi
+        
+    - name: Notificación de éxito
+      run: |
+        echo "✅ Backup completado exitosamente"
+        echo "📁 Repositorio de backup: ${{ env.BACKUP_REPO }}"
+        echo "📅 Fecha: ${{ steps.date.outputs.date }}"
+        echo "🔗 Ver backup: https://github.com/${{ env.BACKUP_REPO }}"
