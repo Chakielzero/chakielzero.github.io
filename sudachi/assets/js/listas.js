@@ -731,8 +731,8 @@ const juegos = [
         id: "Resident Evil 6",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/RV6.webp",
         altText: "Resident Evil 6",
-        title: "Resident Evil 6.nsp (PRONTO)",
-        downloadLink2: "JJJJ" // Segundo enlace de descarga
+        title: "Resident Evil 6.nsp",
+        downloadLink2: "https://terabox.com/s/1TYMCzCdnlSZbx1FWcUK6Ng" // Segundo enlace de descarga
 
     },       
     {
