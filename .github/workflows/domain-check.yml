@@ -67,15 +67,6 @@ jobs:
         fi
         echo "" >> $LOG_FILE
         
-        echo "📋 Registros CNAME:" >> $LOG_FILE
-        CNAME_RECORDS=$(dig +short CNAME $DOMAIN 2>/dev/null || echo "")
-        if [ -z "$CNAME_RECORDS" ]; then
-          echo "❌ No hay registros CNAME" >> $LOG_FILE
-        else
-          echo "$CNAME_RECORDS" >> $LOG_FILE
-        fi
-        echo "" >> $LOG_FILE
-        
         echo "📋 Registros MX:" >> $LOG_FILE
         MX_RECORDS=$(dig +short MX $DOMAIN 2>/dev/null || echo "")
         if [ -z "$MX_RECORDS" ]; then
