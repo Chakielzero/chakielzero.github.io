@@ -153,8 +153,8 @@ jobs:
       run: |
         cd backup-repo
         
-        git config --local user.email "backup-action@github.com"
-        git config --local user.name "Backup Bot"
+        git config --local user.email "segundariocuenta@gmail.com"
+        git config --local user.name "Chakielzero"
         
         git add .
         
