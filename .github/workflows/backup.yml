@@ -25,6 +25,7 @@ jobs:
         echo "BACKUP_REPO=chakielzero/chakielweb-backup" >> $GITHUB_ENV
         
     - name: Crear estructura de backup
+      id: create_backup
       run: |
         mkdir -p backup-data
         
@@ -112,6 +113,7 @@ jobs:
         echo "*.bundle filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
         
     - name: Organizar backup en repositorio externo
+      id: get-backup-info # Añadimos un ID para capturar las salidas
       run: |
         cd backup-repo
         
@@ -119,6 +121,10 @@ jobs:
         YEAR=$(date +'%Y')
         MONTH=$(date +'%m-%B')
         mkdir -p "backups/$YEAR/$MONTH"
+        
+        # Obtener el nombre de archivo y su tamaño para la notificación
+        BACKUP_FILENAME="source-code-${{ steps.date.outputs.date }}.tar.gz"
+        BACKUP_FILESIZE=$(du -h ../backup-data/"$BACKUP_FILENAME" | cut -f1)
         
         # Mover archivos de backup
         cp ../backup-data/* "backups/$YEAR/$MONTH/"
@@ -184,10 +190,16 @@ jobs:
         
         # Agregar entrada actual
         FILECOUNT=$(find "backups/$YEAR/$MONTH" -name "source-code-*.tar.gz" -exec tar -tzf {} \; 2>/dev/null | wc -l || echo "N/A")
-        FILESIZE=$(du -h "backups/$YEAR/$MONTH/source-code-"*.tar.gz 2>/dev/null | cut -f1 || echo "N/A")
+        FILESIZE_INDEX=$(du -h "backups/$YEAR/$MONTH/source-code-"*.tar.gz 2>/dev/null | cut -f1 || echo "N/A")
         
-        echo "| ${{ steps.date.outputs.short_date }} | $FILECOUNT | $FILESIZE | ✅ |" >> BACKUP_INDEX.md
+        echo "| ${{ steps.date.outputs.short_date }} | $FILECOUNT | $FILESIZE_INDEX | ✅ |" >> BACKUP_INDEX.md
         
+        # Establecemos las variables de salida para la notificación
+        echo "backup_filename=$BACKUP_FILENAME" >> "$GITHUB_OUTPUT"
+        echo "backup_filesize=$BACKUP_FILESIZE" >> "$GITHUB_OUTPUT"
+        echo "year=$YEAR" >> "$GITHUB_OUTPUT"
+        echo "month=$MONTH" >> "$GITHUB_OUTPUT"
+
     - name: Commit y push al repositorio de backup
       run: |
         cd backup-repo
@@ -241,7 +253,18 @@ jobs:
       uses: tsickert/discord-webhook@v5.3.0
       with:
         webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        content: "✅ Backup completado exitosamente para el repositorio **${{ github.repository }}**."
+        content: |
+          ✅ ¡Backup completado con éxito!
+          
+          **Detalles del backup:**
+          - **Repositorio de origen**: ${{ github.repository }}
+          - **Fecha**: `${{ steps.date.outputs.short_date }}`
+          - **Tamaño**: `${{ steps.get-backup-info.outputs.backup_filesize }}`
+          
+          **🔗 Enlace al backup:**
+          > https://github.com/${{ env.BACKUP_REPO }}/blob/main/backups/${{ steps.get-backup-info.outputs.year }}/${{ steps.get-backup-info.outputs.month }}/${{ steps.get-backup-info.outputs.backup_filename }}
+          
+          *Puedes ver el repositorio completo en https://github.com/${{ env.BACKUP_REPO }}*
         
     # --- Notificación a Discord (paso de fallo) ---
     - name: Notificación de fallo en Discord
@@ -249,4 +272,4 @@ jobs:
       uses: tsickert/discord-webhook@v5.3.0
       with:
         webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        content: "❌ ¡Atención! El backup para el repositorio **${{ github.repository }}** ha fallado."
+        content: "❌ ¡Atención! El backup para el repositorio **${{ github.repository }}** ha fallado. Revisa la acción para más detalles: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
