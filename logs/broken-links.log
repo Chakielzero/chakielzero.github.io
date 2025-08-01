@@ -1,9 +1,9 @@
-=== VERIFICACIÓN DE ENLACES ROTOS - 2025-08-01 20:20:35 UTC ===
+=== VERIFICACIÓN DE ENLACES ROTOS - 2025-08-01 23:22:00 UTC ===
 
 🌐 Dominio verificado: https://chakielroms.com
-📅 Fecha de verificación: 2025-08-01 20:20:35 UTC
+📅 Fecha de verificación: 2025-08-01 23:22:00 UTC
 
-📄 Archivos HTML encontrados:
+📄 Archivos HTML encontrados: 14
 ./dmca/index.html
 ./ps3/index.html
 ./gamecube/index.html
@@ -434,6 +434,8 @@
     - https://chakielroms.com/android/assets/js/game.js
     - assets/js/listas.js
 
+🔗 Verificando páginas críticas:
+❌ No se pudo conectar al dominio principal
 
 === RESUMEN ===
 📊 Estadísticas del sitio:
@@ -442,4 +444,9 @@
   - Archivos JS: 13
   - Archivos de imagen: 183
 
-✅ Verificación completada: 2025-08-01 20:20:35 UTC
+📈 Estado de verificación:
+  - Páginas exitosas: 0
+  - Advertencias: 0
+  - Errores: 1
+
+✅ Verificación completada: 2025-08-01 23:22:00 UTC
