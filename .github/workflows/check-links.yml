@@ -22,7 +22,7 @@ jobs:
       run: |
         npm install -g broken-link-checker
         sudo apt-get update
-        sudo apt-get install -y lynx
+        sudo apt-get install -y lynx curl jq
 
     - name: Verificar enlaces y crear reporte
       run: |
@@ -38,13 +38,21 @@ jobs:
         echo "📅 Fecha de verificación: $DATE" >> $LOG_FILE
         echo "" >> $LOG_FILE
 
+        # Variables para el resumen de Discord
+        ERRORS_COUNT=0
+        WARNINGS_COUNT=0
+        SUCCESS_COUNT=0
+        DISCORD_MESSAGE=""
+
         # Análisis de archivos HTML locales
         HTML_FILES=$(find . -name "*.html" -not -path './.git/*' -not -path './logs/*' -not -path './backups/*')
 
         if [ -z "$HTML_FILES" ]; then
           echo "❌ No se encontraron archivos HTML" >> $LOG_FILE
+          DISCORD_MESSAGE="$DISCORD_MESSAGE❌ No se encontraron archivos HTML\n"
         else
-          echo "📄 Archivos HTML encontrados:" >> $LOG_FILE
+          HTML_COUNT=$(echo "$HTML_FILES" | wc -l)
+          echo "📄 Archivos HTML encontrados: $HTML_COUNT" >> $LOG_FILE
           echo "$HTML_FILES" >> $LOG_FILE
           echo "" >> $LOG_FILE
 
@@ -67,7 +75,8 @@ jobs:
           done
         fi
 
-        # Verificar el sitio web en vivo si está disponible y listar rutas
+        # Verificar el sitio web en vivo
+        echo "🔗 Verificando páginas críticas:" >> $LOG_FILE
         if curl -s --head --max-time 10 "$DOMAIN" | head -n 1 | grep -q "200 OK"; then
           CRITICAL_PAGES=(
             "$DOMAIN"
@@ -80,12 +89,21 @@ jobs:
 
             if [ "$STATUS" = "200" ]; then
               echo "$page ✅ Estado: $STATUS (${TIME}s)" >> $LOG_FILE
+              SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
             elif [ "$STATUS" = "ERROR" ]; then
               echo "$page ❌ Error de conexión" >> $LOG_FILE
+              ERRORS_COUNT=$((ERRORS_COUNT + 1))
+              DISCORD_MESSAGE="$DISCORD_MESSAGE❌ $page - Error de conexión\n"
             else
               echo "$page ⚠️ Estado: $STATUS" >> $LOG_FILE
+              WARNINGS_COUNT=$((WARNINGS_COUNT + 1))
+              DISCORD_MESSAGE="$DISCORD_MESSAGE⚠️ $page - Estado: $STATUS\n"
             fi
           done
+        else
+          echo "❌ No se pudo conectar al dominio principal" >> $LOG_FILE
+          ERRORS_COUNT=$((ERRORS_COUNT + 1))
+          DISCORD_MESSAGE="$DISCORD_MESSAGE❌ No se pudo conectar al dominio principal\n"
         fi
 
         echo "" >> $LOG_FILE
@@ -95,14 +113,36 @@ jobs:
         JS_FILES=$(find . -name "*.js" -not -path './.git/*' -not -path './logs/*' -not -path './backups/*' -not -path './node_modules/*')
         IMG_FILES=$(find . \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" -o -name "*.svg" -o -name "*.webp" \) -not -path './.git/*' -not -path './logs/*' -not -path './backups/*')
 
+        HTML_COUNT=$(echo "$HTML_FILES" | wc -l)
+        CSS_COUNT=$(echo "$CSS_FILES" | wc -l)
+        JS_COUNT=$(echo "$JS_FILES" | wc -l)
+        IMG_COUNT=$(echo "$IMG_FILES" | wc -l)
+
         echo "=== RESUMEN ===" >> $LOG_FILE
         echo "📊 Estadísticas del sitio:" >> $LOG_FILE
-        echo "  - Archivos HTML: $(echo "$HTML_FILES" | wc -l)" >> $LOG_FILE
-        echo "  - Archivos CSS: $(echo "$CSS_FILES" | wc -l)" >> $LOG_FILE
-        echo "  - Archivos JS: $(echo "$JS_FILES" | wc -l)" >> $LOG_FILE
-        echo "  - Archivos de imagen: $(echo "$IMG_FILES" | wc -l)" >> $LOG_FILE
+        echo "  - Archivos HTML: $HTML_COUNT" >> $LOG_FILE
+        echo "  - Archivos CSS: $CSS_COUNT" >> $LOG_FILE
+        echo "  - Archivos JS: $JS_COUNT" >> $LOG_FILE
+        echo "  - Archivos de imagen: $IMG_COUNT" >> $LOG_FILE
+        echo "" >> $LOG_FILE
+        echo "📈 Estado de verificación:" >> $LOG_FILE
+        echo "  - Páginas exitosas: $SUCCESS_COUNT" >> $LOG_FILE
+        echo "  - Advertencias: $WARNINGS_COUNT" >> $LOG_FILE
+        echo "  - Errores: $ERRORS_COUNT" >> $LOG_FILE
         echo "" >> $LOG_FILE
         echo "✅ Verificación completada: $DATE" >> $LOG_FILE
+
+        # Guardar variables para Discord en archivo
+        echo "ERRORS_COUNT=$ERRORS_COUNT" >> $GITHUB_ENV
+        echo "WARNINGS_COUNT=$WARNINGS_COUNT" >> $GITHUB_ENV
+        echo "SUCCESS_COUNT=$SUCCESS_COUNT" >> $GITHUB_ENV
+        echo "HTML_COUNT=$HTML_COUNT" >> $GITHUB_ENV
+        echo "CSS_COUNT=$CSS_COUNT" >> $GITHUB_ENV
+        echo "JS_COUNT=$JS_COUNT" >> $GITHUB_ENV
+        echo "IMG_COUNT=$IMG_COUNT" >> $GITHUB_ENV
+        echo "DOMAIN=$DOMAIN" >> $GITHUB_ENV
+        
+
 
     - name: Commit y push del reporte
       run: |
@@ -125,10 +165,62 @@ jobs:
           }
         fi
 
-    - name: Enviar rutas al canal de Discord
+    - name: Enviar notificación a Discord
+      if: always()
       run: |
-        PAYLOAD=$(jq -Rs . < logs/broken-links.log)
-        curl -H "Content-Type: application/json" \
-             -X POST \
-             -d "{\"content\": $PAYLOAD}" \
-             ${{ secrets.DISCORD_WEBHOOK_URL }}
+        DATE=$(date '+%Y-%m-%d %H:%M')
+        REPO_URL="https://github.com/${{ github.repository }}"
+        LOG_URL="$REPO_URL/blob/${{ github.ref_name }}/logs/broken-links.log"
+        ACTION_URL="$REPO_URL/actions/runs/${{ github.run_id }}"
+        
+        # Determinar el estado general
+        if [ $ERRORS_COUNT -gt 0 ]; then
+          STATUS="🔴 **ERRORES**"
+          COLOR=15158332  # Rojo
+        elif [ $WARNINGS_COUNT -gt 0 ]; then
+          STATUS="🟡 **ADVERTENCIAS**"
+          COLOR=16776960  # Amarillo
+        else
+          STATUS="🟢 **OK**"
+          COLOR=5763719   # Verde
+        fi
+
+        # Crear notificación concisa
+        cat > discord_payload.json << EOF
+        {
+          "embeds": [{
+            "title": "🔗 Verificación de Enlaces - chakielroms.com",
+            "description": "$STATUS | ✅ $SUCCESS_COUNT • ⚠️ $WARNINGS_COUNT • ❌ $ERRORS_COUNT",
+            "color": $COLOR,
+            "fields": [
+              {
+                "name": "📄 Ver Log Completo",
+                "value": "[📋 broken-links.log]($LOG_URL)",
+                "inline": true
+              },
+              {
+                "name": "🔧 Ver Ejecución",
+                "value": "[⚙️ GitHub Action]($ACTION_URL)",
+                "inline": true
+              }
+            ],
+            "footer": {
+              "text": "$DATE UTC"
+            }
+          }]
+        }
+        EOF
+
+        # Enviar a Discord
+        if [ -n "${{ secrets.DISCORD_WEBHOOK_URL }}" ]; then
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d @discord_payload.json \
+               "${{ secrets.DISCORD_WEBHOOK_URL }}"
+          
+          echo "✅ Notificación enviada a Discord"
+        else
+          echo "⚠️ DISCORD_WEBHOOK_URL no configurado"
+        fi
+
+        rm -f discord_payload.json
