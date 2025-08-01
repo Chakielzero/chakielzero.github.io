@@ -1,0 +1,161 @@
+name: Verificación de Dominio
+
+on:
+  schedule:
+    # Ejecuta cada 6 horas
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Permite ejecutar manualmente
+  push:
+    branches: [ main ]
+
+jobs:
+  check-domain:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repositorio
+      uses: actions/checkout@v4
+      
+    - name: Instalar herramientas necesarias
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y dnsutils curl jq
+        
+    - name: Verificar dominio y crear log
+      run: |
+        mkdir -p logs
+        
+        DOMAIN="chakielroms.com"
+        GITHUB_DOMAIN="chakielzero.github.io"
+        LOG_FILE="logs/domain.log"
+        DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
+        
+        echo "=== VERIFICACIÓN DE DOMINIO - $DATE ===" > $LOG_FILE
+        echo "" >> $LOG_FILE
+        
+        # Información básica del dominio
+        echo "🌐 DOMINIO PRINCIPAL: $DOMAIN" >> $LOG_FILE
+        echo "🔗 GITHUB PAGES: $GITHUB_DOMAIN" >> $LOG_FILE
+        echo "" >> $LOG_FILE
+        
+        # Verificar DNS Records
+        echo "=== DNS RECORDS ===" >> $LOG_FILE
+        echo "📋 Registros A:" >> $LOG_FILE
+        dig +short A $DOMAIN >> $LOG_FILE || echo "❌ Error obteniendo registros A" >> $LOG_FILE
+        echo "" >> $LOG_FILE
+        
+        echo "📋 Registros AAAA (IPv6):" >> $LOG_FILE
+        dig +short AAAA $DOMAIN >> $LOG_FILE || echo "❌ No hay registros AAAA" >> $LOG_FILE
+        echo "" >> $LOG_FILE
+        
+        echo "📋 Registros CNAME:" >> $LOG_FILE
+        dig +short CNAME $DOMAIN >> $LOG_FILE || echo "❌ No hay registros CNAME" >> $LOG_FILE
+        echo "" >> $LOG_FILE
+        
+        echo "📋 Registros MX:" >> $LOG_FILE
+        dig +short MX $DOMAIN >> $LOG_FILE || echo "❌ No hay registros MX" >> $LOG_FILE
+        echo "" >> $LOG_FILE
+        
+        echo "📋 Registros TXT:" >> $LOG_FILE
+        dig +short TXT $DOMAIN >> $LOG_FILE || echo "❌ No hay registros TXT" >> $LOG_FILE
+        echo "" >> $LOG_FILE
+        
+        # Verificar conectividad HTTP/HTTPS
+        echo "=== VERIFICACIÓN DE CONECTIVIDAD ===" >> $LOG_FILE
+        
+        # HTTP
+        echo "🔍 Verificando HTTP (http://$DOMAIN):" >> $LOG_FILE
+        HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "http://$DOMAIN" || echo "ERROR")
+        if [ "$HTTP_STATUS" = "ERROR" ]; then
+          echo "❌ No se pudo conectar via HTTP" >> $LOG_FILE
+        else
+          echo "✅ Estado HTTP: $HTTP_STATUS" >> $LOG_FILE
+        fi
+        echo "" >> $LOG_FILE
+        
+        # HTTPS
+        echo "🔍 Verificando HTTPS (https://$DOMAIN):" >> $LOG_FILE
+        HTTPS_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://$DOMAIN" || echo "ERROR")
+        if [ "$HTTPS_STATUS" = "ERROR" ]; then
+          echo "❌ No se pudo conectar via HTTPS" >> $LOG_FILE
+        else
+          echo "✅ Estado HTTPS: $HTTPS_STATUS" >> $LOG_FILE
+        fi
+        echo "" >> $LOG_FILE
+        
+        # Verificar certificado SSL
+        echo "=== CERTIFICADO SSL ===" >> $LOG_FILE
+        SSL_INFO=$(echo | openssl s_client -servername $DOMAIN -connect $DOMAIN:443 2>/dev/null | openssl x509 -noout -dates 2>/dev/null || echo "ERROR")
+        if [ "$SSL_INFO" = "ERROR" ]; then
+          echo "❌ No se pudo obtener información del certificado SSL" >> $LOG_FILE
+        else
+          echo "📜 Información del certificado:" >> $LOG_FILE
+          echo "$SSL_INFO" >> $LOG_FILE
+        fi
+        echo "" >> $LOG_FILE
+        
+        # Verificar tiempo de respuesta
+        echo "=== TIEMPO DE RESPUESTA ===" >> $LOG_FILE
+        RESPONSE_TIME=$(curl -s -o /dev/null -w "%{time_total}" --max-time 10 "https://$DOMAIN" 2>/dev/null || echo "ERROR")
+        if [ "$RESPONSE_TIME" = "ERROR" ]; then
+          echo "❌ No se pudo medir el tiempo de respuesta" >> $LOG_FILE
+        else
+          echo "⏱️ Tiempo de respuesta: ${RESPONSE_TIME}s" >> $LOG_FILE
+        fi
+        echo "" >> $LOG_FILE
+        
+        # Verificar headers importantes
+        echo "=== HEADERS DE SEGURIDAD ===" >> $LOG_FILE
+        HEADERS=$(curl -s -I "https://$DOMAIN" --max-time 10 2>/dev/null || echo "ERROR")
+        if [ "$HEADERS" = "ERROR" ]; then
+          echo "❌ No se pudieron obtener los headers" >> $LOG_FILE
+        else
+          echo "🔒 Content-Security-Policy:" >> $LOG_FILE
+          echo "$HEADERS" | grep -i "content-security-policy" || echo "❌ No configurado" >> $LOG_FILE
+          echo "" >> $LOG_FILE
+          
+          echo "🔒 X-Frame-Options:" >> $LOG_FILE
+          echo "$HEADERS" | grep -i "x-frame-options" || echo "❌ No configurado" >> $LOG_FILE
+          echo "" >> $LOG_FILE
+          
+          echo "🔒 Strict-Transport-Security:" >> $LOG_FILE
+          echo "$HEADERS" | grep -i "strict-transport-security" || echo "❌ No configurado" >> $LOG_FILE
+        fi
+        echo "" >> $LOG_FILE
+        
+        # Verificar redirecciones
+        echo "=== REDIRECCIONES ===" >> $LOG_FILE
+        echo "🔄 Verificando redirección www -> no-www:" >> $LOG_FILE
+        WWW_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://www.$DOMAIN" || echo "ERROR")
+        echo "Estado www.$DOMAIN: $WWW_STATUS" >> $LOG_FILE
+        echo "" >> $LOG_FILE
+        
+        # Verificar GitHub Pages específicamente
+        echo "=== VERIFICACIÓN GITHUB PAGES ===" >> $LOG_FILE
+        GH_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://$GITHUB_DOMAIN" || echo "ERROR")
+        echo "✅ Estado GitHub Pages ($GITHUB_DOMAIN): $GH_STATUS" >> $LOG_FILE
+        echo "" >> $LOG_FILE
+        
+        # Resumen
+        echo "=== RESUMEN ===" >> $LOG_FILE
+        if [ "$HTTPS_STATUS" = "200" ]; then
+          echo "✅ Dominio funcionando correctamente" >> $LOG_FILE
+        else
+          echo "❌ Problemas detectados en el dominio" >> $LOG_FILE
+        fi
+        
+        echo "📊 Verificación completada: $DATE" >> $LOG_FILE
+        
+    - name: Commit y push del log
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        git add logs/domain.log
+        
+        if git diff --staged --quiet; then
+          echo "No hay cambios en el log de dominio"
+        else
+          git commit -m "📊 Actualización log de dominio - $(date '+%Y-%m-%d %H:%M')"
+          git push
+        fi

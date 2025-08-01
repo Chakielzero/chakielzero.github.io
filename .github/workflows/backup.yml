@@ -1,0 +1,85 @@
+name: Backup Automático
+
+on:
+  schedule:
+    # Ejecuta cada domingo a las 2:00 AM UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch: # Permite ejecutar manualmente
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repositorio
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Obtiene todo el historial
+        
+    - name: Configurar fecha
+      id: date
+      run: echo "date=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
+      
+    - name: Crear archivo de backup
+      run: |
+        mkdir -p backups
+        
+        # Información del repositorio
+        echo "=== BACKUP DEL REPOSITORIO chakielzero.github.io ===" > backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "Fecha: $(date)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "Commit actual: $(git rev-parse HEAD)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "Rama: $(git branch --show-current)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "Último commit: $(git log -1 --pretty=format:'%h - %an, %ar : %s')" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        
+        # Lista de archivos
+        echo "=== ARCHIVOS EN EL REPOSITORIO ===" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        find . -type f -not -path './.git/*' -not -path './backups/*' | sort >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        
+        # Estadísticas
+        echo "" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "=== ESTADÍSTICAS ===" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "Total de archivos: $(find . -type f -not -path './.git/*' -not -path './backups/*' | wc -l)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "Archivos HTML: $(find . -name '*.html' -not -path './.git/*' | wc -l)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "Archivos CSS: $(find . -name '*.css' -not -path './.git/*' | wc -l)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        echo "Archivos JS: $(find . -name '*.js' -not -path './.git/*' | wc -l)" >> backups/backup-info-${{ steps.date.outputs.date }}.txt
+        
+        # Crear archivo comprimido del repositorio
+        tar -czf backups/backup-${{ steps.date.outputs.date }}.tar.gz \
+          --exclude='.git' \
+          --exclude='backups' \
+          --exclude='node_modules' \
+          .
+          
+    - name: Commit y push del backup
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        git add backups/
+        
+        if git diff --staged --quiet; then
+          echo "No hay cambios para commitear"
+        else
+          git commit -m "🔄 Backup automático - ${{ steps.date.outputs.date }}"
+          git push
+        fi
+        
+    - name: Limpiar backups antiguos (mantener solo los últimos 5)
+      run: |
+        cd backups
+        # Mantener solo los 5 archivos .tar.gz más recientes
+        ls -t backup-*.tar.gz | tail -n +6 | xargs -r rm
+        # Mantener solo los 5 archivos .txt más recientes  
+        ls -t backup-info-*.txt | tail -n +6 | xargs -r rm
+        
+        # Commit de la limpieza si hay cambios
+        cd ..
+        git add backups/
+        
+        if git diff --staged --quiet; then
+          echo "No hay archivos antiguos para limpiar"
+        else
+          git commit -m "🧹 Limpieza de backups antiguos"
+          git push
+        fi
