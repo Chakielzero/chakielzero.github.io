@@ -16,6 +16,12 @@ jobs:
       with:
         fetch-depth: 0 # Obtiene todo el historial
         
+    # Agregado para soportar archivos grandes como el .tar.gz
+    - name: Instalar y configurar Git LFS en el repositorio de origen
+      run: |
+        git lfs install
+        git lfs track "backup-data/*.tar.gz"
+        
     - name: Configurar fecha y variables
       id: date
       run: |
@@ -102,6 +108,15 @@ jobs:
           echo "Repositorio ya existe y está inicializado"
         fi
         
+    # Agregado: Configurar Git LFS en el directorio del repositorio de backup
+    - name: Configurar Git LFS en el repositorio de backup
+      run: |
+        cd backup-repo
+        # Asegura que Git LFS esté activo y rastree los archivos .tar.gz
+        git lfs install
+        echo "*.tar.gz filter=lfs diff=lfs merge=lfs -text" > .gitattributes
+        git add .gitattributes
+        
     - name: Organizar backup en repositorio externo
       run: |
         cd backup-repo
@@ -130,9 +145,9 @@ jobs:
         ```
         backups/
         ├── 2025/
-        │   ├── 01-January/
-        │   ├── 02-February/
-        │   └── ...
+        │   ├── 01-January/
+        │   ├── 02-February/
+        │   └── ...
         └── README.md
         ```
         
@@ -192,7 +207,7 @@ jobs:
           echo "No hay cambios para commitear en el backup"
         else
           git commit -m "🔄 Backup automático de chakielroms.com - ${{ steps.date.outputs.date }}
-
+          
           📊 Información del backup:
           - Repositorio origen: ${{ github.repository }}
           - Commit: ${{ github.sha }}
@@ -219,7 +234,7 @@ jobs:
         # Commit de la limpieza si hay cambios
         git add .
         
-        if git diff --staged --quiet; then
+        ifname diff --staged --quiet; then
           echo "No hay backups antiguos para limpiar"
         else
           git commit -m "🧹 Limpieza de backups antiguos - ${{ steps.date.outputs.date }}"
