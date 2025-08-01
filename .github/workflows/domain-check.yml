@@ -2,7 +2,6 @@ name: Verificación de Dominio
 
 on:
   schedule:
-    # Ejecuta cada 6 horas
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
@@ -39,17 +38,14 @@ jobs:
         echo "=== VERIFICACIÓN DE DOMINIO - $DATE ===" > $LOG_FILE
         echo "" >> $LOG_FILE
         
-        # Información básica del dominio
         echo "🌐 DOMINIO PRINCIPAL: $DOMAIN" >> $LOG_FILE
         echo "🔗 GITHUB PAGES: $GITHUB_DOMAIN" >> $LOG_FILE
         echo "" >> $LOG_FILE
         
-        # Variables para el resumen
         ISSUES_FOUND=0
         CRITICAL_ISSUES=""
         STATUS_SUMMARY=""
         
-        # Verificar DNS Records
         echo "=== DNS RECORDS ===" >> $LOG_FILE
         echo "📋 Registros A:" >> $LOG_FILE
         A_RECORDS=$(dig +short A $DOMAIN 2>/dev/null || echo "ERROR")
@@ -98,10 +94,8 @@ jobs:
         fi
         echo "" >> $LOG_FILE
         
-        # Verificar conectividad HTTP/HTTPS
         echo "=== VERIFICACIÓN DE CONECTIVIDAD ===" >> $LOG_FILE
         
-        # HTTP
         echo "🔍 Verificando HTTP (http://$DOMAIN):" >> $LOG_FILE
         HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "http://$DOMAIN" 2>/dev/null || echo "ERROR")
         if [ "$HTTP_STATUS" = "ERROR" ]; then
@@ -112,7 +106,6 @@ jobs:
         fi
         echo "" >> $LOG_FILE
         
-        # HTTPS
         echo "🔍 Verificando HTTPS (https://$DOMAIN):" >> $LOG_FILE
         HTTPS_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://$DOMAIN" 2>/dev/null || echo "ERROR")
         if [ "$HTTPS_STATUS" = "ERROR" ]; then
@@ -128,7 +121,6 @@ jobs:
         fi
         echo "" >> $LOG_FILE
         
-        # Verificar certificado SSL
         echo "=== CERTIFICADO SSL ===" >> $LOG_FILE
         SSL_INFO=$(echo | openssl s_client -servername $DOMAIN -connect $DOMAIN:443 2>/dev/null | openssl x509 -noout -dates 2>/dev/null || echo "ERROR")
         if [ "$SSL_INFO" = "ERROR" ]; then
@@ -138,14 +130,11 @@ jobs:
         else
           echo "📜 Información del certificado:" >> $LOG_FILE
           echo "$SSL_INFO" >> $LOG_FILE
-          
-          # Verificar si el certificado está próximo a vencer (30 días)
           NOT_AFTER=$(echo "$SSL_INFO" | grep "notAfter" | cut -d= -f2)
           if [ -n "$NOT_AFTER" ]; then
             EXPIRY_DATE=$(date -d "$NOT_AFTER" +%s 2>/dev/null || echo "0")
             CURRENT_DATE=$(date +%s)
             DAYS_UNTIL_EXPIRY=$(( (EXPIRY_DATE - CURRENT_DATE) / 86400 ))
-            
             if [ "$DAYS_UNTIL_EXPIRY" -lt 30 ] && [ "$DAYS_UNTIL_EXPIRY" -gt 0 ]; then
               echo "⚠️ Certificado expira en $DAYS_UNTIL_EXPIRY días" >> $LOG_FILE
               CRITICAL_ISSUES="$CRITICAL_ISSUES\n⚠️ Certificado SSL expira en $DAYS_UNTIL_EXPIRY días"
@@ -158,14 +147,12 @@ jobs:
         fi
         echo "" >> $LOG_FILE
         
-        # Verificar tiempo de respuesta
         echo "=== TIEMPO DE RESPUESTA ===" >> $LOG_FILE
         RESPONSE_TIME=$(curl -s -o /dev/null -w "%{time_total}" --max-time 10 "https://$DOMAIN" 2>/dev/null || echo "ERROR")
         if [ "$RESPONSE_TIME" = "ERROR" ]; then
           echo "❌ No se pudo medir el tiempo de respuesta" >> $LOG_FILE
         else
           echo "⏱️ Tiempo de respuesta: ${RESPONSE_TIME}s" >> $LOG_FILE
-          # Advertir si el tiempo de respuesta es muy lento (>3 segundos)
           if (( $(echo "$RESPONSE_TIME > 3.0" | bc -l 2>/dev/null || echo "0") )); then
             echo "⚠️ Tiempo de respuesta lento (>${RESPONSE_TIME}s)" >> $LOG_FILE
             CRITICAL_ISSUES="$CRITICAL_ISSUES\n⚠️ Sitio lento (${RESPONSE_TIME}s)"
@@ -173,33 +160,12 @@ jobs:
         fi
         echo "" >> $LOG_FILE
         
-        # Verificar headers importantes
-        echo "=== HEADERS DE SEGURIDAD ===" >> $LOG_FILE
-        HEADERS=$(curl -s -I "https://$DOMAIN" --max-time 10 2>/dev/null || echo "ERROR")
-        if [ "$HEADERS" = "ERROR" ]; then
-          echo "❌ No se pudieron obtener los headers" >> $LOG_FILE
-        else
-          echo "🔒 Content-Security-Policy:" >> $LOG_FILE
-          echo "$HEADERS" | grep -i "content-security-policy" || echo "❌ No configurado" >> $LOG_FILE
-          echo "" >> $LOG_FILE
-          
-          echo "🔒 X-Frame-Options:" >> $LOG_FILE
-          echo "$HEADERS" | grep -i "x-frame-options" || echo "❌ No configurado" >> $LOG_FILE
-          echo "" >> $LOG_FILE
-          
-          echo "🔒 Strict-Transport-Security:" >> $LOG_FILE
-          echo "$HEADERS" | grep -i "strict-transport-security" || echo "❌ No configurado" >> $LOG_FILE
-        fi
-        echo "" >> $LOG_FILE
-        
-        # Verificar redirecciones
         echo "=== REDIRECCIONES ===" >> $LOG_FILE
         echo "🔄 Verificando redirección www -> no-www:" >> $LOG_FILE
         WWW_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://www.$DOMAIN" 2>/dev/null || echo "ERROR")
         echo "Estado www.$DOMAIN: $WWW_STATUS" >> $LOG_FILE
         echo "" >> $LOG_FILE
         
-        # Verificar GitHub Pages específicamente
         echo "=== VERIFICACIÓN GITHUB PAGES ===" >> $LOG_FILE
         GH_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://$GITHUB_DOMAIN" 2>/dev/null || echo "ERROR")
         echo "✅ Estado GitHub Pages ($GITHUB_DOMAIN): $GH_STATUS" >> $LOG_FILE
@@ -208,7 +174,6 @@ jobs:
         fi
         echo "" >> $LOG_FILE
         
-        # Resumen
         echo "=== RESUMEN ===" >> $LOG_FILE
         if [ "$HTTPS_STATUS" = "200" ] && [ "$ISSUES_FOUND" -eq 0 ]; then
           echo "✅ Dominio funcionando correctamente" >> $LOG_FILE
@@ -223,29 +188,24 @@ jobs:
         
         echo "📊 Verificación completada: $DATE" >> $LOG_FILE
         
-        # Establecer variables de salida para Discord
         echo "https_status=$HTTPS_STATUS" >> $GITHUB_OUTPUT
         echo "issues_count=$ISSUES_FOUND" >> $GITHUB_OUTPUT
         echo "status_summary=$STATUS_SUMMARY" >> $GITHUB_OUTPUT
         echo "critical_issues=$CRITICAL_ISSUES" >> $GITHUB_OUTPUT
         echo "response_time=$RESPONSE_TIME" >> $GITHUB_OUTPUT
         echo "log_size=$(du -h logs/domain.log | cut -f1)" >> $GITHUB_OUTPUT
-        
+
     - name: Commit y push del log
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        
         git add logs/domain.log
-        
         if git diff --staged --quiet; then
           echo "No hay cambios en el log de dominio"
         else
           git commit -m "📊 Actualización log de dominio - ${{ steps.date.outputs.short_date }} ${{ steps.date.outputs.time_only }}"
           git push
-        fi
 
-    # --- Notificación a Discord (dominio funcionando correctamente) ---
     - name: Notificación de éxito en Discord
       if: success() && steps.domain_check.outputs.https_status == '200' && steps.domain_check.outputs.issues_count == '0'
       uses: tsickert/discord-webhook@v5.3.0
@@ -263,7 +223,6 @@ jobs:
           
           **📁 Log completo:** [`domain.log`](<${{ github.server_url }}/${{ github.repository }}/blob/main/logs/domain.log>) (`${{ steps.domain_check.outputs.log_size }}`)
 
-    # --- Notificación a Discord (advertencias menores) ---
     - name: Notificación de advertencias en Discord
       if: success() && steps.domain_check.outputs.https_status == '200' && steps.domain_check.outputs.issues_count != '0'
       uses: tsickert/discord-webhook@v5.3.0
@@ -283,7 +242,6 @@ jobs:
           
           **📁 Revisar log completo:** [`domain.log`](<${{ github.server_url }}/${{ github.repository }}/blob/main/logs/domain.log>) (`${{ steps.domain_check.outputs.log_size }}`)
 
-    # --- Notificación a Discord (problemas críticos) ---
     - name: Notificación de problemas críticos en Discord
       if: success() && steps.domain_check.outputs.https_status != '200'
       uses: tsickert/discord-webhook@v5.3.0
@@ -306,7 +264,6 @@ jobs:
           
           **⚡ Acción requerida:** Revisar configuración DNS y estado del servidor
 
-    # --- Notificación a Discord (fallo de la acción) ---
     - name: Notificación de fallo en Discord
       if: failure()
       uses: tsickert/discord-webhook@v5.3.0
