@@ -19,14 +19,22 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y dnsutils curl jq
         
+    - name: Configurar fecha y variables
+      id: date
+      run: |
+        echo "datetime=$(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_OUTPUT
+        echo "short_date=$(date '+%Y-%m-%d')" >> $GITHUB_OUTPUT
+        echo "time_only=$(date '+%H:%M UTC')" >> $GITHUB_OUTPUT
+        
     - name: Verificar dominio y crear log
+      id: domain_check
       run: |
         mkdir -p logs
         
         DOMAIN="chakielroms.com"
         GITHUB_DOMAIN="chakielzero.github.io"
         LOG_FILE="logs/domain.log"
-        DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
+        DATE="${{ steps.date.outputs.datetime }}"
         
         echo "=== VERIFICACIÓN DE DOMINIO - $DATE ===" > $LOG_FILE
         echo "" >> $LOG_FILE
@@ -36,26 +44,58 @@ jobs:
         echo "🔗 GITHUB PAGES: $GITHUB_DOMAIN" >> $LOG_FILE
         echo "" >> $LOG_FILE
         
+        # Variables para el resumen
+        ISSUES_FOUND=0
+        CRITICAL_ISSUES=""
+        STATUS_SUMMARY=""
+        
         # Verificar DNS Records
         echo "=== DNS RECORDS ===" >> $LOG_FILE
         echo "📋 Registros A:" >> $LOG_FILE
-        dig +short A $DOMAIN >> $LOG_FILE || echo "❌ Error obteniendo registros A" >> $LOG_FILE
+        A_RECORDS=$(dig +short A $DOMAIN 2>/dev/null || echo "ERROR")
+        if [ "$A_RECORDS" = "ERROR" ] || [ -z "$A_RECORDS" ]; then
+          echo "❌ Error obteniendo registros A" >> $LOG_FILE
+          ISSUES_FOUND=$((ISSUES_FOUND + 1))
+          CRITICAL_ISSUES="$CRITICAL_ISSUES\n❌ Registros DNS A no encontrados"
+        else
+          echo "$A_RECORDS" >> $LOG_FILE
+        fi
         echo "" >> $LOG_FILE
         
         echo "📋 Registros AAAA (IPv6):" >> $LOG_FILE
-        dig +short AAAA $DOMAIN >> $LOG_FILE || echo "❌ No hay registros AAAA" >> $LOG_FILE
+        AAAA_RECORDS=$(dig +short AAAA $DOMAIN 2>/dev/null || echo "")
+        if [ -z "$AAAA_RECORDS" ]; then
+          echo "❌ No hay registros AAAA" >> $LOG_FILE
+        else
+          echo "$AAAA_RECORDS" >> $LOG_FILE
+        fi
         echo "" >> $LOG_FILE
         
         echo "📋 Registros CNAME:" >> $LOG_FILE
-        dig +short CNAME $DOMAIN >> $LOG_FILE || echo "❌ No hay registros CNAME" >> $LOG_FILE
+        CNAME_RECORDS=$(dig +short CNAME $DOMAIN 2>/dev/null || echo "")
+        if [ -z "$CNAME_RECORDS" ]; then
+          echo "❌ No hay registros CNAME" >> $LOG_FILE
+        else
+          echo "$CNAME_RECORDS" >> $LOG_FILE
+        fi
         echo "" >> $LOG_FILE
         
         echo "📋 Registros MX:" >> $LOG_FILE
-        dig +short MX $DOMAIN >> $LOG_FILE || echo "❌ No hay registros MX" >> $LOG_FILE
+        MX_RECORDS=$(dig +short MX $DOMAIN 2>/dev/null || echo "")
+        if [ -z "$MX_RECORDS" ]; then
+          echo "❌ No hay registros MX" >> $LOG_FILE
+        else
+          echo "$MX_RECORDS" >> $LOG_FILE
+        fi
         echo "" >> $LOG_FILE
         
         echo "📋 Registros TXT:" >> $LOG_FILE
-        dig +short TXT $DOMAIN >> $LOG_FILE || echo "❌ No hay registros TXT" >> $LOG_FILE
+        TXT_RECORDS=$(dig +short TXT $DOMAIN 2>/dev/null || echo "")
+        if [ -z "$TXT_RECORDS" ]; then
+          echo "❌ No hay registros TXT" >> $LOG_FILE
+        else
+          echo "$TXT_RECORDS" >> $LOG_FILE
+        fi
         echo "" >> $LOG_FILE
         
         # Verificar conectividad HTTP/HTTPS
@@ -63,9 +103,10 @@ jobs:
         
         # HTTP
         echo "🔍 Verificando HTTP (http://$DOMAIN):" >> $LOG_FILE
-        HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "http://$DOMAIN" || echo "ERROR")
+        HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "http://$DOMAIN" 2>/dev/null || echo "ERROR")
         if [ "$HTTP_STATUS" = "ERROR" ]; then
           echo "❌ No se pudo conectar via HTTP" >> $LOG_FILE
+          ISSUES_FOUND=$((ISSUES_FOUND + 1))
         else
           echo "✅ Estado HTTP: $HTTP_STATUS" >> $LOG_FILE
         fi
@@ -73,9 +114,15 @@ jobs:
         
         # HTTPS
         echo "🔍 Verificando HTTPS (https://$DOMAIN):" >> $LOG_FILE
-        HTTPS_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://$DOMAIN" || echo "ERROR")
+        HTTPS_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://$DOMAIN" 2>/dev/null || echo "ERROR")
         if [ "$HTTPS_STATUS" = "ERROR" ]; then
           echo "❌ No se pudo conectar via HTTPS" >> $LOG_FILE
+          ISSUES_FOUND=$((ISSUES_FOUND + 1))
+          CRITICAL_ISSUES="$CRITICAL_ISSUES\n❌ HTTPS no responde"
+        elif [ "$HTTPS_STATUS" != "200" ]; then
+          echo "⚠️ Estado HTTPS: $HTTPS_STATUS" >> $LOG_FILE
+          ISSUES_FOUND=$((ISSUES_FOUND + 1))
+          CRITICAL_ISSUES="$CRITICAL_ISSUES\n⚠️ HTTPS devuelve código $HTTPS_STATUS"
         else
           echo "✅ Estado HTTPS: $HTTPS_STATUS" >> $LOG_FILE
         fi
@@ -86,9 +133,28 @@ jobs:
         SSL_INFO=$(echo | openssl s_client -servername $DOMAIN -connect $DOMAIN:443 2>/dev/null | openssl x509 -noout -dates 2>/dev/null || echo "ERROR")
         if [ "$SSL_INFO" = "ERROR" ]; then
           echo "❌ No se pudo obtener información del certificado SSL" >> $LOG_FILE
+          ISSUES_FOUND=$((ISSUES_FOUND + 1))
+          CRITICAL_ISSUES="$CRITICAL_ISSUES\n❌ Certificado SSL no disponible"
         else
           echo "📜 Información del certificado:" >> $LOG_FILE
           echo "$SSL_INFO" >> $LOG_FILE
+          
+          # Verificar si el certificado está próximo a vencer (30 días)
+          NOT_AFTER=$(echo "$SSL_INFO" | grep "notAfter" | cut -d= -f2)
+          if [ -n "$NOT_AFTER" ]; then
+            EXPIRY_DATE=$(date -d "$NOT_AFTER" +%s 2>/dev/null || echo "0")
+            CURRENT_DATE=$(date +%s)
+            DAYS_UNTIL_EXPIRY=$(( (EXPIRY_DATE - CURRENT_DATE) / 86400 ))
+            
+            if [ "$DAYS_UNTIL_EXPIRY" -lt 30 ] && [ "$DAYS_UNTIL_EXPIRY" -gt 0 ]; then
+              echo "⚠️ Certificado expira en $DAYS_UNTIL_EXPIRY días" >> $LOG_FILE
+              CRITICAL_ISSUES="$CRITICAL_ISSUES\n⚠️ Certificado SSL expira en $DAYS_UNTIL_EXPIRY días"
+            elif [ "$DAYS_UNTIL_EXPIRY" -le 0 ]; then
+              echo "❌ Certificado SSL expirado" >> $LOG_FILE
+              CRITICAL_ISSUES="$CRITICAL_ISSUES\n❌ Certificado SSL expirado"
+              ISSUES_FOUND=$((ISSUES_FOUND + 1))
+            fi
+          fi
         fi
         echo "" >> $LOG_FILE
         
@@ -99,6 +165,11 @@ jobs:
           echo "❌ No se pudo medir el tiempo de respuesta" >> $LOG_FILE
         else
           echo "⏱️ Tiempo de respuesta: ${RESPONSE_TIME}s" >> $LOG_FILE
+          # Advertir si el tiempo de respuesta es muy lento (>3 segundos)
+          if (( $(echo "$RESPONSE_TIME > 3.0" | bc -l 2>/dev/null || echo "0") )); then
+            echo "⚠️ Tiempo de respuesta lento (>${RESPONSE_TIME}s)" >> $LOG_FILE
+            CRITICAL_ISSUES="$CRITICAL_ISSUES\n⚠️ Sitio lento (${RESPONSE_TIME}s)"
+          fi
         fi
         echo "" >> $LOG_FILE
         
@@ -124,25 +195,41 @@ jobs:
         # Verificar redirecciones
         echo "=== REDIRECCIONES ===" >> $LOG_FILE
         echo "🔄 Verificando redirección www -> no-www:" >> $LOG_FILE
-        WWW_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://www.$DOMAIN" || echo "ERROR")
+        WWW_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://www.$DOMAIN" 2>/dev/null || echo "ERROR")
         echo "Estado www.$DOMAIN: $WWW_STATUS" >> $LOG_FILE
         echo "" >> $LOG_FILE
         
         # Verificar GitHub Pages específicamente
         echo "=== VERIFICACIÓN GITHUB PAGES ===" >> $LOG_FILE
-        GH_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://$GITHUB_DOMAIN" || echo "ERROR")
+        GH_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "https://$GITHUB_DOMAIN" 2>/dev/null || echo "ERROR")
         echo "✅ Estado GitHub Pages ($GITHUB_DOMAIN): $GH_STATUS" >> $LOG_FILE
+        if [ "$GH_STATUS" != "200" ] && [ "$GH_STATUS" != "ERROR" ]; then
+          CRITICAL_ISSUES="$CRITICAL_ISSUES\n⚠️ GitHub Pages devuelve código $GH_STATUS"
+        fi
         echo "" >> $LOG_FILE
         
         # Resumen
         echo "=== RESUMEN ===" >> $LOG_FILE
-        if [ "$HTTPS_STATUS" = "200" ]; then
+        if [ "$HTTPS_STATUS" = "200" ] && [ "$ISSUES_FOUND" -eq 0 ]; then
           echo "✅ Dominio funcionando correctamente" >> $LOG_FILE
+          STATUS_SUMMARY="✅ Todo funcionando correctamente"
+        elif [ "$HTTPS_STATUS" = "200" ] && [ "$ISSUES_FOUND" -gt 0 ]; then
+          echo "⚠️ Dominio funcionando con advertencias ($ISSUES_FOUND problemas menores)" >> $LOG_FILE
+          STATUS_SUMMARY="⚠️ Funcionando con $ISSUES_FOUND advertencias"
         else
-          echo "❌ Problemas detectados en el dominio" >> $LOG_FILE
+          echo "❌ Problemas críticos detectados en el dominio" >> $LOG_FILE
+          STATUS_SUMMARY="❌ Problemas críticos detectados"
         fi
         
         echo "📊 Verificación completada: $DATE" >> $LOG_FILE
+        
+        # Establecer variables de salida para Discord
+        echo "https_status=$HTTPS_STATUS" >> $GITHUB_OUTPUT
+        echo "issues_count=$ISSUES_FOUND" >> $GITHUB_OUTPUT
+        echo "status_summary=$STATUS_SUMMARY" >> $GITHUB_OUTPUT
+        echo "critical_issues=$CRITICAL_ISSUES" >> $GITHUB_OUTPUT
+        echo "response_time=$RESPONSE_TIME" >> $GITHUB_OUTPUT
+        echo "log_size=$(du -h logs/domain.log | cut -f1)" >> $GITHUB_OUTPUT
         
     - name: Commit y push del log
       run: |
@@ -154,6 +241,83 @@ jobs:
         if git diff --staged --quiet; then
           echo "No hay cambios en el log de dominio"
         else
-          git commit -m "📊 Actualización log de dominio - $(date '+%Y-%m-%d %H:%M')"
+          git commit -m "📊 Actualización log de dominio - ${{ steps.date.outputs.short_date }} ${{ steps.date.outputs.time_only }}"
           git push
         fi
+
+    # --- Notificación a Discord (dominio funcionando correctamente) ---
+    - name: Notificación de éxito en Discord
+      if: success() && steps.domain_check.outputs.https_status == '200' && steps.domain_check.outputs.issues_count == '0'
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        content: |
+          ✅ **Verificación de dominio completada**
+          
+          **🌐 chakielroms.com** está funcionando perfectamente
+          
+          **📊 Detalles:**
+          - **Estado HTTPS**: `200 OK`
+          - **Tiempo de respuesta**: `${{ steps.domain_check.outputs.response_time }}s`
+          - **Fecha**: `${{ steps.date.outputs.short_date }} a las ${{ steps.date.outputs.time_only }}`
+          
+          **📁 Log completo:** [`domain.log`](<${{ github.server_url }}/${{ github.repository }}/blob/main/logs/domain.log>) (`${{ steps.domain_check.outputs.log_size }}`)
+
+    # --- Notificación a Discord (advertencias menores) ---
+    - name: Notificación de advertencias en Discord
+      if: success() && steps.domain_check.outputs.https_status == '200' && steps.domain_check.outputs.issues_count != '0'
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        content: |
+          ⚠️ **Verificación de dominio - Advertencias detectadas**
+          
+          **🌐 chakielroms.com** funciona pero con **${{ steps.domain_check.outputs.issues_count }}** advertencias
+          
+          **🔍 Problemas encontrados:**${{ steps.domain_check.outputs.critical_issues }}
+          
+          **📊 Detalles:**
+          - **Estado HTTPS**: `200 OK`
+          - **Tiempo de respuesta**: `${{ steps.domain_check.outputs.response_time }}s`
+          - **Fecha**: `${{ steps.date.outputs.short_date }} a las ${{ steps.date.outputs.time_only }}`
+          
+          **📁 Revisar log completo:** [`domain.log`](<${{ github.server_url }}/${{ github.repository }}/blob/main/logs/domain.log>) (`${{ steps.domain_check.outputs.log_size }}`)
+
+    # --- Notificación a Discord (problemas críticos) ---
+    - name: Notificación de problemas críticos en Discord
+      if: success() && steps.domain_check.outputs.https_status != '200'
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        content: |
+          🚨 **¡ALERTA! Problemas críticos en el dominio**
+          
+          **🌐 chakielroms.com** presenta **problemas críticos**
+          
+          **❌ Estado actual:** `${{ steps.domain_check.outputs.status_summary }}`
+          
+          **🔍 Problemas críticos:**${{ steps.domain_check.outputs.critical_issues }}
+          
+          **📊 Detalles:**
+          - **Estado HTTPS**: `${{ steps.domain_check.outputs.https_status }}`
+          - **Fecha**: `${{ steps.date.outputs.short_date }} a las ${{ steps.date.outputs.time_only }}`
+          
+          **📁 Log completo:** [`domain.log`](<${{ github.server_url }}/${{ github.repository }}/blob/main/logs/domain.log>) (`${{ steps.domain_check.outputs.log_size }}`)
+          
+          **⚡ Acción requerida:** Revisar configuración DNS y estado del servidor
+
+    # --- Notificación a Discord (fallo de la acción) ---
+    - name: Notificación de fallo en Discord
+      if: failure()
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        content: |
+          ❌ **¡Error en la verificación de dominio!**
+          
+          La acción de verificación para **chakielroms.com** falló durante la ejecución.
+          
+          **🔗 Ver detalles del error:**
+          ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          
+          **📅 Fecha:** `${{ steps.date.outputs.short_date }} a las ${{ steps.date.outputs.time_only }}`
