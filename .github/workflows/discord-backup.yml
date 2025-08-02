@@ -39,7 +39,7 @@ jobs:
           --exclude='*.log' \
           --exclude='*.tmp' \
           3ds/ android/ assets/ dmca/ gamecube/ \
-          logs/ pc/ ps2/ ps3/ ps4/ psvita/ subir \
+          logs/ pc/ ps2/ ps3/ ps4/ psvita/ \
           sudachi/ wii/ wiiu/ \
           CNAME index.html robots.txt sitemap.xml styles.css
           
@@ -82,14 +82,34 @@ jobs:
           
           📤 Subiendo código fuente...
         
-    # Subir backup principal a Discord
+    # Subir backup principal a Discord (método directo más confiable)
     - name: Enviar backup del código fuente a Discord
       if: steps.create_backup.outputs.backup_too_large == 'false'
-      uses: sinshutu/upload-to-discord@master
-      env:
-        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
-      with:
-        args: backup-data/${{ steps.create_backup.outputs.backup_filename }}
+      run: |
+        echo "📤 Enviando archivo a Discord..."
+        
+        RESPONSE=$(curl -s -w "%{http_code}" -X POST \
+          -H "Content-Type: multipart/form-data" \
+          -F "file=@backup-data/${{ steps.create_backup.outputs.backup_filename }}" \
+          -F "content=📦 **Backup de chakielroms.com** - ${{ steps.date.outputs.short_date }} (${{ steps.create_backup.outputs.backup_size_human }})" \
+          "${{ secrets.DISCORD_WEBHOOK_URL }}")
+        
+        HTTP_CODE="${RESPONSE: -3}"
+        RESPONSE_BODY="${RESPONSE%???}"
+        
+        echo "Código de respuesta: $HTTP_CODE"
+        echo "Respuesta: $RESPONSE_BODY"
+        
+        if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "204" ]; then
+          echo "✅ Archivo enviado exitosamente a Discord"
+          echo "upload_success=true" >> $GITHUB_OUTPUT
+        else
+          echo "❌ Error enviando archivo a Discord"
+          echo "upload_success=false" >> $GITHUB_OUTPUT
+          echo "error_code=$HTTP_CODE" >> $GITHUB_OUTPUT
+          echo "error_response=$RESPONSE_BODY" >> $GITHUB_OUTPUT
+          exit 1
+        fi
         
     # Crear backup dividido si es muy grande
     - name: Crear backup dividido si es necesario
@@ -113,22 +133,42 @@ jobs:
         
         echo "✅ Backup dividido en $PARTS_COUNT partes de ~20MB cada una"
         
-    # Subir partes divididas si es necesario
+    # Subir partes divididas si es necesario (método directo)
     - name: Enviar partes divididas a Discord
       if: steps.create_backup.outputs.backup_too_large == 'true'
       run: |
         echo "📤 Enviando backup dividido en ${{ steps.split_backup.outputs.parts_count }} partes..."
         
-        # Enviar cada parte
+        # Enviar mensaje informativo primero
+        curl -X POST \
+          -H "Content-Type: application/json" \
+          -d "{\"content\":\"📦 **Backup dividido de chakielroms.com** - ${{ steps.date.outputs.short_date }}\\n\\n⚠️ Archivo dividido en ${{ steps.split_backup.outputs.parts_count }} partes (archivo original: ${{ steps.create_backup.outputs.backup_size_human }})\\n\\n📥 Descarga todas las partes y únelas con:\\n\`\`\`\\ncat chakielroms-part-*.tar.gz > backup-completo.tar.gz\\n\`\`\`\"}" \
+          "${{ secrets.DISCORD_WEBHOOK_URL }}"
+        
+        sleep 2
+        
+        # Enviar cada parte con curl directo
+        PART_NUM=1
         for part in backup-data/chakielroms-part-*.tar.gz; do
           if [ -f "$part" ]; then
-            echo "Enviando $(basename "$part")..."
-            curl -X POST \
+            echo "Enviando parte $PART_NUM de ${{ steps.split_backup.outputs.parts_count }}..."
+            
+            RESPONSE=$(curl -s -w "%{http_code}" -X POST \
               -H "Content-Type: multipart/form-data" \
               -F "file=@$part" \
-              "${{ secrets.DISCORD_WEBHOOK_URL }}"
+              -F "content=📦 Parte $PART_NUM/${{ steps.split_backup.outputs.parts_count }}" \
+              "${{ secrets.DISCORD_WEBHOOK_URL }}")
             
-            # Esperar un poco entre uploads para no saturar
+            HTTP_CODE="${RESPONSE: -3}"
+            
+            if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "204" ]; then
+              echo "✅ Parte $PART_NUM enviada exitosamente"
+            else
+              echo "❌ Error enviando parte $PART_NUM (código: $HTTP_CODE)"
+            fi
+            
+            PART_NUM=$((PART_NUM + 1))
+            # Esperar entre uploads para no saturar Discord
             sleep 3
           fi
         done
