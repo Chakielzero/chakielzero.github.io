@@ -52,12 +52,12 @@ jobs:
         echo "backup_size_human=$BACKUP_SIZE_HUMAN" >> $GITHUB_OUTPUT
         echo "backup_filename=chakielroms-backup-${{ steps.date.outputs.date }}.tar.gz" >> $GITHUB_OUTPUT
         
-        # Verificar si el archivo es menor a 25MB
-        if [ $BACKUP_SIZE_MB -gt 24 ]; then
-          echo "⚠️ ADVERTENCIA: Archivo de $BACKUP_SIZE_MB MB puede ser demasiado grande para Discord"
+        # Verificar si el archivo es menor a 20MB (más conservador)
+        if [ $BACKUP_SIZE_MB -gt 20 ]; then
+          echo "⚠️ Archivo de $BACKUP_SIZE_MB MB será dividido para Discord (límite conservador: 20MB)"
           echo "backup_too_large=true" >> $GITHUB_OUTPUT
         else
-          echo "✅ Archivo de $BACKUP_SIZE_MB MB está dentro del límite de Discord"
+          echo "✅ Archivo de $BACKUP_SIZE_MB MB está dentro del límite conservador"
           echo "backup_too_large=false" >> $GITHUB_OUTPUT
         fi
         
@@ -78,7 +78,7 @@ jobs:
           - **Fecha**: `${{ steps.date.outputs.short_date }}`
           - **Tamaño del backup**: `${{ steps.create_backup.outputs.backup_size_human }}`
           
-          ${{ steps.create_backup.outputs.backup_too_large == 'true' && '⚠️ **ADVERTENCIA**: El archivo puede ser demasiado grande para Discord (>24MB)' || '✅ **OK**: Archivo dentro del límite de Discord' }}
+          ${{ steps.create_backup.outputs.backup_too_large == 'true' && '📦 **Archivo será dividido**: Para evitar errores de Discord' || '✅ **OK**: Archivo dentro del límite de Discord' }}
           
           📤 Subiendo código fuente...
         
@@ -118,8 +118,8 @@ jobs:
       run: |
         echo "📦 Creando backup dividido para Discord..."
         
-        # Dividir en partes más pequeñas (20MB cada una)
-        split -b 20M backup-data/${{ steps.create_backup.outputs.backup_filename }} backup-data/chakielroms-part-
+        # Dividir en partes más pequeñas (15MB cada una para ser más seguro)
+        split -b 15M backup-data/${{ steps.create_backup.outputs.backup_filename }} backup-data/chakielroms-part-
         
         # Renombrar partes con extensión
         cd backup-data
