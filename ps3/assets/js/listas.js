@@ -41,6 +41,38 @@ const juegos = [
 
     },       
     {
+        id: "Call of Duty - Modern Warfare 2",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/codmw2.webp",
+        altText: "Call of Duty - Modern Warfare 2 (Spain)",
+        title: "Call of Duty - Modern Warfare 2 (Spain).iso",
+        downloadLink2: "https://terabox.com/s/1Q8jsJZPzd9bRZ5aPmjNjXg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Call of Duty 4 - Modern Warfare (USA)",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/codmw4.webp",
+        altText: "Call of Duty 4 - Modern Warfare (USA)",
+        title: "Call of Duty 4 - Modern Warfare (USA).iso",
+        downloadLink2: "https://terabox.com/s/1-JlOBH-TUKxEqQOLiIZdEQ" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Castlevania - Lords of Shadow 2",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/castle.webp",
+        altText: "Castlevania - Lords of Shadow 2",
+        title: "Castlevania - Lords of Shadow 2 (USA) (En,Fr,De,Es,It,Pt).iso",
+        downloadLink2: "https://terabox.com/s/1GpPiw8ZrOJOPqj6JVhmi6w" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Chavo Kart, El",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/BAYO.webp",
+        altText: "Chavo Kart, El (Latin America)",
+        title: "Chavo Kart, El (Latin America) (En,Es,Pt).iso",
+        downloadLink2: "https://terabox.com/s/1AGYf1rQbbJCai7QzDq7dLg" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Clow Tower 3 - PS2",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/clowtower3.webp",
         altText: "Clow Tower 3 - PS2",
@@ -97,6 +129,30 @@ const juegos = [
 
     },       
     {
+        id: "Dante's Inferno",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/dante.webp",
+        altText: "Dante's Inferno (USA)",
+        title: "Dante's Inferno (USA) (En,Fr,Es).iso",
+        downloadLink2: "https://terabox.com/s/1IKzU-3m2zGqcicAxDbEOXg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "DEMO Infamous",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/infademo.webp",
+        altText: "DEMO Infamous",
+        title: "DEMO Infamous.pkg",
+        downloadLink2: "https://terabox.com/s/1D97qZcD34Q7aMAult22cdQ" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "DEMO Sonic Unleashead",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/sonicdemo.webp",
+        altText: "DEMO Sonic Unleashead.pkg",
+        title: "DEMO Sonic Unleashead.pkg",
+        downloadLink2: "https://terabox.com/s/10kLpoWZL_dyLyi4R7_ZSAQ" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Def Jam Fight for NY - PS2",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/defjam.webp",
         altText: "Def Jam Fight for NY - PS2",
@@ -113,6 +169,14 @@ const juegos = [
 
     },       
     {
+        id: "Devil May Cry - DMC",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/dmc.webp",
+        altText: "Devil May Cry - DMC.iso",
+        title: "Devil May Cry - DMC.iso",
+        downloadLink2: "https://terabox.com/s/19wlBfs_UWClK2DzsDOP_VA" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Digimon All-Star Rumble",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/digimonall.webp",
         altText: "Digimon All-Star Rumble (USA) (En,Fr,Es,Pt)",
@@ -121,11 +185,43 @@ const juegos = [
 
     },       
     {
+        id: "Disney Castle of Illusion Starring Mickey Mouse",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/disneymyckey.webp",
+        altText: "Disney Castle of Illusion Starring Mickey Mouse (Europe)",
+        title: "Disney Castle of Illusion Starring Mickey Mouse (Europe).pkg (Pronto)",
+        downloadLink2: "FleuoQ" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Disney-Pixar Toy Story 3",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/toystory3.webp",
         altText: "Disney-Pixar Toy Story 3 (Europe) (En,Fr,De,Es,It,Nl)",
         title: "Disney-Pixar Toy Story 3 (Europe) (En,Fr,De,Es,It,Nl).iso",
         downloadLink2: "https://terabox.com/s/1D7NUQ3eSnLmBGydtDr6FxA" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Dragon Ball Z - Battle of Z",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/dbbatlez.webp",
+        altText: "Dragon Ball Z - Battle of Z",
+        title: "Dragon Ball Z - Battle of Z (Europe) (En,Fr,De,Es,It).iso",
+        downloadLink2: "https://terabox.com/s/1nMkpvQKpZgEN6GrXGT46Zw" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Dragon Ball Z Budokai HD Collection",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/dbbudokaihd.webp",
+        altText: "Dragon Ball Z Budokai HD Collection",
+        title: "Dragon Ball Z Budokai HD Collection.iso",
+        downloadLink2: "https://terabox.com/s/174eNrSCa5yrqZ5Z0p1zn3g" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Dragon Ball Z - Burst Limit",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/dbbur.webp",
+        altText: "Dragon Ball Z - Burst Limit (USA)",
+        title: "Dragon Ball Z - Burst Limit (USA).iso",
+        downloadLink2: "https://terabox.com/s/1oa5fieVM9ZCrqPWOubE28g" // Segundo enlace de descarga
 
     },       
     {
@@ -145,14 +241,6 @@ const juegos = [
 
     },       
     {
-        id: "Dragon Ball Z - Burst Limit",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/dbbur.webp",
-        altText: "Dragon Ball Z - Burst Limit (USA)",
-        title: "Dragon Ball Z - Burst Limit (USA).iso",
-        downloadLink2: "https://terabox.com/s/1oa5fieVM9ZCrqPWOubE28g" // Segundo enlace de descarga
-
-    },       
-    {
         id: "Dragon Ball Z - Ultimate Tenkaichi",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/dbbudokaitenk.webp",
         altText: "Dragon Ball Z - Ultimate Tenkaichi (USA) (En,Fr,Es)",
@@ -161,11 +249,11 @@ const juegos = [
 
     },       
     {
-        id: "Dragon Ball Z Budokai HD Collection",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/dbbudokaihd.webp",
-        altText: "Dragon Ball Z Budokai HD Collection",
-        title: "Dragon Ball Z Budokai HD Collection.iso",
-        downloadLink2: "https://terabox.com/s/174eNrSCa5yrqZ5Z0p1zn3g" // Segundo enlace de descarga
+        id: "Dragon Ball Xenoverse",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/dbxeno.webp",
+        altText: "Dragon Ball Xenoverse (USA)",
+        title: "Dragon Ball Xenoverse (USA) (En,Fr,Es,Pt).iso",
+        downloadLink2: "https://terabox.com/s/1weNRZi13gR7fAv6PIdi3Lg" // Segundo enlace de descarga
 
     },       
     {
@@ -182,6 +270,14 @@ const juegos = [
         altText: "DuckTales Remastered",
         title: "DuckTales Remastered.pkg",
         downloadLink2: "https://terabox.com/s/1nmiImzUSpME_zt9TXZT_uA" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Far Cry 4",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/farcry4.webp",
+        altText: "Far Cry 4 (USA)",
+        title: "Far Cry 4 (USA) (En,Fr,Es,Pt).iso",
+        downloadLink2: "https://terabox.com/s/1u5GN8-lOt0QUHzHGbuA4QA" // Segundo enlace de descarga
 
     },       
     {
@@ -225,11 +321,43 @@ const juegos = [
 
     },       
     {
+        id: "Green Lantern - Rise of the Manhunters",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/green.webp",
+        altText: "Green Lantern - Rise of the Manhunters (USA) (En,Fr,Es,Pt)",
+        title: "Green Lantern - Rise of the Manhunters (USA) (En,Fr,Es,Pt).iso",
+        downloadLink2: "https://terabox.com/s/1DXG3ooOF6tsR_1GzQqk7lA" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Ico & Shadow of the Colossus Collection, The",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/shadow.webp",
+        altText: "Ico & Shadow of the Colossus Collection, The",
+        title: "Ico & Shadow of the Colossus Collection, The (USA, Brazil) (En,Fr,Es).iso (Pronto)",
+        downloadLink2: "F56x5KEWQ" // Segundo enlace de descarga
+
+    },       
+    {
         id: "inFamous",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/infamous.webp",
         altText: "inFamous (USA) (En,Fr,Es) (v02.00)",
         title: "inFamous (USA) (En,Fr,Es) (v02.00).iso",
         downloadLink2: "https://terabox.com/s/1fQaf-xm7VbFTfXC2HOxl9w" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "J-Stars Victory Vs+",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/jstars.webp",
+        altText: "J-Stars Victory Vs+",
+        title: "J-Stars Victory Vs+ (Europe) (En,Fr,De,Es,It).iso",
+        downloadLink2: "https://terabox.com/s/1CMlbalnbr7bumLuwmCRKfg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "LEGO Marvel Super Heroes",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/legosuperheroes.webp",
+        altText: "LEGO Marvel Super Heroes",
+        title: "LEGO Marvel Super Heroes (USA) (En,Fr,Es,Pt).iso",
+        downloadLink2: "https://terabox.com/s/1PWI_oU6nhtLYnK0GUaHVYg" // Segundo enlace de descarga
 
     },       
     {
@@ -249,6 +377,14 @@ const juegos = [
 
     },       
     {
+        id: "Lollipop Chainsaw",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/lollipop.webp",
+        altText: "Lollipop Chainsaw",
+        title: "Lollipop Chainsaw (USA) (En,Fr,De,Es,It,Ru).iso",
+        downloadLink2: "https://terabox.com/s/1feVJKrFGc082EshpY7OvsQ" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Midnight Club - Los Angeles",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/midnight.webp",
         altText: "Midnight Club - Los Angeles (USA) (En,Fr,De,Es,It)",
@@ -257,11 +393,43 @@ const juegos = [
 
     },       
     {
+        id: "Minecraft - PlayStation 3 Edition",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/minecraft.webp",
+        altText: "Minecraft - PlayStation 3 Edition",
+        title: "Minecraft - PlayStation 3 Edition (USA) (En,Ja,Fr,De,Es,It,Nl,Pt,Sv,No,Da,Fi,Ko,Pl,Ru,Tr).iso",
+        downloadLink2: "https://terabox.com/s/1bPBnGURxfqPVXy311KdhEw" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Mortal Kombat",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/mortalkombat.webp",
+        altText: "Mortal Kombat",
+        title: "Mortal Kombat (USA) (En,Fr,De,Es,It,Pt).iso",
+        downloadLink2: "https://terabox.com/s/1LTdysfc4gCCfZRFPHxIqbA" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Naruto Shippuden - Ultimate Ninja Storm Generations",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/narutostorm.webp",
         altText: "Naruto Shippuden - Ultimate Ninja Storm Generations (USA) (Demo)",
         title: "Naruto Shippuden - Ultimate Ninja Storm Generations (USA) (Demo).pkg",
         downloadLink2: "https://terabox.com/s/12JGDXJ7dCAEJEMVraBIe_w" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Need for Speed - Most Wanted - A Criterion Game",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/nfs2012.webp",
+        altText: "Need for Speed - Most Wanted - A Criterion Game",
+        title: "Need for Speed - Most Wanted - A Criterion Game (USA) (En,Fr,Es).iso",
+        downloadLink2: "https://terabox.com/s/1MY58RHzsOaU_N3aeudx9hg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Need for Speed - Shift",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/nfsshift.webp",
+        altText: "Need for Speed - Shift",
+        title: "Need for Speed - Shift (Europe) (En,Fr,De,Es,Nl,It).iso",
+        downloadLink2: "https://terabox.com/s/13jAanUIPZFXAoXNEFcYshg" // Segundo enlace de descarga
 
     },       
     {
@@ -289,6 +457,14 @@ const juegos = [
 
     },       
     {
+        id: "Plants vs. Zombies - Garden Warfare",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/pvszgarden.webp",
+        altText: "Plants vs. Zombies - Garden Warfare (USA)",
+        title: "Plants vs. Zombies - Garden Warfare (USA).pkg (Pronto)",
+        downloadLink2: "18zxucvzNq6_jSw" // Segundo enlace de descarga
+
+    },       
+    {
         id: "PlayStation All-Stars Battle Royale",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/playstation.webp",
         altText: "PlayStation All-Stars Battle Royale (USA) (En,Fr,Es,Pt)",
@@ -303,6 +479,38 @@ const juegos = [
         title: "Rayman Origins (Europe) (En,Fr,De,Es,It,Nl).iso",
         downloadLink2: "https://terabox.com/s/146iLv7OrnZRcqxuh9tob-A" // Segundo enlace de descarga
 
+    },       
+    {
+        id: "Ratchet - Deadlocked HD",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/ratchetdead.webp",
+        altText: "Ratchet - Deadlocked HD (USA)",
+        title: "Ratchet - Deadlocked HD (USA).pkg",
+        downloadLink2: "https://terabox.com/s/1OU8SVRcsEr0lmg_mlB6bfw" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Red Dead Redemption",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/reddead.webp",
+        altText: "Red Dead Redemption",
+        title: "Red Dead Redemption (USA) (En,Fr,De,Es,It).iso",
+        downloadLink2: "https://terabox.com/s/1yPpb4EkCXWXHfGsFo3NQKQ" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Resident Evil 4 HD",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/RE4HD.webp",
+        altText: "Resident Evil 4 HD",
+        title: "Resident Evil 4 HD.pkg (Pronto)",
+        downloadLink2: "ZRsgPPa6w" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Resident Evil 5",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/residente5.webp",
+        altText: "Resident Evil 5",
+        title: "Resident Evil 5 (USA) (En,Ja,Fr,De,Es,It).iso",
+        downloadLink2: "https://terabox.com/s/1gvEjPgsqMcUdTjIcN3SlKw" // Segundo enlace de descarga
+
     },
     {
         id: "Resident Evil 5",
@@ -310,6 +518,14 @@ const juegos = [
         altText: "Resident Evil 5 (DEMO)",
         title: "Resident Evil 5 (DEMO).pkg",
         downloadLink2: "https://terabox.com/s/1RHPsbSoR_-hUjWsr7xp7ZQ" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Resident Evil 6",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/re6.webp",
+        altText: "Resident Evil 6",
+        title: "Resident Evil 6 (Europe) (En,Fr,De,Es,It,Pt,Pl,Ru).iso",
+        downloadLink2: "https://terabox.com/s/1IYzN_3bFGVhWim0PmDP9BA" // Segundo enlace de descarga
 
     },       
     {
@@ -329,11 +545,67 @@ const juegos = [
 
     },       
     {
+        id: "Sonic Generations",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/sonicgen.webp",
+        altText: "Sonic Generations",
+        title: "Sonic Generations (Europe) (En,Ja,Fr,De,Es,It).iso",
+        downloadLink2: "https://terabox.com/s/15m4A0z_KFci6CnTsxKt8lQ" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Sonic The Hedgehog 4 - Episode II",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/sonic4episade2.webp",
         altText: "Sonic The Hedgehog 4 - Episode II (USA) (Trial)",
         title: "Sonic The Hedgehog 4 - Episode II (USA) (Trial).pkg",
         downloadLink2: "https://terabox.com/s/1-3eHQBgWgYlurtS9tHyVYg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Sonic Unleashed",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/sonicun.webp",
+        altText: "Sonic Unleashed",
+        title: "Sonic Unleashed (Europe) (En,Ja,Fr,De,Es,It).iso",
+        downloadLink2: "https://terabox.com/s/1IKZE2mCzVd6oHrLeUG8UoA" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Spider-Man 3 - Collector's Edition",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/spiderman3.webp",
+        altText: "Spider-Man 3 - Collector's Edition",
+        title: "Spider-Man 3 - Collector's Edition (Europe) (Fr,De,Es,It).iso",
+        downloadLink2: "https://terabox.com/s/1V0WmprM6OhHSfndKwVNEMg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Spider-Man Edge of Time",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/spidermanedge.webp",
+        altText: "Spider-Man Edge of Time",
+        title: "Spider-Man Edge of Time.iso",
+        downloadLink2: "https://terabox.com/s/1tLAl_oak64UhR0Wn9U0pvw" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Street Fighter IV",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/streetiv.webp",
+        altText: "Street Fighter IV",
+        title: "Street Fighter IV (Europe) (En,Fr,De,Es,It).iso",
+        downloadLink2: "https://terabox.com/s/13wyxgpcsJfqWb1tBtGG_VA" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Tekken 5 - Dark Resurrection",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/tekken5.webp",
+        altText: "Tekken 5 - Dark Resurrection",
+        title: "Tekken 5 - Dark Resurrection (USA).pkg",
+        downloadLink2: "https://terabox.com/s/1Jpr4CLzVmcPCEoZs5W3UQA" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Tekken 6",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/tekken6.webp",
+        altText: "Tekken 6",
+        title: "Tekken 6 (USA) (En,Ja,Fr,De,Es,It,Ko,Ru).iso",
+        downloadLink2: "https://terabox.com/s/1sZ7edkV3GU1lBrTWYhf8NA" // Segundo enlace de descarga
 
     },       
     {
@@ -345,11 +617,35 @@ const juegos = [
 
     },       
     {
+        id: "The Amazing Spider-Man 2",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/theaspiderman2.webp",
+        altText: "The Amazing Spider-Man 2",
+        title: "The Amazing Spider-Man 2 (Europe) (En,Fr,De,Es,It).iso",
+        downloadLink2: "https://terabox.com/s/1qsbwlyXNSB2_ox04kGfnyw" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "The Last of Us",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/thelastofus.webp",
+        altText: "The Last of Us",
+        title: "The Last of Us.iso (Pronto)",
+        downloadLink2: "s20NBxnmg" // Segundo enlace de descarga
+
+    },       
+    {
         id: "TMNT - Turtles in Time Re-Shelled",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/turtle.webp",
         altText: "TMNT - Turtles in Time Re-Shelled",
         title: "TMNT - Turtles in Time Re-Shelled.iso",
         downloadLink2: "https://terabox.com/s/1kyswTHO2d7J42gi0d4YHSw" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Uncharted 2 - Among Thieves",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/uncharted2.webp",
+        altText: "Uncharted 2 - Among Thieves",
+        title: "Uncharted 2 - Among Thieves (USA) (En,Fr,Es).iso",
+        downloadLink2: "https://terabox.com/s/1bpsMZT_08ddk78VmFHXyxg" // Segundo enlace de descarga
 
     },
     {
@@ -358,6 +654,22 @@ const juegos = [
         altText: "Virtua Fighter 5 (USA) (En,Ja,Fr,De,Es,It)",
         title: "Virtua Fighter 5 (USA) (En,Ja,Fr,De,Es,It).iso",
         downloadLink2: "https://terabox.com/s/1PbYUPDtba3vpy-9M20Qmuw" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Wipeout HD",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/WIPEOUT.webp",
+        altText: "Wipeout HD",
+        title: "Wipeout HD.pkg (Pronto)",
+        downloadLink2: "hhwIlHsg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "WRC 5",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/wrc5.webp",
+        altText: "WRC 5",
+        title: "WRC 5 (USA) (En,Fr,De,Es,It).iso (Pronto)",
+        downloadLink2: "hhwIlHsg" // Segundo enlace de descarga
 
     },       
     {
