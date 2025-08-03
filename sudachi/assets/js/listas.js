@@ -1,11 +1,19 @@
 // Lista de juegos
 const juegos = [       
     {
-        id: "A Short Hike",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/HIKE.webp",
-        altText: "A Short Hike",
-        title: "A Short Hike.nsp",
-        downloadLink2: "https://terabox.com/s/1QLkxNwHn56_RdAPaxRIpCA" // Segundo enlace de descarga
+        id: "Alan Wake Remastered",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/alan.webp",
+        altText: "Alan Wake Remastered",
+        title: "Alan Wake Remastered.nsp",
+        downloadLink2: "https://terabox.com/s/19u3FVVuICRN6-RPvyMG-wQ" // Segundo enlace de descarga
+    },       
+    {
+        id: "Animal Crossing New Horizons",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/animal.webp",
+        altText: "Animal Crossing New Horizons",
+        title: "Animal Crossing New Horizons.nsp",
+        downloadLink2: "https://terabox.com/s/1AKLi6KTZeOnG_QNvTnGWaw" // Segundo enlace de descarga
+
     },       
     {
         id: "ANIMAL WELL",
@@ -21,6 +29,30 @@ const juegos = [
         altText: "ARMS",
         title: "ARMS.nsp",
         downloadLink2: "https://terabox.com/s/1xx0pp2yebYGcnmWbuhcw4Q" // Segundo enlace de descarga
+            
+    },
+    {
+        id: "A Short Hike",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/HIKE.webp",
+        altText: "A Short Hike",
+        title: "A Short Hike.nsp",
+        downloadLink2: "https://terabox.com/s/1QLkxNwHn56_RdAPaxRIpCA" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Astral Chain",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/astral.webp",
+        altText: "Astral Chain",
+        title: "Astral Chain.xci",
+        downloadLink2: "https://terabox.com/s/1JLrjJ-vd57od0102szuwFw" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Attack on Titan 2",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/aot2.webp",
+        altText: "Attack on Titan 2",
+        title: "Attack on Titan 2.nsp",
+        downloadLink2: "https://terabox.com/s/1FOaO1ZE0X7GA55953C7fIw" // Segundo enlace de descarga
 
     },       
     {
@@ -48,11 +80,27 @@ const juegos = [
 
     },       
     {
+        id: "Bayonetta",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BAYO.webp",
+        altText: "Bayonetta",
+        title: "Bayonetta.nsp (Pronto)",
+        downloadLink2: "hd5Tg" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Bayonetta 2",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BAYO2.webp",
         altText: "Bayonetta 2",
         title: "Bayonetta 2.nsp",
         downloadLink2: "https://terabox.com/s/1Zflp75ozyF3lzBxuvSDCvw" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Bayonetta 3",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BAYO3.webp",
+        altText: "Bayonetta 2",
+        title: "Bayonetta 2.nsp (Pronto)",
+        downloadLink2: "f0FQ" // Segundo enlace de descarga
 
     },       
     {
@@ -168,11 +216,27 @@ const juegos = [
 
     },       
     {
+        id: "Dark Souls Remastered",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/dark.webp",
+        altText: "Dark Souls Remastered",
+        title: "Dark Souls Remastered.nsp",
+        downloadLink2: "https://terabox.com/s/1ZYEaNLOvH7MVBPSeIz62XQ" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Demon Slayer Kimetsu no Yaiba The Hinokami Chronicles",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/KMY.webp",
         altText: "Demon Slayer Kimetsu no Yaiba The Hinokami Chronicles",
         title: "Demon Slayer Kimetsu no Yaiba The Hinokami Chronicles.xci",
         downloadLink2: "https://terabox.com/s/1deH9vO28IimUKC61PV1YJg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Devil May Cry 3 : Special Edition",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/dmc3.webp",
+        altText: "Devil May Cry 3 : Special Edition",
+        title: "Devil May Cry 3 : Special Edition.nsp",
+        downloadLink2: "https://terabox.com/s/1M2YovYSf_RcxVTwmFleuoQ" // Segundo enlace de descarga
 
     },       
     {
@@ -224,6 +288,14 @@ const juegos = [
 
     },       
     {
+        id: "Dragons Dogma Dark Arisen",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/dragondogma.webp",
+        altText: "Dragons Dogma Dark Arisen",
+        title: "Dragons Dogma Dark Arisen.nsp",
+        downloadLink2: "https://terabox.com/s/1oEulO9uh4a7zDrt7L46ewA" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Dying light Platinum Edition",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/DYING.webp",
         altText: "Dying light Platinum Edition",
@@ -237,6 +309,22 @@ const juegos = [
         altText: "EA SPORTS FIFA 23 Legacy Edition",
         title: "EA SPORTS FIFA 23 Legacy Edition.xci",
         downloadLink2: "https://terabox.com/s/172o7t09Qg1VBgJthSfHTNg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "EA SPORTS FC 2024",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/ea2024.webp",
+        altText: "EA SPORTS FC 2024",
+        title: "EA SPORTS FC 2024.xci",
+        downloadLink2: "https://terabox.com/s/1an_nDAs9wIyDp2hFs5VDcw" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Fire Emblem Engage",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/fireembledengage.webp",
+        altText: "Fire Emblem Engage",
+        title: "Fire Emblem Engage.nsp",
+        downloadLink2: "https://terabox.com/s/1lwUx6w4c1XB9pX-2vr_H7w" // Segundo enlace de descarga
 
     },       
     {
@@ -424,6 +512,22 @@ const juegos = [
 
     },       
     {
+        id: "Mario Tennis Ace",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/mariotennis.webp",
+        altText: "Mario Tennis Ace",
+        title: "Mario Tennis Ace.nsp",
+        downloadLink2: "https://terabox.com/s/1Zbt5U4LZyb2NnJWjhBBIVQ" // Segundo enlace de descarga
+     
+    },       
+    {
+        id: "Mario & Luigi Brothership",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/marioyluigi.webp",
+        altText: "Mario & Luigi Brothership",
+        title: "Mario & Luigi Brothership.nsp",
+        downloadLink2: "https://terabox.com/s/1SG8E0_AHTqldcF56x5KEWQ" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Mario y Sonic en los Juegos Olympicos Tokio 2020",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/MARIOYSONIC.webp",
         altText: "Mario y Sonic en los Juegos Olympicos Tokio 2020",
@@ -608,6 +712,14 @@ const juegos = [
 
     },       
     {
+        id: "PERSONA 3 PORTABLE",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/persona3.webp",
+        altText: "PERSONA 3 PORTABLE",
+        title: "PERSONA 3 PORTABLE.xci",
+        downloadLink2: "https://terabox.com/s/1V0rauZa9REeXR2R6wJWkBg" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Persona 5 Royal",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/PS5RL.webp",
         altText: "Persona 5 Royal",
@@ -621,6 +733,14 @@ const juegos = [
         altText: "Plastomorphosis",
         title: "Plastomorphosis.nsp",
         downloadLink2: "https://terabox.com/s/1pXeGysqlCpA09IEZsHzU2Q" // Segundo enlace de descarga
+      
+    },       
+    {
+        id: "Pokemon Diamante Brillante",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/pokemondb.webp",
+        altText: "Pokemon Diamante Brillante",
+        title: "Pokemon Diamante Brillante.nsp",
+        downloadLink2: "https://terabox.com/s/1LN-9wz86Qs1Fj5G3hc3Btw" // Segundo enlace de descarga
 
     },       
     {
@@ -653,6 +773,22 @@ const juegos = [
         altText: "Pokémon Leyendas Arceus",
         title: "Pokémon Leyendas Arceus.xci",
         downloadLink2: "https://terabox.com/s/1ghqUU9fRKsu29OQeI7n99Q" // Segundo enlace de descarga  
+        
+    },       
+    {
+        id: "Pokemon Mundo Misterioso: Equipo de Rescate DX",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/pokemonmis.webp",
+        altText: "Pokemon Mundo Misterioso: Equipo de Rescate DX",
+        title: "Pokemon Mundo Misterioso: Equipo de Rescate DX.nsp",
+        downloadLink2: "https://terabox.com/s/1NxpwH57RruA6cxwvx0MSFg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Pokemon Perla Relociente",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/pokemonpr.webp",
+        altText: "Pokemon Perla Relociente",
+        title: "Pokemon Perla Relociente.nsp",
+        downloadLink2: "https://terabox.com/s/1nH2RlaCg9Ix7xeNO2uoWow" // Segundo enlace de descarga
 
     },       
     {
@@ -848,6 +984,22 @@ const juegos = [
 
     },       
     {
+        id: "Splatoon 2",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/splatoon2.webp",
+        altText: "Splatoon 2",
+        title: "Splatoon 2.xci (Pronto)",
+        downloadLink2: "sg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Splatoon 3",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/splatoon3.webp",
+        altText: "Splatoon 3",
+        title: "Splatoon 3.nsp",
+        downloadLink2: "https://terabox.com/s/1TI6N9C2894IUPXwGLSqj5Q" // Segundo enlace de descarga
+
+    },       
+    {
         id: "SpongeBob SquarePants: The Cosmic Shake",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BOB.webp",
         altText: "SpongeBob SquarePants: The Cosmic Shake",
@@ -925,6 +1077,14 @@ const juegos = [
         altText: "Super Smash Bros Ultimate",
         title: "Super Smash Bros Ultimate.nsp",
         downloadLink2: "https://terabox.com/s/1OG1YkBFDZW0C9IxaTg3YAQ" // Segundo enlace de descarga
+        
+    },       
+    {
+        id: "Teenage Mutant Ninja Turtles Splintered Fate",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/tortugas.webp",
+        altText: "Teenage Mutant Ninja Turtles Splintered Fate",
+        title: "Teenage Mutant Ninja Turtles Splintered Fate.nsp",
+        downloadLink2: "https://terabox.com/s/11nFGxUE18zxucvzNq6_jSw" // Segundo enlace de descarga
 
     },       
     {
@@ -1005,6 +1165,14 @@ const juegos = [
         altText: "WRC 10",
         title: "WRC 10.xci",
         downloadLink2: "https://terabox.com/s/1dyOjl4i3Kby3voUtzHm9fg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Xenoblade Chronicles X Definitive Edition",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/xenox.webp",
+        altText: "Xenoblade Chronicles X Definitive Edition",
+        title: "Xenoblade Chronicles X Definitive Edition.xci",
+        downloadLink2: "https://terabox.com/s/1bLBmb2G0q-ZlvWTtW8cChg" // Segundo enlace de descarga
     }
 ];
 
