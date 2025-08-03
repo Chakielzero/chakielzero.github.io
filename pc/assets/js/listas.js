@@ -500,8 +500,8 @@ const juegos = [
         id: "State of Decay 2",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/sod2.webp",
         altText: "State of Decay 2",
-        title: "State of Decay 2 (Pronto)",
-        downloadLink2: "dcAxDbEOXg" // Segundo enlace de descarga
+        title: "State of Decay 2",
+        downloadLink2: "https://terabox.com/s/1mB2JSjZcmWiZRHd_hmZl-A" // Segundo enlace de descarga
 
     },       
     {
@@ -580,8 +580,8 @@ const juegos = [
         id: "Tony Hawks Pro Skater 3 y 4",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/tony3y4.webp",
         altText: "Tony Hawks Pro Skater 3 y 4",
-        title: "Tony Hawks Pro Skater 3 y 4 (Pronto)",
-        downloadLink2: "daMAult22cdQ" // Segundo enlace de descarga
+        title: "Tony Hawks Pro Skater 3 y 4",
+        downloadLink2: "https://terabox.com/s/1ObfV3Iu-IhCW02GZ9p6F-w" // Segundo enlace de descarga
 
     },       
     {
