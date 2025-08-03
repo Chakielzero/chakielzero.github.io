@@ -83,8 +83,8 @@ const juegos = [
         id: "Bayonetta",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BAYO.webp",
         altText: "Bayonetta",
-        title: "Bayonetta.nsp (Pronto)",
-        downloadLink2: "hd5Tg" // Segundo enlace de descarga
+        title: "Bayonetta.nsp",
+        downloadLink2: "https://terabox.com/s/1qBRUJBWDpVrHYAsKPXwP8w" // Segundo enlace de descarga
 
     },       
     {
@@ -99,8 +99,8 @@ const juegos = [
         id: "Bayonetta 3",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/BAYO3.webp",
         altText: "Bayonetta 2",
-        title: "Bayonetta 2.nsp (Pronto)",
-        downloadLink2: "f0FQ" // Segundo enlace de descarga
+        title: "Bayonetta 2.nsp",
+        downloadLink2: "https://terabox.com/s/1qbN4cG1o87Pw1LTdcLIMww" // Segundo enlace de descarga
 
     },       
     {
@@ -987,8 +987,8 @@ const juegos = [
         id: "Splatoon 2",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/sudachi/splatoon2.webp",
         altText: "Splatoon 2",
-        title: "Splatoon 2.xci (Pronto)",
-        downloadLink2: "sg" // Segundo enlace de descarga
+        title: "Splatoon 2.xci",
+        downloadLink2: "https://terabox.com/s/1R_YSiJAh76QA37bgI6NXAw" // Segundo enlace de descarga
 
     },       
     {
