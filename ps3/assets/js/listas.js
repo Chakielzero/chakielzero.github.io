@@ -66,7 +66,7 @@ const juegos = [
     },       
     {
         id: "Chavo Kart, El",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/BAYO.webp",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/chavo.webp",
         altText: "Chavo Kart, El (Latin America)",
         title: "Chavo Kart, El (Latin America) (En,Es,Pt).iso",
         downloadLink2: "https://terabox.com/s/1AGYf1rQbbJCai7QzDq7dLg" // Segundo enlace de descarga
