@@ -15,6 +15,14 @@ const juegos = [
         title: "Alone In The Dark",
         downloadLink2: "https://terabox.com/s/1n0mT_DM6yLnnmxjra-X-sw" // Segundo enlace de descarga
 
+   },
+   {
+        id: "Assasing Creed",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/assasing.webp",
+        altText: "Assasing Creed",
+        title: "Assasing Creed",
+        downloadLink2: "https://terabox.com/s/1MuTkzEEPUZ83sbXyI_-sig" // Segundo enlace de descarga
+
     },       
     {
         id: "Assassin's Creed Rogue",
@@ -70,6 +78,14 @@ const juegos = [
         altText: "CRISIS CORE FINAL FANTASY VII REUNION",
         title: "CRISIS CORE FINAL FANTASY VII REUNION",
         downloadLink2: "https://terabox.com/s/1JbMg10BDOjmBhjgbIAhHug" // Segundo enlace de descarga
+
+   },
+   {
+        id: "Cyberpunk 2077",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/cyber.webp",
+        altText: "Cyberpunk 2077",
+        title: "Cyberpunk 2077",
+        downloadLink2: "https://terabox.com/s/1mZlDg13CWPKx-IE843JQtQ" // Segundo enlace de descarga
         
     },       
     {
@@ -193,6 +209,14 @@ const juegos = [
 
     },       
     {
+        id: "Grand Theft Auto San Andreas",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/gtasa.webp",
+        altText: "Grand Theft Auto San Andreas",
+        title: "Grand Theft Auto San Andreas",
+        downloadLink2: "https://terabox.com/s/19nSFEOLqHd-treaVnCgCWw" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Grand Theft Auto V",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/gtav.webp",
         altText: "Grand Theft Auto V",
@@ -206,6 +230,14 @@ const juegos = [
         altText: "Grand Theft Auto IV",
         title: "Grand Theft Auto IV",
         downloadLink2: "https://nephobox.com/s/1f1khERQaToGYmQAYCzXmHw" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Hellblade Senuas Sacrifice",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/hell.webp",
+        altText: "Hellblade Senuas Sacrifice",
+        title: "Hellblade Senuas Sacrifice",
+        downloadLink2: "https://terabox.com/s/1h-kmD4TOcEhFC5aCNuXWgg" // Segundo enlace de descarga
 
     },       
     {
@@ -246,6 +278,14 @@ const juegos = [
         altText: "Kingdom Hearts III",
         title: "Kingdom Hearts III",
         downloadLink2: "https://terabox.com/s/1GO8PkbnrcB-s9Nv5T4h_ew" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Left 4 Dead 2",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/l4d2.webp",
+        altText: "Left 4 Dead 2",
+        title: "Left 4 Dead 2",
+        downloadLink2: "https://terabox.com/s/15ZVdC4UDqYvmVDFpx1Dl0A" // Segundo enlace de descarga
 
     },       
     {
@@ -377,6 +417,14 @@ const juegos = [
 
     },       
     {
+        id: "Resident Evil 6",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/re6.webp",
+        altText: "Resident Evil 6",
+        title: "Resident Evil 6",
+        downloadLink2: "https://terabox.com/s/1FlQ7LK09MGMxfPAFHmyoiQ" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Resident Evil 7 DX11",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/re7.webp",
         altText: "Resident Evil 7 DX11",
@@ -449,6 +497,14 @@ const juegos = [
 
     },       
     {
+        id: "State of Decay 2",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/sod2.webp",
+        altText: "State of Decay 2",
+        title: "State of Decay 2 (Pronto)",
+        downloadLink2: "dcAxDbEOXg" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Stray",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/Stray.webp",
         altText: "Stray",
@@ -518,6 +574,14 @@ const juegos = [
         altText: "The Witcher 3",
         title: "The Witcher 3",
         downloadLink2: "https://terabox.com/s/1pFxcJglip4IDxj6hnIonFg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Tony Hawks Pro Skater 3 y 4",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/tony3y4.webp",
+        altText: "Tony Hawks Pro Skater 3 y 4",
+        title: "Tony Hawks Pro Skater 3 y 4 (Pronto)",
+        downloadLink2: "daMAult22cdQ" // Segundo enlace de descarga
 
     },       
     {
