@@ -188,8 +188,8 @@ const juegos = [
         id: "Disney Castle of Illusion Starring Mickey Mouse",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/disneymyckey.webp",
         altText: "Disney Castle of Illusion Starring Mickey Mouse (Europe)",
-        title: "Disney Castle of Illusion Starring Mickey Mouse (Europe).pkg (Pronto)",
-        downloadLink2: "FleuoQ" // Segundo enlace de descarga
+        title: "Disney Castle of Illusion Starring Mickey Mouse (Europe).pkg",
+        downloadLink2: "https://terabox.com/s/1HmwXZhWbhXYz1XHst4yq5g" // Segundo enlace de descarga
 
     },       
     {
@@ -332,8 +332,8 @@ const juegos = [
         id: "Ico & Shadow of the Colossus Collection, The",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/shadow.webp",
         altText: "Ico & Shadow of the Colossus Collection, The",
-        title: "Ico & Shadow of the Colossus Collection, The (USA, Brazil) (En,Fr,Es).iso (Pronto)",
-        downloadLink2: "F56x5KEWQ" // Segundo enlace de descarga
+        title: "Ico & Shadow of the Colossus Collection, The (USA, Brazil) (En,Fr,Es).iso",
+        downloadLink2: "https://terabox.com/s/1q0Wp0yRwkiQtMJ8D4jsUwg" // Segundo enlace de descarga
 
     },       
     {
@@ -460,8 +460,8 @@ const juegos = [
         id: "Plants vs. Zombies - Garden Warfare",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/pvszgarden.webp",
         altText: "Plants vs. Zombies - Garden Warfare (USA)",
-        title: "Plants vs. Zombies - Garden Warfare (USA).pkg (Pronto)",
-        downloadLink2: "18zxucvzNq6_jSw" // Segundo enlace de descarga
+        title: "Plants vs. Zombies - Garden Warfare (USA).pkg",
+        downloadLink2: "https://terabox.com/s/1ihPflG-1dTC9L2LbwUdhFQ" // Segundo enlace de descarga
 
     },       
     {
@@ -500,8 +500,8 @@ const juegos = [
         id: "Resident Evil 4 HD",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/RE4HD.webp",
         altText: "Resident Evil 4 HD",
-        title: "Resident Evil 4 HD.pkg (Pronto)",
-        downloadLink2: "ZRsgPPa6w" // Segundo enlace de descarga
+        title: "Resident Evil 4 HD.pkg",
+        downloadLink2: "https://terabox.com/s/1dLBMXIFTFjFclMCAiWAFmg" // Segundo enlace de descarga
 
     },       
     {
@@ -628,8 +628,8 @@ const juegos = [
         id: "The Last of Us",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/thelastofus.webp",
         altText: "The Last of Us",
-        title: "The Last of Us.iso (Pronto)",
-        downloadLink2: "s20NBxnmg" // Segundo enlace de descarga
+        title: "The Last of Us.iso",
+        downloadLink2: "https://terabox.com/s/1c8uWtKZkjOElgbA8uwZnUQ" // Segundo enlace de descarga
 
     },       
     {
@@ -661,15 +661,15 @@ const juegos = [
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/WIPEOUT.webp",
         altText: "Wipeout HD",
         title: "Wipeout HD.pkg (Pronto)",
-        downloadLink2: "hhwIlHsg" // Segundo enlace de descarga
+        downloadLink2: "https://terabox.com/s/1ZX0VsWe_bQy-kcGWSCpp5Q" // Segundo enlace de descarga
 
     },       
     {
         id: "WRC 5",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3/wrc5.webp",
         altText: "WRC 5",
-        title: "WRC 5 (USA) (En,Fr,De,Es,It).iso (Pronto)",
-        downloadLink2: "hhwIlHsg" // Segundo enlace de descarga
+        title: "WRC 5 (USA) (En,Fr,De,Es,It).iso",
+        downloadLink2: "https://terabox.com/s/1zqPSCYShS3t2j9qY42Vz7w" // Segundo enlace de descarga
 
     },       
     {
