@@ -112,7 +112,7 @@ const juegos = [
     },       
     {
         id: "Counter Strike 1.6",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/mmj.webp",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/counter.webp",
         altText: "Counter Strike 1.6",
         title: "Counter Strike 1.6 Port.apk",
         downloadLink2: "https://terabox.com/s/1c_RfGD7OUMV65qmhxeqc5g" // Segundo enlace de descarga
