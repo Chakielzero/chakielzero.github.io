@@ -1,23 +1,73 @@
-=== VERIFICACIÓN DE ENLACES ROTOS - 2025-08-27 03:37:49 UTC ===
+=== VERIFICACIÓN DE ENLACES ROTOS - 2025-08-28 03:39:01 UTC ===
 
 🌐 Dominio verificado: https://chakielroms.com
-📅 Fecha de verificación: 2025-08-27 03:37:49 UTC
+📅 Fecha de verificación: 2025-08-28 03:39:01 UTC
 
 📄 Archivos HTML encontrados: 14
-./psvita/index.html
-./sudachi/index.html
-./wii/index.html
-./android/index.html
-./ps2/index.html
-./ps4/index.html
+./pc/index.html
 ./3ds/index.html
+./psvita/index.html
+./ps4/index.html
+./gamecube/index.html
+./wii/index.html
+./ps2/index.html
+./sudachi/index.html
+./android/index.html
+./ps3/index.html
 ./wiiu/dmca/index.html
 ./wiiu/index.html
-./pc/index.html
-./ps3/index.html
 ./dmca/index.html
 ./index.html
-./gamecube/index.html
+
+🔍 Analizando: ./pc/index.html
+  📎 Enlaces href encontrados:
+    - http://chakielroms.com/pc/
+    - assets/icons/icon.png
+    - /site.webmanifest
+    - assets/icons/favicon.ico
+    - https://chakielroms.com/android/assets/css/dark.css
+    - https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap
+    - https://www.youtube.com/@ChakielZero
+    - https://www.tiktok.com/@chakielzero
+    - https://www.instagram.com/gerardo.bricenoo/
+    - https://www.chakielemuladores.com/
+    - https://chakielroms.com
+    - https://youtube.com/shorts/2m-sf_1oz9o?si=_7jnDIUxUeWeH5ev
+    - https://chakielroms.com/dmca
+  🖼️ Enlaces src encontrados:
+    - images.jpeg
+    - chakiel.png
+    - assets/icons/youtube.png
+    - assets/icons/tiktok.png
+    - assets/icons/instagram.png
+    - assets/icons/chakiel.png
+    - https://chakielroms.com/android/assets/js/game.js
+    - assets/js/listas.js
+
+🔍 Analizando: ./3ds/index.html
+  📎 Enlaces href encontrados:
+    - http://chakielroms.com/3ds/
+    - assets/icons/icon.png
+    - /site.webmanifest
+    - assets/icons/favicon.ico
+    - https://chakielroms.com/android/assets/css/dark.css
+    - https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap
+    - https://www.youtube.com/@ChakielZero
+    - https://www.tiktok.com/@chakielzero
+    - https://www.instagram.com/gerardo.bricenoo/
+    - https://www.chakielemuladores.com/
+    - https://chakielroms.com
+    - https://youtube.com/shorts/2m-sf_1oz9o?si=_7jnDIUxUeWeH5ev
+    - https://chakielroms.com/dmca
+  🖼️ Enlaces src encontrados:
+    - images.jpeg
+    - chakiel.png
+    - assets/icons/youtube.png
+    - assets/icons/tiktok.png
+    - assets/icons/instagram.png
+    - assets/icons/chakiel.png
+    - https://chakielroms.com/android/assets/js/game.js
+    - assets/js/listas.js
 
 🔍 Analizando: ./psvita/index.html
   📎 Enlaces href encontrados:
@@ -44,9 +94,33 @@
     - https://chakielroms.com/android/assets/js/game.js
     - assets/js/listas.js
 
-🔍 Analizando: ./sudachi/index.html
+🔍 Analizando: ./ps4/index.html
   📎 Enlaces href encontrados:
-    - http://chakielroms.com/sudachi/
+    - http://chakielroms.com/ps4/
+    - assets/icons/icon.png
+    - /site.webmanifest
+    - assets/icons/favicon.ico
+    - https://chakielroms.com/android/assets/css/dark.css
+    - https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap
+    - https://www.youtube.com/@ChakielZero
+    - https://www.tiktok.com/@chakielzero
+    - https://www.instagram.com/gerardo.bricenoo/
+    - https://www.chakielemuladores.com/
+    - https://youtube.com/shorts/2m-sf_1oz9o?si=_7jnDIUxUeWeH5ev
+    - https://chakielroms.com/dmca
+  🖼️ Enlaces src encontrados:
+    - images.jpeg
+    - chakiel.png
+    - assets/icons/youtube.png
+    - assets/icons/tiktok.png
+    - assets/icons/instagram.png
+    - assets/icons/chakiel.png
+    - https://chakielroms.com/android/assets/js/game.js
+    - assets/js/listas.js
+
+🔍 Analizando: ./gamecube/index.html
+  📎 Enlaces href encontrados:
+    - http://chakielroms.com/gamecube/
     - assets/icons/icon.png
     - /site.webmanifest
     - assets/icons/favicon.ico
@@ -94,31 +168,6 @@
     - https://chakielroms.com/android/assets/js/game.js
     - assets/js/listas.js
 
-🔍 Analizando: ./android/index.html
-  📎 Enlaces href encontrados:
-    - http://chakielroms.com/android/
-    - assets/icons/icon.png
-    - /site.webmanifest
-    - assets/icons/favicon.ico
-    - https://chakielroms.com/android/assets/css/dark.css
-    - https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap
-    - https://www.youtube.com/@ChakielZero
-    - https://www.tiktok.com/@chakielzero
-    - https://www.instagram.com/gerardo.bricenoo/
-    - https://www.chakielemuladores.com/
-    - https://chakielroms.com
-    - https://youtube.com/shorts/2m-sf_1oz9o?si=_7jnDIUxUeWeH5ev
-    - https://chakielroms.com/dmca
-  🖼️ Enlaces src encontrados:
-    - images.jpeg
-    - chakiel.png
-    - assets/icons/youtube.png
-    - assets/icons/tiktok.png
-    - assets/icons/instagram.png
-    - assets/icons/chakiel.png
-    - assets/js/game.js
-    - assets/js/listas.js
-
 🔍 Analizando: ./ps2/index.html
   📎 Enlaces href encontrados:
     - http://chakielroms.com/ps2/
@@ -144,9 +193,9 @@
     - https://chakielroms.com/android/assets/js/game.js
     - assets/js/listas.js
 
-🔍 Analizando: ./ps4/index.html
+🔍 Analizando: ./sudachi/index.html
   📎 Enlaces href encontrados:
-    - http://chakielroms.com/ps4/
+    - http://chakielroms.com/sudachi/
     - assets/icons/icon.png
     - /site.webmanifest
     - assets/icons/favicon.ico
@@ -156,6 +205,7 @@
     - https://www.tiktok.com/@chakielzero
     - https://www.instagram.com/gerardo.bricenoo/
     - https://www.chakielemuladores.com/
+    - https://chakielroms.com
     - https://youtube.com/shorts/2m-sf_1oz9o?si=_7jnDIUxUeWeH5ev
     - https://chakielroms.com/dmca
   🖼️ Enlaces src encontrados:
@@ -168,9 +218,34 @@
     - https://chakielroms.com/android/assets/js/game.js
     - assets/js/listas.js
 
-🔍 Analizando: ./3ds/index.html
+🔍 Analizando: ./android/index.html
   📎 Enlaces href encontrados:
-    - http://chakielroms.com/3ds/
+    - http://chakielroms.com/android/
+    - assets/icons/icon.png
+    - /site.webmanifest
+    - assets/icons/favicon.ico
+    - https://chakielroms.com/android/assets/css/dark.css
+    - https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap
+    - https://www.youtube.com/@ChakielZero
+    - https://www.tiktok.com/@chakielzero
+    - https://www.instagram.com/gerardo.bricenoo/
+    - https://www.chakielemuladores.com/
+    - https://chakielroms.com
+    - https://youtube.com/shorts/2m-sf_1oz9o?si=_7jnDIUxUeWeH5ev
+    - https://chakielroms.com/dmca
+  🖼️ Enlaces src encontrados:
+    - images.jpeg
+    - chakiel.png
+    - assets/icons/youtube.png
+    - assets/icons/tiktok.png
+    - assets/icons/instagram.png
+    - assets/icons/chakiel.png
+    - assets/js/game.js
+    - assets/js/listas.js
+
+🔍 Analizando: ./ps3/index.html
+  📎 Enlaces href encontrados:
+    - http://chakielroms.com/ps3/
     - assets/icons/icon.png
     - /site.webmanifest
     - assets/icons/favicon.ico
@@ -237,56 +312,6 @@
     - assets/icons/discord.png
     - assets/icons/telegram.png
     - assets/icons/tiktok.png
-    - https://chakielroms.com/android/assets/js/game.js
-    - assets/js/listas.js
-
-🔍 Analizando: ./pc/index.html
-  📎 Enlaces href encontrados:
-    - http://chakielroms.com/pc/
-    - assets/icons/icon.png
-    - /site.webmanifest
-    - assets/icons/favicon.ico
-    - https://chakielroms.com/android/assets/css/dark.css
-    - https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap
-    - https://www.youtube.com/@ChakielZero
-    - https://www.tiktok.com/@chakielzero
-    - https://www.instagram.com/gerardo.bricenoo/
-    - https://www.chakielemuladores.com/
-    - https://chakielroms.com
-    - https://youtube.com/shorts/2m-sf_1oz9o?si=_7jnDIUxUeWeH5ev
-    - https://chakielroms.com/dmca
-  🖼️ Enlaces src encontrados:
-    - images.jpeg
-    - chakiel.png
-    - assets/icons/youtube.png
-    - assets/icons/tiktok.png
-    - assets/icons/instagram.png
-    - assets/icons/chakiel.png
-    - https://chakielroms.com/android/assets/js/game.js
-    - assets/js/listas.js
-
-🔍 Analizando: ./ps3/index.html
-  📎 Enlaces href encontrados:
-    - http://chakielroms.com/ps3/
-    - assets/icons/icon.png
-    - /site.webmanifest
-    - assets/icons/favicon.ico
-    - https://chakielroms.com/android/assets/css/dark.css
-    - https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap
-    - https://www.youtube.com/@ChakielZero
-    - https://www.tiktok.com/@chakielzero
-    - https://www.instagram.com/gerardo.bricenoo/
-    - https://www.chakielemuladores.com/
-    - https://chakielroms.com
-    - https://youtube.com/shorts/2m-sf_1oz9o?si=_7jnDIUxUeWeH5ev
-    - https://chakielroms.com/dmca
-  🖼️ Enlaces src encontrados:
-    - images.jpeg
-    - chakiel.png
-    - assets/icons/youtube.png
-    - assets/icons/tiktok.png
-    - assets/icons/instagram.png
-    - assets/icons/chakiel.png
     - https://chakielroms.com/android/assets/js/game.js
     - assets/js/listas.js
 
@@ -409,31 +434,6 @@
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/youtube.webp
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/telegram.webp
 
-🔍 Analizando: ./gamecube/index.html
-  📎 Enlaces href encontrados:
-    - http://chakielroms.com/gamecube/
-    - assets/icons/icon.png
-    - /site.webmanifest
-    - assets/icons/favicon.ico
-    - https://chakielroms.com/android/assets/css/dark.css
-    - https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap
-    - https://www.youtube.com/@ChakielZero
-    - https://www.tiktok.com/@chakielzero
-    - https://www.instagram.com/gerardo.bricenoo/
-    - https://www.chakielemuladores.com/
-    - https://chakielroms.com
-    - https://youtube.com/shorts/2m-sf_1oz9o?si=_7jnDIUxUeWeH5ev
-    - https://chakielroms.com/dmca
-  🖼️ Enlaces src encontrados:
-    - images.jpeg
-    - chakiel.png
-    - assets/icons/youtube.png
-    - assets/icons/tiktok.png
-    - assets/icons/instagram.png
-    - assets/icons/chakiel.png
-    - https://chakielroms.com/android/assets/js/game.js
-    - assets/js/listas.js
-
 🔗 Verificando páginas críticas:
 ❌ No se pudo conectar al dominio principal
 
@@ -449,4 +449,4 @@
   - Advertencias: 0
   - Errores: 1
 
-✅ Verificación completada: 2025-08-27 03:37:49 UTC
+✅ Verificación completada: 2025-08-28 03:39:01 UTC
