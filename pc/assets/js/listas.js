@@ -249,6 +249,14 @@ const juegos = [
 
     },       
     {
+        id: "Hollow Knight Silksong",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/hollowsil.webp",
+        altText: "Hollow Knight Silksong",
+        title: "Hollow Knight Silksong",
+        downloadLink2: "https://terabox.com/s/1t_pnBBV62cH05_mEKGcTmg" // Segundo enlace de descarga
+
+    },       
+    {
         id: "It Take Two",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc/takestwo.webp",
         altText: "It Take Two",
