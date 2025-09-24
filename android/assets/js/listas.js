@@ -95,6 +95,14 @@ const juegos = [
 
     },       
     {
+        id: "Candleman",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/vela.webp",
+        altText: "Candleman",
+        title: "Candleman.apk",
+        downloadLink2: "https://terabox.com/s/1wBZlmBo-CrecEcHDiPmirw" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Cemu Android",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/cemu.webp",
         altText: "Cemu Android",
@@ -188,6 +196,14 @@ const juegos = [
         altText: "Egg NS",
         title: "Egg NS 5.1.1.apk",
         downloadLink2: "https://1024terabox.com/s/1J1eYwfXMX5ib-qKGlXJ18A" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "EISENHORN XENOS",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/xenos.webp",
+        altText: "EISENHORN XENOS",
+        title: "EISENHORN XENOS.apk",
+        downloadLink2: "https://terabox.com/s/1q_Tur7FXf0AZOrWrb3Sj8Q" // Segundo enlace de descarga
 
     },       
     {
@@ -359,6 +375,14 @@ const juegos = [
 
     },       
     {
+        id: "INDIGO LAKE",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/indigo.webp",
+        altText: "INDIGO LAKE",
+        title: "INDIGO LAKE.apk",
+        downloadLink2: "https://terabox.com/s/1ljHH-kfrRGVZoNztCWL0tQ" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Jetpack Joyride Mod",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/jetpack.webp",
         altText: "Jetpack Joyride Mod",
@@ -412,6 +436,14 @@ const juegos = [
         altText: "Max Payne Mobile",
         title: "Max Payne Mobile Installer.apk",
         downloadLink2: "https://nephobox.com/s/13Bhus5P9sHTUzftqx9mWZg" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Metal Slug 4 Aca NeoGeo",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/metalslug4.webp",
+        altText: "Metal Slug 4 Aca NeoGeo",
+        title: "Metal Slug 4 Aca NeoGeo.apk",
+        downloadLink2: "https://terabox.com/s/1g3QhLEi7aEiF7nO2u0Poag" // Segundo enlace de descarga
 
     },       
     {
@@ -492,6 +524,14 @@ const juegos = [
         altText: "Prince of the Persia Lost Crown",
         title: "Prince of the Persia Lost Crown.apk",
         downloadLink2: "https://terabox.com/s/1tXcm6JpHm0lnQayFlQxmBA" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "Proyect Zomboid",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/zomboid.webp",
+        altText: "Proyect Zomboid",
+        title: "Proyect Zomboid",
+        downloadLink2: "https://terabox.com/s/189-2GOwT7CeiRMUrzF5Mwg" // Segundo enlace de descarga
 
     },       
     {
@@ -688,6 +728,14 @@ const juegos = [
 
     },       
     {
+        id: "Splinter Cell Conviction",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/cell.webp",
+        altText: "Splinter Cell Conviction",
+        title: "Splinter Cell Conviction",
+        downloadLink2: "https://terabox.com/s/1tnIN9AwNl6nEoOeFAk9paw" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Stardew Valley",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/stardew.webp",
         altText: "Stardew Valley",
@@ -697,10 +745,10 @@ const juegos = [
     },       
     {
         id: "Subnautica",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/sub.webp",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/subnautica.webp",
         altText: "Subnautica",
         title: "Subnautica",
-        downloadLink2: "https://terabox.com/s/1fVwYQwzbv5ur41q1ZiE6uQ" // Segundo enlace de descarga
+        downloadLink2: "https://terabox.com/s/1fHQfrNqODU4CCYFgjyZqLg" // Segundo enlace de descarga
 
     },       
     {
@@ -792,6 +840,14 @@ const juegos = [
 
     },       
     {
+        id: "TINTIN",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/tintin.webp",
+        altText: "TINTIN",
+        title: "TINTIN.apk",
+        downloadLink2: "https://terabox.com/s/1i0exaYsdMxmP3lsgDgZVtg" // Segundo enlace de descarga
+
+    },       
+    {
         id: "The Dark Knight Rises",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/batman.webp",
         altText: "The Dark Knight Rises",
@@ -837,6 +893,14 @@ const juegos = [
         altText: "Vita3k",
         title: "Vita3k V12.apk",
         downloadLink2: "https://nephobox.com/s/12UENuOidFdgPJtTGP1NLaA" // Segundo enlace de descarga
+
+    },       
+    {
+        id: "XCOM 2",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/xcom2.webp",
+        altText: "XCOM 2",
+        title: "XCOM 2",
+        downloadLink2: "https://terabox.com/s/1YRqgiHyD-z718-5_HX3BfA" // Segundo enlace de descarga
 
     },       
     {
