@@ -511,6 +511,14 @@ const juegos = [
 
     },       
     {
+        id: "Portal",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/portal.webp",
+        altText: "Portal",
+        title: "Portal",
+        downloadLink2: "https://terabox.com/s/1me8OCr9az7ZJQCPOAhwoew" // Segundo enlace de descarga
+
+    },       
+    {
         id: "Power Warriors v18.2",
         imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/power.webp",
         altText: "Power Warriors v18.2",
