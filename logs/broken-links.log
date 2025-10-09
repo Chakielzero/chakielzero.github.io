@@ -1,9 +1,9 @@
-=== VERIFICACIÓN DE ENLACES ROTOS - 2025-10-08 03:34:49 UTC ===
+=== VERIFICACIÓN DE ENLACES ROTOS - 2025-10-09 03:36:55 UTC ===
 
 🌐 Dominio verificado: https://chakielroms.com
-📅 Fecha de verificación: 2025-10-08 03:34:49 UTC
+📅 Fecha de verificación: 2025-10-09 03:36:55 UTC
 
-📄 Archivos HTML encontrados: 14
+📄 Archivos HTML encontrados: 13
 ./3ds/index.html
 ./android/index.html
 ./index.html
@@ -11,7 +11,6 @@
 ./psvita/index.html
 ./ps3/index.html
 ./ps2/index.html
-./sudachi/index.html
 ./wii/index.html
 ./dmca/index.html
 ./ps4/index.html
@@ -87,8 +86,6 @@
     - 3ds/
     - https://www.chakielemuladores.com/2024/07/cemu-en-android-emulador-de-wii-u.html
     - wiiu/
-    - https://www.chakielemuladores.com/2024/04/yuzu-ultima-version-android.html
-    - sudachi/
     - https://www.chakielemuladores.com/2024/08/5-mejores-emuladores-de-ps1-en-android.html
     - https://nephobox.com/s/1g4AI4GgSAjvVewKkW7BJiw
     - https://www.chakielemuladores.com/2024/04/emulador-nethersx2-18-android.html
@@ -140,7 +137,6 @@
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/wii.webp
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds.webp
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/system1.webp
-    - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/system2.webp
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps1.webp
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps2.webp
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/ps3.webp
@@ -252,31 +248,6 @@
 🔍 Analizando: ./ps2/index.html
   📎 Enlaces href encontrados:
     - http://chakielroms.com/ps2/
-    - assets/icons/icon.png
-    - /site.webmanifest
-    - assets/icons/favicon.ico
-    - https://chakielroms.com/android/assets/css/dark.css
-    - https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap
-    - https://www.youtube.com/@ChakielZero
-    - https://www.tiktok.com/@chakielzero
-    - https://www.instagram.com/gerardo.bricenoo/
-    - https://www.chakielemuladores.com/
-    - https://chakielroms.com
-    - https://youtube.com/shorts/2m-sf_1oz9o?si=_7jnDIUxUeWeH5ev
-    - https://chakielroms.com/dmca
-  🖼️ Enlaces src encontrados:
-    - images.jpeg
-    - chakiel.png
-    - assets/icons/youtube.png
-    - assets/icons/tiktok.png
-    - assets/icons/instagram.png
-    - assets/icons/chakiel.png
-    - https://chakielroms.com/android/assets/js/game.js
-    - assets/js/listas.js
-
-🔍 Analizando: ./sudachi/index.html
-  📎 Enlaces href encontrados:
-    - http://chakielroms.com/sudachi/
     - assets/icons/icon.png
     - /site.webmanifest
     - assets/icons/favicon.ico
@@ -439,14 +410,14 @@
 
 === RESUMEN ===
 📊 Estadísticas del sitio:
-  - Archivos HTML: 14
-  - Archivos CSS: 25
-  - Archivos JS: 13
-  - Archivos de imagen: 183
+  - Archivos HTML: 13
+  - Archivos CSS: 23
+  - Archivos JS: 12
+  - Archivos de imagen: 168
 
 📈 Estado de verificación:
   - Páginas exitosas: 0
   - Advertencias: 0
   - Errores: 1
 
-✅ Verificación completada: 2025-10-08 03:34:49 UTC
+✅ Verificación completada: 2025-10-09 03:36:55 UTC
