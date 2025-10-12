@@ -291,6 +291,14 @@ const juegos = [
         altText: "Formula Cartoon All-Stars Mod Money",
         title: "Formula Cartoon All-Stars Mod Money.apk",
         downloadLink2: "https://terabox.com/s/1XFfqo0fLC_JTh5s0h2NHSQ" // Segundo enlace de descarga
+
+    },
+    {
+        id: "Gamehub Lite",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/lite.webp",
+        altText: "Gamehub Lite",
+        title: "Gamehub Lite.apk",
+        downloadLink2: "https://bit.ly/3KM266H" // Segundo enlace de descarga
         
     },       
     {
