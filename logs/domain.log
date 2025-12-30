@@ -1,14 +1,14 @@
-=== VERIFICACIÓN DE DOMINIO - 2025-12-29 18:14:59 UTC ===
+=== VERIFICACIÓN DE DOMINIO - 2025-12-30 00:47:35 UTC ===
 
 🌐 DOMINIO PRINCIPAL: chakielroms.com
 🔗 GITHUB PAGES: chakielzero.github.io
 
 === DNS RECORDS ===
 📋 Registros A:
+185.199.110.153
 185.199.108.153
 185.199.111.153
 185.199.109.153
-185.199.110.153
 
 📋 Registros AAAA (IPv6):
 ❌ No hay registros AAAA
@@ -36,7 +36,7 @@ notBefore=Nov 17 07:12:11 2025 GMT
 notAfter=Feb 15 07:12:10 2026 GMT
 
 === TIEMPO DE RESPUESTA ===
-⏱️ Tiempo de respuesta: 0.095653s
+⏱️ Tiempo de respuesta: 0.032381s
 
 === REDIRECCIONES ===
 🔄 Verificando redirección www -> no-www:
@@ -47,4 +47,4 @@ Estado www.chakielroms.com: 301
 
 === RESUMEN ===
 ✅ Dominio funcionando correctamente
-📊 Verificación completada: 2025-12-29 18:14:59 UTC
+📊 Verificación completada: 2025-12-30 00:47:35 UTC
