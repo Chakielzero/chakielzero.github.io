@@ -1,19 +1,17 @@
-// Variables para optimización
-let scrollTimeout;
+// ─────────────────────────────────────────────
+//  game.js  |  ChakielRoms — Motor de galería
+//  Lee games.json y renderiza la galería
+// ─────────────────────────────────────────────
+
+// ── Scroll: ocultar imagen principal ──────────
 let isScrolling = false;
 
-// Efecto de difuminado al hacer scroll - Ahora usa la clase CSS 'hidden'
 window.addEventListener("scroll", () => {
     if (!isScrolling) {
         window.requestAnimationFrame(() => {
             const mainImage = document.querySelector("#main-image img");
             if (mainImage) {
-                const scrollY = window.scrollY;
-                if (scrollY > 150) {
-                    mainImage.classList.add('hidden');
-                } else {
-                    mainImage.classList.remove('hidden');
-                }
+                mainImage.classList.toggle('hidden', window.scrollY > 150);
             }
             isScrolling = false;
         });
@@ -21,89 +19,122 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// Filtro de juegos por ID - Optimizado con debouncing
-function filterGames() {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-        const searchInput = document.getElementById('search-input').value.toLowerCase();
-        const games = document.querySelectorAll('.game');
+// ── Búsqueda con debouncing ───────────────────
+let searchTimeout;
 
-        games.forEach(game => {
-            const gameID = game.getAttribute('data-id').toLowerCase();
-            const shouldShow = gameID.includes(searchInput);
-            
-            if (shouldShow) {
-                game.style.display = 'block';
-            } else {
-                game.style.display = 'none';
-            }
+function filterGames() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+        const query = document.getElementById('search-input').value.toLowerCase().trim();
+        document.querySelectorAll('.game').forEach(game => {
+            const id    = (game.dataset.id    || '').toLowerCase();
+            const title = (game.dataset.title || '').toLowerCase();
+            game.style.display = (id.includes(query) || title.includes(query)) ? '' : 'none';
         });
     }, 150);
 }
 
-// Función para crear imagen optimizada (sin estilos JS)
-function createOptimizedImage(imgSrc, altText, title) {
+// ── IntersectionObserver compartido ──────────
+const imageObserver = ('IntersectionObserver' in window)
+    ? new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                obs.unobserve(img);
+            }
+        });
+    }, { rootMargin: '100px 0px' })
+    : null;
+
+// ── Crear imagen con lazy load ────────────────
+function createImage(coverImageUrl, title) {
     const img = document.createElement('img');
-    
-    img.alt = altText;
-    img.title = title;
+    img.alt     = title;
+    img.title   = title;
     img.loading = 'lazy';
 
-    img.onerror = function() {
-        this.src = 'placeholder_error.png'; // Un placeholder de error que puedes definir
-        this.classList.add('error-image'); // Clase para estilos de error en CSS
+    img.onerror = function () {
+        this.removeAttribute('data-src');
+        this.classList.add('error-image');
+        this.alt = 'Imagen no disponible';
     };
-    
-    // Intersection Observer para carga eficiente
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = imgSrc;
-                    observer.unobserve(img);
-                }
-            });
-        }, {
-            rootMargin: '50px 0px'
-        });
-        
+
+    if (imageObserver) {
+        img.dataset.src = coverImageUrl;         // carga diferida
         imageObserver.observe(img);
     } else {
-        img.src = imgSrc;
+        img.src = coverImageUrl;                 // fallback
     }
-    
+
     return img;
 }
 
-// Función optimizada para añadir los juegos al DOM
-function addGameToGallery({id, imgSrc, altText, title, downloadLink2}) {
-    const gallery = document.getElementById('gallery');
-    const gameDiv = document.createElement('div');
-    gameDiv.classList.add('game');
-    gameDiv.setAttribute('data-id', id);
+// ── Renderizar un juego en la galería ─────────
+function renderGame(game) {
+    const { id, title, description, coverImageUrl, downloadUrl, newTag } = game;
 
-    const optimizedImg = createOptimizedImage(imgSrc, altText, title);
-    
+    const div = document.createElement('div');
+    div.classList.add('game');
+    div.dataset.id    = id;
+    div.dataset.title = title;   // búsqueda por título
+
+    // Badge "NEW" opcional
+    if (newTag) {
+        const badge = document.createElement('span');
+        badge.classList.add('game-badge');
+        badge.textContent = newTag;
+        div.appendChild(badge);
+    }
+
+    const img = createImage(coverImageUrl, title);
+
     const titleP = document.createElement('p');
     titleP.textContent = title;
-    
-    const downloadBtn = document.createElement('button');
-    downloadBtn.textContent = 'Descargar';
-    downloadBtn.classList.add('game-download-btn'); // Nueva clase para el botón
-    
-    downloadBtn.onclick = () => window.location.href = downloadLink2;
-    
-    gameDiv.appendChild(optimizedImg);
-    gameDiv.appendChild(titleP);
-    gameDiv.appendChild(downloadBtn);
 
-    const fragment = document.createDocumentFragment();
-    fragment.appendChild(gameDiv);
-    gallery.appendChild(fragment);
+    const desc = document.createElement('small');
+    desc.classList.add('game-desc');
+    desc.textContent = description;
+
+    const btn = document.createElement('button');
+    btn.textContent = 'Descargar';
+    btn.classList.add('game-download-btn');
+    btn.onclick = () => window.open(downloadUrl, '_blank', 'noopener');
+
+    div.append(img, titleP, desc, btn);
+    return div;
 }
 
-// Inicializar funciones cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('✅ Lógica JavaScript inicializada correctamente');
+// ── Cargar games.json y poblar galería ────────
+async function loadGames() {
+    const gallery = document.getElementById('gallery');
+
+    try {
+        const res = await fetch('assets/js/games.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const data  = await res.json();
+        const games = data.games ?? [];
+
+        if (games.length === 0) {
+            gallery.innerHTML = '<p class="empty-msg">No hay juegos disponibles.</p>';
+            return;
+        }
+
+        // Renderizar todo en un solo fragment → 1 solo reflow
+        const fragment = document.createDocumentFragment();
+        games.forEach(game => fragment.appendChild(renderGame(game)));
+        gallery.appendChild(fragment);
+
+    } catch (err) {
+        console.error('Error cargando games.json:', err);
+        gallery.innerHTML = '<p class="empty-msg error-msg">Error al cargar los juegos. Intenta recargar la página.</p>';
+    }
+}
+
+// ── Init ──────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+    loadGames();
+    console.log('✅ game.js inicializado');
 });
