@@ -114,7 +114,7 @@ async function loadGames() {
     const platform = script ? script.dataset.platform : null;
 
     try {
-        const res = await fetch('/assets/js/games.json');
+        const res = await fetch('https://cdn.jsdelivr.net/gh/Chakielzero/data@main/games.json');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
         const data  = await res.json();
@@ -143,5 +143,5 @@ async function loadGames() {
 // ── Init ──────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
     loadGames();
-    console.log('✅ game.js inicializado');
+    console.log('game.js inicializado');
 });
