@@ -1,12 +1,13 @@
-=== VERIFICACIÓN DE ENLACES ROTOS - 2026-03-09 04:58:05 UTC ===
+=== VERIFICACIÓN DE ENLACES ROTOS - 2026-03-10 04:47:05 UTC ===
 
 🌐 Dominio verificado: https://chakielroms.com
-📅 Fecha de verificación: 2026-03-09 04:58:05 UTC
+📅 Fecha de verificación: 2026-03-10 04:47:05 UTC
 
-📄 Archivos HTML encontrados: 13
+📄 Archivos HTML encontrados: 14
 ./index.html
 ./pc/index.html
 ./ps2/index.html
+./xbox/index.html
 ./wii/index.html
 ./psvita/index.html
 ./android/index.html
@@ -28,6 +29,8 @@
     - android/
     - https://www.chakielemuladores.com/2024/08/winlator-glibc-emulador-pc-en-android.html
     - pc/
+    - #
+    - xbox/
     - https://www.chakielemuladores.com/2024/04/el-mejor-emulador-de-gamecube-y-wii.html
     - gamecube/
     - https://www.chakielemuladores.com/2024/04/el-mejor-emulador-de-gamecube-y-wii.html
@@ -83,6 +86,7 @@
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/desktop.webp
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android.webp
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/pc.webp
+    - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/xbox.webp
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/gamecube.webp
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/wii.webp
     - https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/3ds.webp
@@ -147,6 +151,30 @@
 🔍 Analizando: ./ps2/index.html
   📎 Enlaces href encontrados:
     - http://chakielroms.com/ps2/
+    - assets/icons/icon.png
+    - /site.webmanifest
+    - assets/icons/favicon.ico
+    - https://chakielroms.com/android/assets/css/dark.css
+    - https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap
+    - https://www.youtube.com/@ChakielZero
+    - https://www.tiktok.com/@chakielzero
+    - https://www.instagram.com/gerardo.bricenoo/
+    - https://www.chakielemuladores.com/
+    - https://chakielroms.com
+    - https://youtube.com/shorts/2m-sf_1oz9o?si=_7jnDIUxUeWeH5ev
+    - https://chakielroms.com/dmca
+  🖼️ Enlaces src encontrados:
+    - images.jpeg
+    - chakiel.png
+    - assets/icons/youtube.png
+    - assets/icons/tiktok.png
+    - assets/icons/instagram.png
+    - assets/icons/chakiel.png
+    - https://chakielroms.com/assets/js/game.js
+
+🔍 Analizando: ./xbox/index.html
+  📎 Enlaces href encontrados:
+    - http://chakielroms.com/android/
     - assets/icons/icon.png
     - /site.webmanifest
     - assets/icons/favicon.ico
@@ -400,14 +428,14 @@
 
 === RESUMEN ===
 📊 Estadísticas del sitio:
-  - Archivos HTML: 13
-  - Archivos CSS: 23
-  - Archivos JS: 12
-  - Archivos de imagen: 168
+  - Archivos HTML: 14
+  - Archivos CSS: 25
+  - Archivos JS: 14
+  - Archivos de imagen: 183
 
 📈 Estado de verificación:
   - Páginas exitosas: 0
   - Advertencias: 0
   - Errores: 1
 
-✅ Verificación completada: 2026-03-09 04:58:05 UTC
+✅ Verificación completada: 2026-03-10 04:47:05 UTC
