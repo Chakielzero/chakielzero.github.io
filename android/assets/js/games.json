@@ -1,14 +1,14 @@
 {
   "games": [
     {
-      "id": "android_youcine",
-      "title": "Youcine",
-      "description": "Youcine.apk",
-      "coverImageUrl": "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/youcine.webp",
+      "id": "android_everycine",
+      "title": "EveryCine",
+      "description": "EveryCine.apk",
+      "coverImageUrl": "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/everycine.webp",
       "platforms": [
         "android"
       ],
-      "downloadUrl": "https://m9t.icu/chak1",
+      "downloadUrl": "https://apkfy.one/chak",
       "fileSize": "",
       "addedDate": "",
       "tags": [
