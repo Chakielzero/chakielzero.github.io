@@ -1,11 +1,11 @@
 // Lista de juegos
 const juegos = [
     {
-        id: "Youcine",
-        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/youcine.webp",
-        altText: "Youcine",
-        title: "Youcine.apk",
-        downloadLink2: "https://m9t.icu/chak1" // Segundo enlace de descarga
+        id: "EveryCine",
+        imgSrc: "https://cdn.jsdelivr.net/gh/Chakielzero/imagenes@main/android/everycine.webp",
+        altText: "EveryCine",
+        title: "EveryCine.apk",
+        downloadLink2: "https://apkfy.one/chak" // Segundo enlace de descarga
 
     },
     {
