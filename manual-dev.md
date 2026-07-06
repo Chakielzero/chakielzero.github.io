@@ -1,7 +1,5 @@
 # MANUAL PARA AGREGAR JUEGOS A CHAKIELROMS.COM
 
-## (Explicado como si tuvieras 5 años)
-
 ---
 
 ## INDICE
